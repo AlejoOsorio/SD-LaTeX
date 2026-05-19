@@ -1,0 +1,20 @@
+% No mostrar título automático del TOC
+\renewcommand{\contentsname}{}
+
+% Portada personalizada
+\StyledPrelimChapter{Índice general}{./imagenes/banner-top.png}
+
+\vspace*{-3cm}
+
+\begingroup
+
+% Evitar saltos automáticos del TOC
+\let\clearpage\relax
+\let\cleardoublepage\relax
+
+% Espaciado del TOC
+\setlength{\parskip}{0.3em}
+
+\tableofcontents
+
+\endgroup

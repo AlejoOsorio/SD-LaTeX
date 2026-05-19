@@ -16,3 +16,51 @@
 	\vspace*{\fill}
 	\clearpage
 }
+
+% Comando para secciones preliminares (sin numeración pero en índice)
+\newcommand{\StyledPrelimChapter}[2]{%
+
+	% Nueva página
+	\cleardoublepage
+
+	% Ancla para hyperref
+	\phantomsection
+
+	% Entrada en el índice
+	\addcontentsline{toc}{chapter}{#1}
+
+	% Encabezados
+	\markboth{#1}{#1}
+
+	% Fondo y título personalizado
+	\AddToShipoutPictureBG*{%
+		\begin{tikzpicture}[remember picture,overlay]
+
+			% Imagen de fondo
+			\node[
+				inner sep=0pt,
+				anchor=north west
+			] at (current page.north west)
+			{
+				\includegraphics[width=\paperwidth]{#2}
+			};
+
+			% Caja del título
+			\node[
+				anchor=north west,
+				xshift=1.5cm,
+				yshift=-1cm,
+				text=black,
+				fill=white,
+				fill opacity=0.8,
+				rounded corners=6pt,
+				inner xsep=10pt,
+				inner ysep=6pt
+			] at (current page.north west)
+			{
+				\Large\bfseries #1\strut
+			};
+
+		\end{tikzpicture}
+	}%
+}
