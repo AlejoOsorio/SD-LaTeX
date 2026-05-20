@@ -1,13 +1,41 @@
 % ==================================================
-% GEOMETRÍA Y ESPACIADO
+% GEOMETRÍA Y ESPACIADO GLOBAL
 % ==================================================
 
 \geometry{a4paper, margin=3cm}
-
 \onehalfspacing
+
+\setlength{\parskip}{0.7em}
+\setlength{\parindent}{0pt}
 
 % ==================================================
 % GRÁFICOS VECTORIALES
 % ==================================================
 
 \usetikzlibrary{calc}
+
+% ==================================================
+% TÍTULOS DE SECCIÓN
+% ==================================================
+
+\titleformat{\section}
+{\large\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+{\normalsize\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+{\normalsize\bfseries}{\thesubsubsection}{1em}{}
+
+% ==================================================
+% LISTAS
+% ==================================================
+
+\setlist[itemize]{itemsep=0.3em, parsep=0pt, topsep=-0.1em, partopsep=0pt}
+\setlist[enumerate]{itemsep=0.3em, parsep=0pt, topsep=0.1em, partopsep=0pt}
+
+% ==================================================
+% BABEL (IDIOMA - TABLAS)
+% ==================================================
+
+\addto\captionsspanish{\renewcommand{\tablename}{Tabla}}
