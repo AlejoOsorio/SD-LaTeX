@@ -1,0 +1,21 @@
+% Portada personalizada
+\StyledPrelimChapter{Índice de figuras}{./imagenes/banner-top.png}
+
+\vspace*{-3cm}
+
+% pegamos la lista sin salto extra
+\begingroup
+
+% Evitar saltos automáticos
+\let\clearpage\relax
+\let\cleardoublepage\relax
+
+% Reducir el espacio entre líneas de la lista de figuras
+\setlength{\parskip}{0.3em}  % Menos espacio entre párrafos para la lista
+
+{
+	\renewcommand{\listfigurename}{}%
+	\listoffigures
+}
+
+\endgroup
