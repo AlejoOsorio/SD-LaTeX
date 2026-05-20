@@ -1,6 +1,3 @@
-% No mostrar título automático del TOC
-\renewcommand{\contentsname}{}
-
 % Portada personalizada
 \StyledPrelimChapter{Índice general}{./imagenes/banner-top.png}
 
@@ -15,6 +12,10 @@
 % Espaciado del TOC
 \setlength{\parskip}{0.3em}
 
-\tableofcontents
+{
+	% No mostrar título automático del TOC
+	\renewcommand{\contentsname}{}
+	\tableofcontents
+}
 
 \endgroup
