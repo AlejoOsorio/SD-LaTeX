@@ -64,3 +64,17 @@
 		\end{tikzpicture}
 	}%
 }
+
+\newcommand{\CommonFooter}{%
+	\begin{tikzpicture}[remember picture, overlay]
+		\node[anchor=south, inner sep=0pt]
+		at ([xshift=\bannerXOffset, yshift=\bannerYOffset]current page.south)
+		{%
+			\includegraphics[width=\paperwidth, height=\bannerHeight]{./imagenes/banner-bottom.png}%
+		};
+
+		\node[anchor=south west, text=black, font=\bfseries]
+		at ([xshift=\pageNumXOffset, yshift=\pageNumYOffset]current page.south west)
+		{\thepage};
+	\end{tikzpicture}%
+}
