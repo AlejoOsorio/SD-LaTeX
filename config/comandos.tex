@@ -78,3 +78,44 @@
 		{\thepage};
 	\end{tikzpicture}%
 }
+
+% Comando para partes del documento (diseño centrado con posición personalizable)
+% Uso: \PartImage[xpos,ypos]{Título}{imagen.png}
+% xpos: desplazamiento horizontal en puntos desde el centro (positivo = derecha, negativo = izquierda)
+% ypos: desplazamiento vertical en puntos desde el centro (positivo = arriba, negativo = abajo)
+\newcommand{\PartCover}[4][0pt,0pt]{%
+	\cleardoublepage%
+	\thispagestyle{empty}%
+	\refstepcounter{part}%
+	\addcontentsline{toc}{part}{\protect\numberline{\thepart}#2}%
+	% Procesar las coordenadas del parámetro opcional
+	\def\tempcoords{#1}%
+	\expandafter\parsecoords\tempcoords\relax%
+	\AddToShipoutPictureBG*{%
+		\begin{tikzpicture}[remember picture,overlay]
+			% Imagen de fondo que ocupa toda la página
+			\node[inner sep=0pt] at (current page.center)
+			{\includegraphics[width=\paperwidth,height=\paperheight]{#3}};
+			% Título en posición personalizable con salto de línea
+			\node[
+				text=black,
+				fill=white, fill opacity=0.9,
+				rounded corners=10pt,
+				inner xsep=20pt, inner ysep=15pt,
+				font=\Huge\bfseries,
+				align=center
+			] at ([xshift=\xpos,yshift=\ypos]current page.center)
+			{PARTE \thepart\\#2};
+		\end{tikzpicture}
+	}%
+	\vspace*{3cm}%
+	\phantom{.}%
+	\newpage%
+}
+
+% Comando auxiliar para procesar coordenadas
+\def\parsecoords#1,#2\relax{%
+	\def\xpos{#1}%
+	\def\ypos{#2}%
+}
+
