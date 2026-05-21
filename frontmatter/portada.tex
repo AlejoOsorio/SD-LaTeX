@@ -1,4 +1,4 @@
-\AddToShipoutPicture*{\PortadaPic} % agrega la imagen de fondo
+\AddToShipoutPicture*{\CoverBackground} % agrega la imagen de fondo
 
 \begin{titlepage}
 
@@ -8,7 +8,7 @@
 		\node[anchor=west]
 		at ([xshift=14cm,yshift=-6.5cm]current page.north west)
 		{
-			\Large \worktype
+			\Large \workType
 		};
 
 		% Revisor y asesor
@@ -16,7 +16,7 @@
 		at ([xshift=8cm,yshift=-21.5cm]current page.north west)
 		{
 			\begin{tabular}{rl}
-				Revisor:  & \reviewerone \\
+				Revisor:  & \reviewer \\
 				Director: & \advisor
 			\end{tabular}
 		};
@@ -25,7 +25,7 @@
 		\node[anchor=west]
 		at ([xshift=11cm,yshift=-24cm]current page.north west)
 		{
-			\normalsize \timeend
+			\normalsize \submissionDate
 		};
 
 	\end{tikzpicture}
