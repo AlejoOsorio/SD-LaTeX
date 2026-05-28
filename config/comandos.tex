@@ -80,10 +80,13 @@
 }
 
 % Comando para partes del documento (diseño centrado con posición personalizable)
-% Uso: \PartImage[xpos,ypos]{Título}{imagen.png}
+% Uso: \PartCover[xpos,ypos]{Título}{imagen.png}
+%      \PartCover*[xpos,ypos]{Título}{imagen.png} (versión sin numeración de parte)
 % xpos: desplazamiento horizontal en puntos desde el centro (positivo = derecha, negativo = izquierda)
 % ypos: desplazamiento vertical en puntos desde el centro (positivo = arriba, negativo = abajo)
-\newcommand{\PartCover}[4][0pt,0pt]{%
+\makeatletter
+\newcommand{\PartCover}{\@ifstar{\PartCoverStar}{\PartCoverNormal}}
+\newcommand{\PartCoverNormal}[3][0pt,0pt]{%
 	\cleardoublepage%
 	\thispagestyle{empty}%
 	\refstepcounter{part}%
@@ -112,6 +115,34 @@
 	\phantom{.}%
 	\newpage%
 }
+\newcommand{\PartCoverStar}[3][0pt,0pt]{%
+	\cleardoublepage%
+	\thispagestyle{empty}%
+	\phantomsection%
+	\addcontentsline{toc}{chapter}{#2}%
+	\markboth{#2}{#2}%
+	\def\tempcoords{#1}%
+	\expandafter\parsecoords\tempcoords\relax%
+	\AddToShipoutPictureBG*{%
+		\begin{tikzpicture}[remember picture,overlay]
+			\node[inner sep=0pt] at (current page.center)
+			{\includegraphics[width=\paperwidth,height=\paperheight]{#3}};
+			\node[
+				text=black,
+				fill=white, fill opacity=0.9,
+				rounded corners=10pt,
+				inner xsep=20pt, inner ysep=15pt,
+				font=\Huge\bfseries,
+				align=center
+			] at ([xshift=\xpos,yshift=\ypos]current page.center)
+			{#2};
+		\end{tikzpicture}
+	}%
+	\vspace*{3cm}%
+	\phantom{.}%
+	\newpage%
+}
+\makeatother
 
 % Comando auxiliar para procesar coordenadas
 \def\parsecoords#1,#2\relax{%
