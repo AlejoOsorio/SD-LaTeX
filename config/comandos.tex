@@ -1,9 +1,9 @@
 \newcommand\FrontPageBackground{%
-	\includegraphics[scale=1,width=\paperwidth,height=\paperheight]{./imagenes/fondo-anteportada.jpg}
+	\includegraphics[scale=1,width=\paperwidth,height=\paperheight]{\frontispieceBackground}
 }
 
 \newcommand\CoverBackground{%
-	\includegraphics[width=\paperwidth,height=\paperheight]{imagenes/fondo-portada.jpg}%
+	\includegraphics[width=\paperwidth,height=\paperheight]{\coverBackground}%
 }
 
 \newcommand\InsertBlankPage{
@@ -70,7 +70,7 @@
 		\node[anchor=south, inner sep=0pt]
 		at ([xshift=\bannerXOffset, yshift=\bannerYOffset]current page.south)
 		{%
-			\includegraphics[width=\paperwidth, height=\bannerHeight]{./imagenes/banner-bottom.png}%
+			\includegraphics[width=\paperwidth, height=\bannerHeight]{\bottomBanner}%
 		};
 
 		\node[anchor=south west, text=black, font=\bfseries]
