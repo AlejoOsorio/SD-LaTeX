@@ -65,6 +65,56 @@
 	}%
 }
 
+% Comando para capítulos numerados
+\newcommand{\MainChapter}[2]{%
+
+	% Nueva página
+	\cleardoublepage
+
+	% Incrementar contador de capítulo y crear ancla
+	\refstepcounter{chapter}
+
+	% Entrada en el índice
+	\addcontentsline{toc}{chapter}
+		{\protect\numberline{\thechapter}#1}
+
+	% Encabezados
+	\markboth{\thechapter\quad #1}{\thechapter\quad #1}
+
+	% Fondo y título personalizado
+	\AddToShipoutPictureBG*{%
+		\begin{tikzpicture}[remember picture,overlay]
+
+			% Imagen de fondo
+			\node[
+				inner sep=0pt,
+				anchor=north west
+			] at (current page.north west)
+			{
+				\includegraphics[width=\paperwidth]{#2}
+			};
+
+			% Caja del título
+			\node[
+				anchor=north west,
+				xshift=1.5cm,
+				yshift=-1cm,
+				text=black,
+				fill=white,
+				fill opacity=0.8,
+				rounded corners=6pt,
+				inner xsep=10pt,
+				inner ysep=6pt
+			] at (current page.north west)
+			{
+				\Large\bfseries
+				\thechapter\quad #1\strut
+			};
+
+		\end{tikzpicture}
+	}%
+}
+
 \newcommand{\CommonFooter}{%
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south, inner sep=0pt]
