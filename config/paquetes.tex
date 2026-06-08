@@ -72,25 +72,23 @@
 \usepackage{iflang}
 
 % ==================================================
-% BIBLIOGRAFÍA Y REFERENCIAS
-% ==================================================
-
-\usepackage[round]{natbib}
-
-% Hyperlinks: siempre antes de acronym
-\usepackage{hyperref}
-
-% URLs mejor cortadas en bibliografía y enlaces
-\usepackage{xurl}
-
-% Acrónimos
-\usepackage[printonlyused]{acronym}
-
-% ==================================================
 % CÓDIGO FUENTE
 % ==================================================
 
 \usepackage{minted}
+
+% ==================================================
+% BIBLIOGRAFÍA Y REFERENCIAS
+% ==================================================
+\usepackage{csquotes}
+
+\usepackage[backend=biber, style=apa, natbib=true]{biblatex}
+
+% Hyperlinks: siempre antes de acronym
+\usepackage{hyperref}
+
+% Acrónimos
+\usepackage[printonlyused]{acronym}
 
 % ==================================================
 % GRÁFICOS VECTORIALES
