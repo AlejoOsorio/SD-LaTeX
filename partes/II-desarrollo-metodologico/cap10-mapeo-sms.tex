@@ -1,0 +1,225 @@
+% TODO: Fragmentar las secciones de este archivo en multiples archivos
+\MainChapter{Revisión sistemática de la literatura}{\topBanner}\label{cap:revision-literatura}
+\vspace*{0.7cm}
+
+\section{Construcción de la bitácora}
+
+Con el propósito de establecer una base teórica sólida que permitiera sustentar la toma de decisiones respecto a la selección de un servicio de directorio, se llevó a cabo una revisión exhaustiva de la literatura relacionada con el tema. Este proceso se desarrolló en diferentes etapas, las cuales se describen a continuación:
+
+
+\subsection{Planeación}
+
+El objetivo de esta etapa fue definir el propósito general del \ac{SMS}, adoptando la metodología propuesta por \citet{Sepulveda2021}. A su vez, se definieron metas (ver \autoref{tab:metas}), preguntas de investigación (ver \autoref{tab:preguntas}) y métricas (ver \autoref{tab:metricas}). Para ello, se siguió el modelo objetivo-Pregunta-Métrica (\textit{Goal-Question-Metric}, GQM).
+
+
+\subsubsection{Definición de metas para el \ac{SMS}}
+\input{tablas/II-desarrollo-metodologico/cap10-sms/metas.tex}
+
+
+\subsubsection{Definición de preguntas de investigación}\label{subsubsec:rq-def}
+\input{tablas/II-desarrollo-metodologico/cap10-sms/preguntas}
+
+
+\subsubsection{Definición de métricas}
+\input{tablas/II-desarrollo-metodologico/cap10-sms/metricas}
+
+
+\newpage
+\section{Búsqueda de estudios}
+
+Esta etapa comprendió las siguientes secciones:
+\begin{enumerate}
+	\item Estrategia de búsqueda, ya sea independiente o combinada;
+	\item Identificación general de estudios;
+	\item Revisión de estudio; y finalmente,
+	\item Selección de estudios para incluir en el \ac{SMS}.
+\end{enumerate}
+
+
+\subsection{Estrategia de búsqueda}
+
+La estrategia de búsqueda empleada en este estudio combinó consultas estructuradas en bases de datos científicas con la técnica de búsqueda en bola de nieve (\textit{snowballing}). Esta integración metodológica permitió ampliar el alcance del proceso de identificación de literatura relevante, favoreciendo la recuperación de estudios adicionales a partir de las referencias bibliográficas y citaciones de los trabajos inicialmente seleccionados. Como resultado, fue posible identificar investigaciones de interés que podrían no haber sido localizadas mediante la aplicación exclusiva de estrategias de búsqueda tradicionales, fortaleciendo así la exhaustividad y cobertura del mapeo sistemático.
+
+
+\subsection{Búsqueda en bases de datos}\label{subsec:busqueda-bases-datos}
+
+Para la realización del \ac{SMS}, se seleccionaron las bases de datos Web of Science, IEEE Xplore, Springer, ScienceDirect y Taylor \& Francis. La elección de estas fuentes se fundamentó en su reconocida relevancia dentro de la comunidad científica, así como en la amplitud y calidad de la literatura que indexa en el área de investigación objeto de estudio. Adicionalmente, su disponibilidad y cobertura temática permitieron garantizar el acceso a publicaciones científicas actualizadas y pertinentes, contribuyendo a la rigurosidad y confiabilidad del proceso de búsqueda y selección de la evidencia científica.
+
+
+\subsubsection{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacion-estudios}
+
+En esta etapa fue necesario definir un marco de referencia que facilitara la identificación y selección de las palabras clave más adecuadas para la construcción de la cadena de búsqueda empleada en las bases de datos seleccionadas. Con este propósito, se utilizó el modelo PICOC (\textit{Population}, \textit{Intervention}, \textit{Comparator}, \textit{Outcome}, and \textit{Context}) como guía metodológica para estructurar y delimitar los términos de búsqueda relacionados con el objeto de estudio. La aplicación de este modelo permitió sistematizar el proceso de definición de palabras clave, favoreciendo la consistencia y trazabilidad de la estrategia de búsqueda. El resultado de este procedimiento se presenta en la \autoref{tab:modelo-picoc}.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/picoc}
+\input{tablas/II-desarrollo-metodologico/cap10-sms/palabras-clave-picoc}
+
+Los términos de búsqueda identificados a partir del modelo PICOC y presentados en la \autoref{tab:palabras-clave-picoc} fueron complementados mediante la incorporación de sinónimos y conceptos relacionados, con el fin de ampliar la cobertura y sensibilidad del proceso de recuperación de estudios. El conjunto resultante de términos se muestra en la \autoref{tab:palabras-clave}. Estos términos constituyeron la base para la cadena de búsqueda utilizada en cada una de las bases de datos seleccionadas.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/palabras-clave}
+
+Con el objetivo de filtrar los resultados obtenidos y centrar el análisis en estudios relevantes para la investigación, se definieron criterios de inclusión y exclusión, los cuales se presentan en la \autoref{tab:criterios-inclusion-exclusion}. Estos criterios orientaron el proceso de selección de estudios, permitiendo identificar aquellos trabajos alineados con objetivos del \ac{SMS} y descartar aquellos que no contribuían de manera significativa a la respuesta de las preguntas de investigación ni al desarrollo del análisis.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/criterios-inclusion-exclusion}
+
+
+\subsubsection{Búsqueda en bases de datos}\label{par:busqueda-bases-datos}
+
+La cadena de búsqueda correspondiente a cada una de las bases de datos seleccionadas se presenta en la tabla~\ref{tab:cadena-busqueda}.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/cadena-busqueda}
+
+
+\subsubsection{Métricas de la búsqueda sin criterios de inclusión/exclusión}\label{subsubsec:resumen-busqueda}
+
+La \autoref{tab:bases-sin-exclusion} presenta la cantidad de publicaciones recuperadas en las bases de datos consultadas durante la búsqueda inicial, previa a la aplicación de los criterios de inclusión y exclusión. En esta etapa se identificaron un total de 1720 registros, distribuidos entre WOS (39), Springer (38), ScienceDirect (1019), IEEE Xplore (10) y Taylor \& Francis (614). El detalle de esta búsqueda preliminar se presenta en el apéndice \ref{sec:busqueda-sin-criterios}.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/bases-sin-exclusion}
+
+
+\subsubsection{Métricas de la búsqueda con criterios de inclusión/exclusión}\label{subsec:resumen-busqueda-citerios}
+
+Esta búsqueda se realizó considerando los criterios de inclusión y exclusión previamente definidos. Si bien se utilizó la misma cadena de búsqueda, esta etapa se diferencia por la aplicación de filtros específicos en cada base de datos. Las evidencias correspondientes a este proceso pueden consultarse en el apéndice~\ref{sec:busqueda-con-criterios}.
+
+La \autoref{tab:bases-con-exclusion} presenta los resultados obtenidos tras la aplicación de los criterios de inclusión y exclusión. En contraste con la búsqueda inicial, en esta fase los filtros aplicados redujeron de manera significativa la cantidad de publicaciones recuperadas. En total, se identificaron 159 documentos, distribuidos de la siguiente manera: WOS (1), IEEE Xplore (3), Springer (132), ScienceDirect (22) y Taylor \& Francis (1).
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/bases-con-exclusion}
+
+El resultado del proceso de búsqueda en bases de datos puede observarse en la \autoref{fig:resumen-busqueda-bases}. Como se aprecia, tras la aplicación de los criterios de exclusión se descartaron 1156 estudios, lo que representa una pérdida del 90.75\% respecto a los resultados de la búsqueda inicial.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/resumen-busqueda-bases.png}
+	\caption{Diagrama resumen del proceso de búsqueda en bases de datos}
+	\label{fig:resumen-busqueda-bases}
+\end{figure}
+
+
+\section{Eliminación de duplicados}\label{sec:eliminacion-duplicados}
+
+La eliminación de estudios duplicados se llevó a cabo mediante la herramienta de gestión bibliográfica Mendeley. Tras la recopilación inicial, todos los registros fueron importados a dicha plataforma, la cual permitió la identificación y eliminación automática de publicaciones redundantes. Este proceso resultó en la exclusión de \textbf{tres} artículos duplicados, reduciendo el total de estudios a 156. La \autoref{fig:eliminacion-duplicados} presenta una representación gráfica de estos resultados.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/eliminacion-duplicados.png}
+	\caption{Diagrama del proceso de eliminación de resultados}
+	\label{fig:eliminacion-duplicados}
+\end{figure}
+
+
+\section{Priorización de estudios}\label{sec:priorizacion-estudios}
+
+Tras la selección inicial de los artículos, se procedió al análisis de los campos \textit{title}, \textit{abstract} y \textit{keywords} de cada registro. Como resultado de esta revisión, se generaron métricas de calidad para cada artículo con el objetivo de priorizar aquellos más relevantes para la investigación. Las métricas empleadas fueron las siguientes:
+
+\begin{itemize}
+	\item \textbf{SCI} \textit{(Science Citation Index)}
+	\item \textbf{CVI} \textit{(Core Value Index)}
+	\item \textbf{IRRQ} \textit{(Index Relation Research Question)}
+\end{itemize}
+
+Este proceso inició con un total de 156 artículos, los cuales fueron evaluados en función de su alineamiento con los objetivos de la investigación. La fase de \textit{screening} permitió descartar 139 estudios, ya que algunos abordaban herramientas tecnológicas en contextos distintos al de interés y otros no se encontraban alineados con los objetivos de investigación establecidos.
+
+
+\section{Estrategia de búsqueda usando bola de nieve}\label{sec:bola-de-nieve}
+
+En esta etapa, la estrategia de búsqueda mediante \textit{snowballing} se aplicó sobre la totalidad de los 18 estudios seleccionados tras el proceso de selección, en lugar de emplear un conjunto reducido de artículos semilla. Esta decisión permitió ampliar la cobertura de la revisión y reducir el riesgo de omitir literatura relevante, fortaleciendo la exhaustividad del protocolo.
+
+En este proceso se aplicaron las estrategias de bola de nieve directa \textit{(forward)} e inversa \textit{(backward)}, con el objetivo de identificar literatura adicional relevante que no hubiera sido recuperada durante la búsqueda automática en las bases de datos. La búsqueda por bola de nieve inversa permitió identificar un estudio adicional, mientras que la búsqueda por bola de nieve directa permitió identificar tres estudios adicionales, lo que resultó en un total de cuatro estudios incorporados.
+
+El resumen de este proceso puede observarse en la \autoref{fig:resumen-snowball}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.4\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/proceso-snowball.png}
+	\end{center}
+	\caption{Resumen del proceso de búsqueda por bola de nieve}
+	\label{fig:resumen-snowball}
+\end{figure}
+
+
+\section{Identificación de estudios}
+\subsection{Cuadro de estudios}
+
+Los estudios resultantes del proceso de \ac{SMS} se presentan en la \autoref{tab:selected-primary-studies}.
+
+\input{tablas/II-desarrollo-metodologico/cap10-sms/sps}
+
+
+\subsection{Artículos por año y métricas}
+
+A continuación se presentan las gráficas de los resultados de la búsqueda. En la \autoref{fig:plot-anios-vs-indices-calidad} se muestra la relación entre la cantidad de estudios por año y las métricas definidas en la sección \autoref{sec:priorizacion-estudios}.
+
+\begin{figure}[H]
+	\begin{center}
+		\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/sps-year.png}
+	\end{center}
+	\caption{Cantidad de artículos en conformidad con las métricas de calidad definidas en la \autoref{sec:priorizacion-estudios}}
+	\label{fig:plot-anios-vs-indices-calidad}
+\end{figure}
+
+
+\subsection{Diferencias entre estrategias}
+
+En la \autoref{fig:plot-estrategia-vs-articulos} se puede apreciar la cantidad de artículos obtenidos por cada estrategia.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/plot-estrategia-vs-articulos.png}
+	\caption{Diagrama de las distintas estrategias}
+	\label{fig:plot-estrategia-vs-articulos}
+\end{figure}
+
+
+\subsection{Tópicos frecuentes en los estudios}
+
+Con el fin de caracterizar el enfoque temático de la literatura seleccionada, se analizaron los campos \textit{abstract} y \textit{keywords} de los 22 estudios incluidos en el mapeo. Este análisis permitió identificar y agrupar los principales temas de investigación presentes en los estudios, proporcionando una visión general de las áreas que han recibido mayor atención en la literatura. Los resultados de esta clasificación se muestran en la \autoref{fig:plot-topicos}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/plot-topicos.png}
+	\caption{Diagrama de la distribución de los tópicos}
+	\label{fig:plot-topicos}
+\end{figure}
+
+
+\subsection{Conformidad con las preguntas de investigación}
+
+Con respecto al cumplimiento de las preguntas de investigación definidas en la \autoref{subsubsec:rq-def}, se observó que la totalidad de los 22 estudios seleccionados aportó evidencia para responder la \textbf{RQ1}, lo que evidencia una cobertura completa de esta dimensión dentro del corpus analizado. Por su parte, 21 de los 22 estudios contribuyeron a responder la \textbf{RQ2}, indicando que esta temática también presenta una alta representación en la literatura considerada, aunque con un alcance ligeramente menor.
+
+Estos resultados ponen de manifiesto una estrecha relación entre los objetivos de investigación planteados y los estudios finalmente incluidos en el mapeo sistemático, lo que respalda la pertinencia del proceso de selección aplicado. La distribución y el grado de solapamiento entre ambas preguntas de investigación se presentan en la \autoref{fig:plot-venn-rqs}.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.4\textwidth]{imagenes/figuras/II-desarrollo-metodologico/cap10-sms/plot-venn-rqs.png}
+	\caption{Diagrama de los SPSs relacionados con cada pregunta}
+	\label{fig:plot-venn-rqs}
+\end{figure}
+
+
+\section{Información de la herramienta}
+
+La herramienta utilizada para este proceso de revisión de la literatura fue \textbf{SMS-BUILDER}, desarrollada por el Dr. Christian Andrés Candela Uribe la cual se encuentra disponible en \textit{Docker Hub}. La imagen puede consultarse en el siguiente enlace:
+
+\begin{center}
+	\href{https://hub.docker.com/r/griduq/sms-builder}{\texttt{https://hub.docker.com/r/griduq/sms-builder}}
+\end{center}
+
+
+\section{Reproducibilidad del método}
+
+Con el fin de fomentar la reproducibilidad del método de revisión, se proporcionan el mecanismo de verificación que permite a los revisores y lectores acceder de forma transparente a la información utilizada, generada mediante la herramienta \ac{SMS}\-Builder de \citet{SMSBuilder2020}.
+
+\begin{itemize}
+	\item Imagen Docker disponible públicamente que integra toda la documentación necesaria para crear un contenedor con los datos del proceso:
+	      \url{https://hub.docker.com/r/alejoosorio/sms-directory-service}.
+\end{itemize}
+
+\noindent
+Adicionalmente, se implementaron procesos de respaldo como medida de seguridad. Estos \textit{backups} fueron almacenados en ubicaciones diferentes, siguiendo la estrategia de respaldo \textbf{3--2--1}.
+
+\section{Conclusiones de la revisión sistemática de la literatura}
+
+La presente revisión sistemática de la literatura permitió identificar, seleccionar y analizar de manera rigurosa la evidencia científica relacionada con el dominio de estudio definido. Mediante la aplicación de una estrategia de búsqueda estructurada, complementada con técnicas de \textit{snowballing} y criterios de inclusión y exclusión previamente establecidos, fue posible conformar un conjunto final de 22 estudios relevantes para la investigación.
+
+El análisis de los estudios seleccionados permitió caracterizar el estado actual de la literatura, identificar las principales líneas de investigación abordadas por la comunidad científica y determinar el grado de cobertura de las preguntas de investigación planteadas. Los resultados obtenidos evidencian una alta correspondencia entre los objetivos del estudio y la literatura recuperada, ya que la totalidad de los estudios contribuyó a responder la \textbf{RQ1}, mientras que la gran mayoría aportó evidencia para la \textbf{RQ2}.
+
+Asimismo, el proceso de revisión permitió consolidar una visión estructurada del área de investigación, identificando tendencias, enfoques y características comunes presentes en los trabajos analizados. En conjunto, los hallazgos obtenidos constituyen una base sólida para el desarrollo de las etapas posteriores de la investigación, proporcionando evidencia científica que respalda el análisis, la toma de decisiones y la formulación de propuestas fundamentadas en el estado del arte.

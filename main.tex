@@ -4,28 +4,42 @@
 \input{config/ajustes.tex}
 \input{config/estilos.tex}
 \input{config/variables.tex}
+\input{config/sps-commands.tex}
 
 \begin{document}
 
+% ==================================================
+% PORTADAS
+% ==================================================
 \input{frontmatter/anteportada.tex}
 \input{frontmatter/portada.tex}
 
 % Página en blanco antes de la dedicatoria
 \InsertBlankPage
 
-% TODO: acá va la dedicatoria y los agradecimientos
+
+% ==================================================
+% DEDICATORIA Y AGRADECIMIENTOS
+% ==================================================
+% TODO: acá va la dedicatoria
+% TODO: acá van los agradecimientos
 
 % Página en blanco después de agradecimientos
 \InsertBlankPage
 
+
+% ==================================================
+% ELEMENTOS PRELIMINARES
+% ==================================================
 \input{frontmatter/indice.tex}
-
 % TODO: acá va el resumen/abstract
-
 \input{frontmatter/lista_figuras.tex}
-
 \input{frontmatter/lista_tablas.tex}
 
+
+% ==================================================
+% PARTE I - GENERALIDADES
+% ==================================================
 \PartCover[-50pt,50pt]{Generalidades}{\sectionBackground}
 
 \input{partes/I-generalidades/cap1-introduccion.tex}
@@ -35,7 +49,25 @@
 \input{partes/I-generalidades/cap5-alcance.tex}
 \input{partes/I-generalidades/cap6-objetivos.tex}
 \input{partes/I-generalidades/cap7-justificacion.tex}
+% TODO: acá va el capitulo "Marco conceptual"
+% TODO: acá va el capitulo "Marco teorico"
 
+
+% ==================================================
+% PARTE II - DESARROLLO METODOLÓGICO
+% ==================================================
+\PartCover[-50pt,50pt]{Desarrollo metodológico}{\sectionBackground}
+
+\input{partes/II-desarrollo-metodologico/cap10-mapeo-sms.tex}
+
+
+% ==================================================
+% REFERENCIAS Y ANEXOS
+% ==================================================
 \input{backmatter/referencias.tex}
+
+\PartCover[-50pt,50pt]{Apéndices}{\sectionBackground}
+
+\input{backmatter/apendices/apendices.tex}
 
 \end{document}
