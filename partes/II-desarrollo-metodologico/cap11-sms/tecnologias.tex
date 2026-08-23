@@ -1,0 +1,79 @@
+\section{Tecnologías}
+
+\subsection{Tecnologías identificadas}
+
+Como resultado del proceso de búsqueda, selección y extracción de información se identificaron cuatro alternativas de software libre y de código abierto relacionadas con servicios de directorio.
+
+Las tecnologías identificadas fueron:
+
+\subsubsection{OpenLDAP}
+
+OpenLDAP fue identificado como una de las alternativas de código abierto para la implementación de servicios de directorio. La solución se encuentra orientada a entornos distribuidos y utiliza la OpenLDAP Public License, una licencia libre de carácter permisivo con características similares a las licencias BSD.
+
+\subsubsection{389 Directory Server}
+
+389 Directory Server fue identificado como una alternativa orientada a despliegues de mayor escala, incluyendo entornos corporativos y académicos. Su esquema de licenciamiento contempla una GPL Exception y componentes distribuidos bajo Apache 2.0 y LGPL para determinados elementos y extensiones.
+
+\subsubsection{ApacheDS}
+
+Apache Directory Server (ApacheDS) constituye una alternativa desarrollada en Java bajo el proyecto de Apache Software Foundation. Su distribución se realiza bajo Apache License 2.0.
+
+\subsubsection{OpenDJ}
+
+OpenDJ corresponde a una alternativa derivada de los desarrollos de Sun Microsystems y ForgeRock. La solución se distribuye bajo la Common Development and Distribution License (CDDL).
+
+\section{Incorporación de tecnología adicional}
+
+Los resultados obtenidos mediante el SMS permitieron establecer cuatro alternativas tecnológicas. Sin embargo, para ampliar el conjunto de soluciones consideradas en la etapa posterior de evaluación, se incorporó adicionalmente FreeIPA.
+
+Es importante señalar que FreeIPA no constituye un resultado directo del Mapeo Sistemático de Literatura realizado en esta investigación. Por tanto, su incorporación no debe interpretarse como una quinta tecnología identificada mediante el proceso de búsqueda bibliográfica.
+
+La incorporación de FreeIPA se realizó debido a que se trata de una plataforma de código abierto orientada a la gestión centralizada de identidades y políticas, que integra diferentes componentes relacionados con los servicios de directorio y la autenticación. Estas características hacen que constituya una alternativa tecnológica relevante para ser considerada junto con las soluciones obtenidas mediante el \ac{SMS}.
+
+De esta manera, la incorporación de FreeIPA permite ampliar el conjunto de alternativas tecnológicas que serán sometidas posteriormente al proceso de evaluación, manteniendo diferenciada su procedencia respecto de las tecnologías identificadas directamente en el mapeo.
+
+\section{Conjunto de tecnologías candidatas}
+
+Como resultado de la identificación realizada mediante el SMS y de la incorporación de la alternativa adicional, se estableció el siguiente conjunto de tecnologías candidatas:
+
+\begin{table}[htbp]
+	\centering
+	\caption{Conjunto de tecnologías candidatas.}
+	\fontsize{9pt}{10pt}\selectfont
+	\renewcommand{\arraystretch}{1.4} % Ajusta el espaciado vertical de las filas
+	\begin{tabularx}{\textwidth}{|l|l|X|}
+		\hline
+		\rowcolor[gray]{0.85} % Sombreado gris del encabezado
+		\multicolumn{1}{|c|}{\textbf{Tecnología}} &
+		\multicolumn{1}{c|}{\textbf{Procedencia}} &
+		\multicolumn{1}{c|}{\textbf{Licenciamiento}}
+		\\
+		\hline
+		OpenLDAP                                  &
+		Resultado del SMS                         &
+		OpenLDAP Public License
+		\\
+		\hline
+		389 Directory Server                      &
+		Resultado del SMS                         &
+		GPL Exception / Apache 2.0 / LGPL
+		\\
+		\hline
+		ApacheDS                                  &
+		Resultado del SMS                         &
+		Apache License 2.0
+		\\
+		\hline
+		OpenDJ                                    &
+		Resultado del SMS                         &
+		Common Development and Distribution License (CDDL)
+		\\
+		\hline
+		FreeIPA                                   &
+		Incorporación adicional                   &
+		Código abierto
+		\\
+		\hline
+	\end{tabularx}
+	\label{tab:tecnologias_candidatas}
+\end{table}
