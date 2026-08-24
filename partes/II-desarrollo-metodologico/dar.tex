@@ -3,7 +3,7 @@
 
 \section{Metodología de evaluación}
 
-La metodología de evaluación empleada para la selección de la tecnología de servicio de directorio fue \textit{Decision Analysis and Resolution} \ac{DAR} de CMMI \citep{CMMIInstitute2010}. Esta metodología permitió evaluar de manera estructurada las alternativas tecnológicas identificadas, tomando como base los requisitos establecidos para el servicio de directorio. Para ello, se definieron criterios de evaluación derivados de dichos requisitos y complementados con aspectos relacionados con la gestión de identidades y la seguridad de la información, considerando como referencia las normas ISO/IEC 24760 e ISO/IEC 27002.
+La metodología de evaluación empleada para la selección de la tecnología de servicio de directorio fue el \ac{DAR} de \ac{CMMI} \citep{CMMIInstitute2010}. Esta metodología permitió evaluar de manera estructurada las alternativas tecnológicas identificadas, tomando como base los requisitos establecidos para el servicio de directorio. Para ello, se definieron criterios de evaluación derivados de dichos requisitos y complementados con aspectos relacionados con la gestión de identidades y la seguridad de la información, considerando como referencia las normas ISO/IEC 24760 e ISO/IEC 27002.
 
 La evaluación consideró aspectos relacionados con la autenticación, la gestión de cuentas y usuarios, la seguridad de las comunicaciones, la compatibilidad con la infraestructura existente, la administración de accesos y la interoperabilidad, entre otros. Cada criterio fue ponderado de acuerdo con su importancia para el proyecto y las alternativas fueron valoradas según su nivel de cumplimiento. A partir de estas valoraciones se obtuvo una puntuación ponderada para cada alternativa, permitiendo establecer una comparación objetiva y fundamentar la selección de la tecnología con mayor correspondencia con los requisitos definidos.
 
@@ -13,7 +13,7 @@ La evaluación consideró aspectos relacionados con la autenticación, la gesti�
 
 Este criterio determina si la tecnología analizada permite centralizar la autenticación de usuarios en una única plataforma, posibilitando el acceso controlado a múltiples servicios desde una sola fuente de identidad. Será evaluado como cumplimiento total (5) o inexistente (0).
 
-\subsubsection{Autenticación multifactor (MFA)}
+\subsubsection{Autenticación multifactor (\texorpdfstring{\acs{MFA}}{MFA})}
 
 Este criterio determina si la tecnología permite implementar mecanismos de autenticación multifactor, incorporando uno o más factores adicionales al uso de contraseña, como tokens, aplicaciones autenticadoras, certificados digitales o llaves físicas. Será evaluado según el nivel de soporte nativo o integrable, en una escala de 0 a 5.
 
@@ -21,13 +21,13 @@ Este criterio determina si la tecnología permite implementar mecanismos de aute
 
 Este criterio determina si la tecnología permite administrar el ciclo de vida de las cuentas de usuario, incluyendo creación, modificación, suspensión, expiración, reactivación y eliminación. Será evaluado de 0 a 5 según el nivel de automatización y control disponible.
 
-\subsubsection{Cifrado de comunicaciones (TLS/LDAPS)}
+\subsubsection{Cifrado de comunicaciones (\texorpdfstring{\acs{TLS}/\acs{LDAPS}}{TLS/LDAPS})}
 
-Este criterio determina si la tecnología permite proteger las comunicaciones mediante protocolos seguros como TLS, SSL o LDAPS, garantizando la confidencialidad e integridad en el intercambio de credenciales y datos. Será evaluado de 0 a 5.
+Este criterio determina si la tecnología permite proteger las comunicaciones mediante protocolos seguros como \ac{TLS}, \ac{SSL} o \ac{LDAPS}, garantizando la confidencialidad e integridad en el intercambio de credenciales y datos. Será evaluado de 0 a 5.
 
 \subsubsection{Compatibilidad con infraestructura existente}
 
-Este criterio determina el nivel de compatibilidad de la tecnología con la infraestructura existente en el entorno analizado, particularmente con Ubuntu Server 24.04 LTS, OpenVPN, Xen Orchestra y OpenProject. Será evaluado de 0 a 5 según la facilidad de integración y el soporte comprobado.
+Este criterio determina el nivel de compatibilidad de la tecnología con la infraestructura existente en el entorno analizado, particularmente con Ubuntu Server 24.04 \acs{LTS}, OpenVPN, Xen Orchestra y OpenProject. Será evaluado de 0 a 5 según la facilidad de integración y el soporte comprobado.
 
 \subsubsection{Control granular de roles y permisos}
 
@@ -51,7 +51,7 @@ Este criterio determina si la solución permite administrar autorizaciones y fac
 
 \subsubsection{Interoperabilidad entre sistemas}
 
-Este criterio determina la capacidad de la tecnología para integrarse con diferentes aplicaciones, servicios y protocolos estándar como LDAP, Kerberos, SAML, RADIUS, OpenID Connect y otros mecanismos de integración o federación. Será evaluado de 0 a 5.
+Este criterio determina la capacidad de la tecnología para integrarse con diferentes aplicaciones, servicios y protocolos estándar como \ac{LDAP}, Kerberos, \ac{SAML}, \ac{RADIUS}, OpenID Connect y otros mecanismos de integración o federación. Será evaluado de 0 a 5.
 
 \subsubsection{Políticas de contraseña}
 
@@ -63,29 +63,29 @@ Este criterio determina si la tecnología permite registrar eventos relevantes c
 
 \subsection{Ponderación y valoración}
 
-Para el análisis DAR se asignó una ponderación a cada criterio de acuerdo con su importancia dentro del proceso de selección. La suma de las ponderaciones establecidas fue de 52 puntos.
+Para el análisis \ac{DAR} se asignó una ponderación a cada criterio de acuerdo con su importancia dentro del proceso de selección. La suma de las ponderaciones establecidas fue de 52 puntos.
 
 Las alternativas fueron valoradas en una escala de 0 a 5, de acuerdo con el nivel de cumplimiento observado para cada criterio. La puntuación ponderada se obtuvo multiplicando la valoración asignada a cada tecnología por el peso correspondiente al criterio y sumando posteriormente los resultados obtenidos.
 
-\subsection{Análisis DAR}
+\subsection{Análisis \texorpdfstring{\acs{DAR}}{DAR}}
 
-Con los criterios de evaluación definidos y las alternativas tecnológicas identificadas, se realizó el análisis DAR. Para ello, se empleó una plantilla de evaluación que permitió valorar sistemáticamente cada alternativa frente a los criterios establecidos. Las tecnologías fueron evaluadas de acuerdo con su nivel de cumplimiento para cada criterio, considerando una escala de valoración de 0 a 5 y la ponderación asignada según la importancia de cada criterio para el proyecto.
+Con los criterios de evaluación definidos y las alternativas tecnológicas identificadas, se realizó el análisis \ac{DAR}. Para ello, se empleó una plantilla de evaluación que permitió valorar sistemáticamente cada alternativa frente a los criterios establecidos. Las tecnologías fueron evaluadas de acuerdo con su nivel de cumplimiento para cada criterio, considerando una escala de valoración de 0 a 5 y la ponderación asignada según la importancia de cada criterio para el proyecto.
 
-Los resultados del análisis DAR se presentan en la \autoref{fig:dar}, donde se consolidan las valoraciones obtenidas por las cinco alternativas consideradas: OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ y FreeIPA. A partir de estas valoraciones y sus respectivas ponderaciones se obtuvo la puntuación total de cada alternativa, permitiendo realizar la comparación y determinar cuál presentó la mayor correspondencia con los criterios establecidos.
+Los resultados del análisis \ac{DAR} se presentan en la \autoref{fig:dar}, donde se consolidan las valoraciones obtenidas por las cinco alternativas consideradas: OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ y FreeIPA. A partir de estas valoraciones y sus respectivas ponderaciones se obtuvo la puntuación total de cada alternativa, permitiendo realizar la comparación y determinar cuál presentó la mayor correspondencia con los criterios establecidos.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=\textwidth]{imagenes/figuras/II-desarrollo-metodologico/dar/dar.png}
-	\caption{Resultados análisis DAR}
+	\caption{Resultados análisis \acs{DAR}}
 	\label{fig:dar}
 \end{figure}
 
 \section{Resultados}
 
-A partir de la aplicación del análisis DAR a las alternativas identificadas, se obtuvo una valoración comparativa basada en los criterios de selección definidos para el estudio. Estos criterios permitieron determinar el nivel de correspondencia de cada alternativa con las características consideradas relevantes para la selección de una tecnología de servicio de directorio.
+A partir de la aplicación del análisis \ac{DAR} a las alternativas identificadas, se obtuvo una valoración comparativa basada en los criterios de selección definidos para el estudio. Estos criterios permitieron determinar el nivel de correspondencia de cada alternativa con las características consideradas relevantes para la selección de una tecnología de servicio de directorio.
 
 Los resultados mostraron diferencias entre las alternativas evaluadas en aspectos relacionados con sus capacidades de autenticación y gestión de identidades, mecanismos de seguridad, interoperabilidad, administración, documentación y soporte, entre otros criterios establecidos. La valoración conjunta de estos aspectos permitió establecer una alternativa con un mayor nivel de correspondencia frente al conjunto de criterios definidos.
 
 Como resultado del análisis, FreeIPA fue la tecnología que obtuvo la valoración más favorable, por lo que fue seleccionada como la alternativa para continuar con las siguientes fases del proyecto. Esta selección fue resultado de la evaluación sistemática de las alternativas mediante los criterios establecidos y no de la consideración aislada de una característica particular de las tecnologías analizadas.
 
-De esta manera, el análisis DAR permitió resolver la selección de la tecnología a utilizar, estableciendo a FreeIPA como la alternativa seleccionada para la implementación del servicio de directorio.
+De esta manera, el análisis \ac{DAR} permitió resolver la selección de la tecnología a utilizar, estableciendo a FreeIPA como la alternativa seleccionada para la implementación del servicio de directorio.

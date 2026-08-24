@@ -597,7 +597,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 		      \hline
 		      \endhead
 
-		      Identidad que ejecutó la operación & admin@GRID.UNIQUINDIO.EDU.CO & admin@GRID.UNIQUINDIO.EDU.CO    & Sí \\ \hline
+		      Identidad que ejecutó la operación & admin@\acs{GRID}.UNIQUINDIO.EDU.CO & admin@\acs{GRID}.UNIQUINDIO.EDU.CO    & Sí \\ \hline
 		      Operación                          & user mod                     & Modificación de usuario         & Sí \\ \hline
 		      Identidad afectada                 & juang                        & juang                           & Sí \\ \hline
 		      Atributo modificado                & title                        & title 'Prueba de auditoria'     & Sí \\ \hline
@@ -680,7 +680,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 		      \label{fig:figura-29}
 	      \end{figure}
 
-	\item \textbf{Verificación inicial de la identidad:} Se seleccionó una cuenta de prueba para realizar la validación de la replicación. Desde la CLI del servidor principal se consultó la información de la cuenta, estableciendo los atributos que posteriormente serían utilizados como referencia para comprobar su sincronización.
+	\item \textbf{Verificación inicial de la identidad:} Se seleccionó una cuenta de prueba para realizar la validación de la replicación. Desde la \ac{CLI} del servidor principal se consultó la información de la cuenta, estableciendo los atributos que posteriormente serían utilizados como referencia para comprobar su sincronización.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-30.png}
@@ -688,7 +688,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 		      \label{fig:figura-30}
 	      \end{figure}
 
-	\item \textbf{Creación o modificación de la identidad en el servidor principal:} Se realizó una operación de gestión sobre la cuenta de prueba desde el servidor principal. Posteriormente, se consultó nuevamente la información mediante la CLI para comprobar que el cambio hubiera sido aplicado correctamente en el servidor de origen.
+	\item \textbf{Creación o modificación de la identidad en el servidor principal:} Se realizó una operación de gestión sobre la cuenta de prueba desde el servidor principal. Posteriormente, se consultó nuevamente la información mediante la \ac{CLI} para comprobar que el cambio hubiera sido aplicado correctamente en el servidor de origen.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-31.png}
@@ -696,7 +696,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 		      \label{fig:figura-31}
 	      \end{figure}
 
-	\item \textbf{Verificación del cambio en el servidor réplica:} Una vez realizado el cambio, se consultó desde la CLI del servidor réplica la misma cuenta y sus atributos, con el propósito de comprobar que la información hubiera sido replicada.
+	\item \textbf{Verificación del cambio en el servidor réplica:} Una vez realizado el cambio, se consultó desde la \ac{CLI} del servidor réplica la misma cuenta y sus atributos, con el propósito de comprobar que la información hubiera sido replicada.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-32.png}
@@ -883,7 +883,7 @@ El resultado de esta evaluación se clasificó en tres categorías: cumple, cuan
 	R-03                       & Definir y aplicar políticas de seguridad para usuarios y credenciales.                                                                 & PT-04                         & Cumple               & Se verificó la aplicación de las políticas de credenciales configuradas.                                                                                                        \\ \hline
 	R-04                       & Controlar y monitorear los accesos y facilitar la revisión de permisos.                                                                & PT-02, PT-06                  & Cumple               & Se verificó el control de acceso mediante grupos y la revisión de los permisos asociados.                                                                                       \\ \hline
 	R-05                       & Registrar actividades relevantes de gestión de identidades y accesos para fines de auditoría.                                          & PT-05                         & Cumple               & Se verificó que una operación de gestión de identidad generara un registro que permite identificar la actividad realizada.                                                      \\ \hline
-	R-06                       & Fortalecer la autenticación mediante políticas de credenciales y mecanismos adicionales de autenticación.                              & PT-04                         & Cumplimiento parcial & Se implementaron políticas de credenciales, pero la integración de MFA con los servicios mediante LDAP no fue posible dentro de la arquitectura implementada.                   \\ \hline
+	R-06                       & Fortalecer la autenticación mediante políticas de credenciales y mecanismos adicionales de autenticación.                              & PT-04                         & Cumplimiento parcial & Se implementaron políticas de credenciales, pero la integración de \acs{MFA} con los servicios mediante \acs{LDAP} no fue posible dentro de la arquitectura implementada.                   \\ \hline
 	R-07                       & Proporcionar mecanismos seguros de recuperación o restablecimiento de credenciales.                                                    &                               & No cumple            & FreeIPA no proporciona un mecanismo nativo de recuperación de contraseña mediante autoservicio. La incorporación de alternativas externas quedó fuera del alcance del proyecto. \\ \hline
 	R-08                       & Permitir la evolución y ampliación del servicio ante la incorporación de nuevos sistemas o activos.                                    & PT-01, pruebas de integración & Cumple               & La integración de los tres servicios mediante el directorio centralizado evidencia la capacidad de incorporar sistemas al servicio de directorio.                               \\ \hline
 \end{longtable}
@@ -895,14 +895,14 @@ Durante la ejecución de las pruebas se tuvieron en cuenta las condiciones del e
 
 Las pruebas se realizaron sobre el entorno compuesto por el servidor principal, el servidor réplica de FreeIPA y el balanceador HAProxy, junto con los servicios integrados OpenVPN, OpenProject y Xen Orchestra.
 
-Para la ejecución de las pruebas se utilizaron tanto la interfaz web de administración de FreeIPA como la interfaz de línea de comandos. La interfaz web se empleó principalmente para evidenciar elementos cuya representación gráfica facilita su interpretación, como la topología de replicación. Por su parte, la CLI se utilizó para las operaciones y consultas que requerían contrastar directamente la información entre el servidor principal y el servidor réplica, especialmente en las pruebas de replicación, continuidad y recuperación.
+Para la ejecución de las pruebas se utilizaron tanto la interfaz web de administración de FreeIPA como la interfaz de línea de comandos. La interfaz web se empleó principalmente para evidenciar elementos cuya representación gráfica facilita su interpretación, como la topología de replicación. Por su parte, la \ac{CLI} se utilizó para las operaciones y consultas que requerían contrastar directamente la información entre el servidor principal y el servidor réplica, especialmente en las pruebas de replicación, continuidad y recuperación.
 
 Las evidencias se integraron directamente con el procedimiento de cada caso de prueba. De esta manera, cada evidencia se relaciona con la actividad que permitió obtenerla, facilitando la trazabilidad entre las acciones ejecutadas y los resultados observados. Asimismo, cuando una actividad ya había sido validada en una prueba anterior, sus resultados se utilizaron como antecedente en pruebas posteriores para evitar la repetición innecesaria de procedimientos y evidencias.
 
 \subsubsection{Limitaciones}
-Una de las limitaciones identificadas corresponde al requisito R-06, relacionado con el fortalecimiento de la autenticación mediante políticas de credenciales y mecanismos adicionales de autenticación. La autenticación multifactor se contempló dentro del alcance del proyecto; sin embargo, la integración de OpenVPN, OpenProject y Xen Orchestra se realizó mediante LDAP, y las implementaciones LDAP utilizadas por estos servicios no contemplan, dentro de este mecanismo de integración, el uso de la autenticación multifactor proporcionada por FreeIPA. Por tanto, aunque FreeIPA dispone de capacidades relacionadas con mecanismos adicionales de autenticación, estas no pudieron incorporarse a los tres servicios mediante la arquitectura implementada.
+Una de las limitaciones identificadas corresponde al requisito R-06, relacionado con el fortalecimiento de la autenticación mediante políticas de credenciales y mecanismos adicionales de autenticación. La autenticación multifactor se contempló dentro del alcance del proyecto; sin embargo, la integración de OpenVPN, OpenProject y Xen Orchestra se realizó mediante \ac{LDAP}, y las implementaciones \ac{LDAP} utilizadas por estos servicios no contemplan, dentro de este mecanismo de integración, el uso de la autenticación multifactor proporcionada por FreeIPA. Por tanto, aunque FreeIPA dispone de capacidades relacionadas con mecanismos adicionales de autenticación, estas no pudieron incorporarse a los tres servicios mediante la arquitectura implementada.
 
-La incorporación de autenticación multifactor directamente en los servicios podría requerir mecanismos de integración adicionales o componentes específicos de cada plataforma, lo que implicaría ampliar la arquitectura planteada y utilizar servicios adicionales. Por este motivo, dicha alternativa se mantiene fuera del alcance de la implementación realizada. En consecuencia, la evaluación de R-06 debe distinguir entre las políticas de credenciales implementadas y el mecanismo adicional de autenticación que no pudo integrarse mediante LDAP.
+La incorporación de autenticación multifactor directamente en los servicios podría requerir mecanismos de integración adicionales o componentes específicos de cada plataforma, lo que implicaría ampliar la arquitectura planteada y utilizar servicios adicionales. Por este motivo, dicha alternativa se mantiene fuera del alcance de la implementación realizada. En consecuencia, la evaluación de R-06 debe distinguir entre las políticas de credenciales implementadas y el mecanismo adicional de autenticación que no pudo integrarse mediante \ac{LDAP}.
 
 Otra limitación corresponde al requisito R-07, relacionado con la recuperación o restablecimiento de credenciales. La implementación permite al usuario modificar su contraseña cuando dispone de la credencial vigente; sin embargo, no proporciona un mecanismo de recuperación de contraseña cuando esta ha sido olvidada. Esta limitación corresponde a una decisión del propio proyecto FreeIPA: su documentación señala que el restablecimiento de contraseña mediante autoservicio no forma parte de las funcionalidades principales de gestión de usuarios y que los usuarios que olvidan sus credenciales deben recurrir al administrador o a la mesa de ayuda, previa verificación de su identidad.
 
