@@ -1,0 +1,44 @@
+\MainChapter{Marco Conceptual}{\topBanner}\label{cap:marco_conceptual}
+\vspace*{0.7cm}
+
+En esta sección se presentan los conceptos fundamentales que sustentan el desarrollo del proyecto. Se abordan los principales términos, tecnologías y enfoques relacionados con los servicios de directorio, la gestión de identidades y la autenticación, con el propósito de proporcionar un marco de referencia que facilite la comprensión de las decisiones metodológicas y técnicas adoptadas durante el diseño e implementación de la solución propuesta.
+
+\section{Gestión de identidades y accesos}
+
+La \ac{IAM} comprende el conjunto de políticas, procesos y tecnologías destinadas a administrar las identidades digitales y controlar el acceso a los recursos de una organización. De acuerdo con \citet{MatthewKosinski}, una solución \ac{IAM} permite garantizar que los usuarios adecuados accedan a los recursos apropiados en el momento requerido y bajo las condiciones establecidas por la organización.
+
+Asimismo, la gestión de identidades y accesos facilita la administración centralizada de cuentas, credenciales y permisos a lo largo del ciclo de vida de las identidades, contribuyendo al fortalecimiento de la seguridad, el cumplimiento normativo y la eficiencia operativa dentro de los entornos tecnológicos \citep{MatthewKosinski}.
+
+\section{Autenticación}
+
+La autenticación es el proceso mediante el cual un sistema verifica la identidad reclamada por un usuario, servicio o dispositivo, comprobando que los autenticadores presentados sean válidos para dicha identidad \citep{NIST80063v4}. Este mecanismo constituye la primera línea de control para proteger los recursos de información, ya que permite establecer un nivel de confianza sobre la identidad de una entidad antes de concederle acceso a sistemas o servicios.
+
+\section{Autorización}
+
+La autorización corresponde al proceso mediante el cual se concede a una entidad autenticada el permiso para acceder a determinados recursos o ejecutar acciones específicas dentro de un sistema \citep{OWASP2026}. De esta manera, mientras la autenticación permite verificar la identidad de un usuario, la autorización define los privilegios asociados a dicha identidad, determinando qué recursos pueden utilizarse y qué operaciones pueden realizarse sobre ellos \citep{RFC4949}.
+
+Una práctica recomendada dentro de este proceso es el principio de mínimo privilegio, según el cual cada usuario o componente debe contar únicamente con los permisos indispensables para ejecutar sus funciones autorizadas, reduciendo así la superficie de ataque ante posibles compromisos de cuentas o servicios \citep{OWASP2026}.
+
+\section{Servicios de directorio}
+
+Los servicios de directorio almacenan información sobre los objetos de una red, tales como usuarios, grupos, dispositivos y otros recursos, permitiendo que dicha información pueda ser localizada y consultada de manera eficiente por las aplicaciones y administradores que lo requieran \citep{Microsoft2025}.
+
+Estos servicios organizan su contenido mediante una estructura lógica y jerárquica, lo que favorece la administración centralizada de las identidades y constituye la base sobre la cual se implementan mecanismos de autenticación y control de acceso en los entornos corporativos \citep{Microsoft2025}.
+
+\section{\texorpdfstring{\acs{LDAP}}{LDAP}}
+
+\ac{LDAP} es un protocolo abierto e independiente del proveedor, utilizado para acceder a servicios de directorio distribuidos a través de redes basadas en TCP/IP. Este protocolo define los elementos y mecanismos necesarios para ejecutar operaciones sobre la información contenida en dichos servicios, tales como búsquedas, lecturas, modificaciones y adiciones de entradas \citep{RFC4511}.
+
+La información gestionada mediante \acs{LDAP} se organiza en entradas estructuradas jerárquicamente, formando un árbol de información de directorio (\acs{DIT}) que facilita la localización y administración de los objetos almacenados. Cada entrada está compuesta por atributos que describen sus características y se identifica de manera única mediante su nombre distintivo dentro de la jerarquía \citep{RFC4512}.
+
+\section{Autenticación federada}
+
+La autenticación federada es un modelo que permite transmitir aserciones de autenticación e información de identidad de un usuario entre sistemas interconectados, de modo que los servicios que reciben dicha información puedan identificar al usuario y tomar decisiones de autorización sobre los recursos que administran \citep{NIST80063v4}. Bajo este esquema, las organizaciones participantes confían mutuamente en las identidades emitidas por sus respectivos proveedores, evitando la creación y gestión de cuentas duplicadas \citep{Prout2019}.
+
+Este enfoque simplifica la experiencia del usuario al reducir el número de credenciales necesarias para acceder a múltiples servicios, y disminuye la carga administrativa derivada del mantenimiento de repositorios de identidades separados \citep{Felts2023}.
+
+\section{Software libre y código abierto}
+
+El software libre es aquel cuya licencia garantiza a los usuarios las libertades de ejecutar el programa con cualquier propósito, estudiar su funcionamiento, modificarlo y distribuir tanto copias originales como versiones modificadas. Estas libertades buscan garantizar que los usuarios mantengan el control sobre la tecnología que utilizan, promoviendo la independencia tecnológica y la cooperación entre desarrolladores y organizaciones \citep{FSF2026}.
+
+Por su parte, el software de código abierto se caracteriza por poner a disposición de los usuarios el código fuente de una aplicación, permitiendo su inspección, modificación y redistribución conforme a una licencia que cumpla con la definición de código abierto. Este modelo fomenta la transparencia, la colaboración y el desarrollo comunitario del software \citep{OSI2026}. Aunque ambas corrientes parten de planteamientos filosóficos distintos, en la práctica suelen aplicarse a licencias que satisfacen simultáneamente ambos criterios.
