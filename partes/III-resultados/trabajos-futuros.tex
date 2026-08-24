@@ -1,0 +1,14 @@
+\MainChapter{Trabajos futuros}{\topBanner}\label{cap:trabajos-futuros}
+\vspace*{0.7cm}
+
+A partir de los resultados obtenidos y de las limitaciones identificadas durante la implementación y validación de la solución, se plantean las siguientes líneas de trabajo futuro.
+
+En primer lugar, se propone ampliar los mecanismos de autenticación utilizados por los servicios integrados con el fin de incorporar autenticación multifactor. Debido a que las integraciones realizadas en el proyecto se basaron en LDAP, esta funcionalidad no pudo ser implementada directamente dentro del flujo de autenticación utilizado. Por tanto, un trabajo posterior podría evaluar mecanismos como OpenID Connect o SAML, junto con un proveedor de identidad que permita incorporar factores adicionales de autenticación sin depender exclusivamente de las capacidades del protocolo LDAP.
+
+En segundo lugar, se plantea implementar un mecanismo de recuperación de contraseñas que permita a los usuarios recuperar o restablecer sus credenciales de manera autónoma. Esta funcionalidad podría apoyarse en mecanismos de verificación adicionales, como el correo electrónico institucional, y permitiría reducir la dependencia de la intervención administrativa para la recuperación de las cuentas.
+
+Como tercera línea de trabajo, se propone profundizar en los mecanismos de monitoreo y auditoría del servicio de directorio. Esto podría incluir la centralización de los registros generados por FreeIPA, la definición de mecanismos de consulta y análisis de eventos y la incorporación de herramientas de monitoreo que permitan detectar comportamientos anómalos, intentos de acceso no autorizados y eventos relevantes para la seguridad.
+
+También se plantea ampliar la integración de la solución con otros servicios utilizados por el grupo de investigación. La arquitectura implementada proporciona una base para incorporar nuevos servicios que soporten los mecanismos de autenticación disponibles, permitiendo extender progresivamente el uso del directorio como punto central para la gestión de identidades y autorización.
+
+Finalmente, se propone realizar una evaluación de la solución en un entorno de operación con una mayor cantidad de usuarios, servicios y solicitudes de autenticación. Esta evaluación permitiría analizar aspectos como el rendimiento, la disponibilidad, el comportamiento de la replicación y la capacidad de crecimiento de la arquitectura, proporcionando información adicional para determinar los ajustes necesarios ante una eventual adopción a mayor escala.
