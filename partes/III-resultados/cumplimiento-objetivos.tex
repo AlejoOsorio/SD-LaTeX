@@ -1,16 +1,16 @@
 \MainChapter{Cumplimiento de objetivos}{\topBanner}\label{cap:cumplimiento-objetivos}
 \vspace*{0.7cm}
 
-En esta sección se presenta el grado de cumplimiento de los objetivos planteados para el desarrollo del proyecto. La evaluación se realizó considerando los resultados obtenidos durante las diferentes fases del proyecto, así como las evidencias generadas durante la implementación y validación de la solución.
+En esta sección se presenta el grado de cumplimiento de los objetivos planteados para el desarrollo del proyecto. La evaluación parte de los resultados obtenidos durante las diferentes fases, así como de las evidencias generadas durante la implementación y validación de la solución.
 
 \section{Cumplimiento del objetivo general}
 \label{sec:cumplimiento-objetivo-general}
 
 El objetivo general del proyecto consistió en implementar un servicio de directorio para la infraestructura del grupo de investigación \ac{GRID} de la Universidad del Quindío.
 
-Este objetivo se cumplió mediante la identificación de necesidades, la selección, el diseño y la implementación de una solución basada en FreeIPA. La solución permitió establecer un servicio centralizado para la administración de usuarios y grupos, aplicar políticas de seguridad, integrar los servicios contemplados mediante LDAP y disponer de un servidor réplica para proporcionar redundancia al servicio de directorio.
+Este objetivo se cumplió mediante la identificación de necesidades, la selección, el diseño y la implementación de una solución basada en FreeIPA. Dicha solución ofrece un servicio centralizado para la administración de usuarios y grupos, la aplicación de políticas de seguridad y la integración de los servicios contemplados mediante LDAP, junto con un servidor réplica que proporciona redundancia al servicio de directorio.
 
-La validación realizada permitió comprobar el funcionamiento de los componentes implementados y determinar el comportamiento de la solución frente a los requisitos establecidos. Si bien algunas funcionalidades planteadas inicialmente, como la autenticación multifactor y la recuperación autónoma de contraseñas, no fueron alcanzadas mediante la integración LDAP implementada, estas limitaciones fueron identificadas y delimitadas durante el proceso de validación. Por lo tanto, se considera que el objetivo general fue cumplido dentro del alcance y las condiciones establecidas para el proyecto.
+La validación comprobó el funcionamiento de los componentes implementados y caracterizó el comportamiento de la solución frente a los requisitos establecidos. Si bien algunas funcionalidades planteadas inicialmente, como la autenticación multifactor y la recuperación autónoma de contraseñas, no fueron alcanzadas mediante la integración LDAP implementada, el proceso de validación las identificó y delimitó oportunamente. Por lo tanto, se considera cumplido el objetivo general dentro del alcance y las condiciones establecidas para el proyecto.
 
 \section{Cumplimiento de los objetivos específicos}
 \label{sec:cumplimiento-objetivos-especificos}
@@ -20,48 +20,48 @@ La validación realizada permitió comprobar el funcionamiento de los componente
 
 \textit{Identificar la necesidad funcional y técnica del \ac{GRID} con relación a un servicio de directorio.}
 
-Este objetivo fue cumplido mediante el proceso de identificación y caracterización de las necesidades, problemas y oportunidades presentes en el entorno del grupo de investigación. Como resultado, se establecieron los aspectos que debía abordar la solución y se definieron los requisitos funcionales y de seguridad utilizados posteriormente como referencia para el diseño y la evaluación de la solución.
+El proceso de identificación y caracterización de las necesidades, problemas y oportunidades presentes en el entorno del grupo de investigación dio respuesta a este objetivo. De ese ejercicio resultaron los aspectos que debía abordar la solución, así como los requisitos funcionales y de seguridad utilizados posteriormente como referencia para el diseño y la evaluación.
 
 \subsection{Objetivo específico 2}
 \label{subsec:cumplimiento-objetivo-2}
 
 \textit{Caracterizar alternativas de software libres/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación \ac{GRID}.}
 
-Este objetivo fue cumplido mediante el estudio de las alternativas de software libre y código abierto disponibles para la implementación de servicios de directorio. De este estudio se obtuvo la caracterización de tecnologías candidatas como OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ y FreeIPA, en cuanto a sus funcionalidades, mecanismos de autenticación, seguridad, administración y esquemas de licenciamiento, conformando el insumo para su evaluación comparativa.
+El estudio de las alternativas de software libre y código abierto disponibles para la implementación de servicios de directorio atendió este objetivo. El análisis caracterizó tecnologías candidatas como OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ y FreeIPA, en cuanto a sus funcionalidades, mecanismos de autenticación, seguridad, administración y esquemas de licenciamiento, conformando el insumo para su evaluación comparativa.
 
 \subsection{Objetivo específico 3}
 \label{subsec:cumplimiento-objetivo-3}
 
 \textit{Seleccionar una alternativa de software libre/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación \ac{GRID}.}
 
-Este objetivo fue cumplido mediante la definición de criterios de evaluación derivados de las necesidades previamente establecidas y la aplicación del análisis DAR sobre las alternativas caracterizadas. Como resultado de este proceso de evaluación estructurada, se seleccionó FreeIPA como la tecnología base para la solución.
+Este objetivo quedó cubierto al definir criterios de evaluación derivados de las necesidades previamente identificadas y aplicar sobre las alternativas caracterizadas el análisis DAR. Como resultado de esa evaluación estructurada, se seleccionó FreeIPA como la tecnología base para la solución.
 
 \subsection{Objetivo específico 4}
 \label{subsec:cumplimiento-objetivo-4}
 
 \textit{Diseñar el servicio de directorio para el \ac{GRID} según la arquitectura de software seleccionado.}
 
-Este objetivo fue cumplido mediante la definición de la arquitectura de la solución y de los componentes requeridos para su funcionamiento. El diseño contempló el servicio de directorio, los servicios consumidores de las identidades, los mecanismos de integración mediante LDAP y la incorporación de un servidor réplica para proporcionar redundancia y mejorar la disponibilidad del servicio.
+Este propósito se materializó con la definición de la arquitectura de la solución y de los componentes requeridos para su funcionamiento. El diseño contempla el servicio de directorio, los servicios consumidores de las identidades, los mecanismos de integración mediante LDAP y un servidor réplica que aporta redundancia y mejora la disponibilidad del servicio.
 
 \subsection{Objetivo específico 5}
 \label{subsec:cumplimiento-objetivo-5}
 
 \textit{Implementar prototipo funcional del servicio de directorio para el \ac{GRID}.}
 
-Este objetivo fue cumplido mediante el despliegue y configuración de FreeIPA, la creación y administración de usuarios y grupos, la aplicación de políticas de seguridad, la configuración de la réplica y la integración con los servicios definidos en el alcance del proyecto. La implementación permitió disponer de un servicio de directorio funcional sobre el cual se realizaron las pruebas de validación.
+Su cumplimiento corresponde al despliegue y configuración de FreeIPA, la creación y administración de usuarios y grupos, la aplicación de políticas de seguridad, la configuración de la réplica y la integración con los servicios definidos en el alcance del proyecto. La implementación permitió disponer de un servicio de directorio funcional sobre el cual se realizaron las pruebas de validación.
 
 \subsection{Objetivo específico 6}
 \label{subsec:cumplimiento-objetivo-6}
 
 \textit{Validar prototipo funcional del servicio de directorio implementado para el \ac{GRID}.}
 
-Este objetivo fue cumplido mediante la ejecución de pruebas sobre el servicio de directorio, la réplica y los servicios integrados. Las pruebas permitieron verificar aspectos relacionados con la administración de identidades, autenticación, autorización mediante grupos, aplicación de políticas de seguridad, integración de servicios y disponibilidad del servicio de directorio.
+La ejecución de pruebas sobre el servicio de directorio, la réplica y los servicios integrados completó la verificación. Estas pruebas abordaron la administración de identidades, la autenticación, la autorización mediante grupos, la aplicación de políticas de seguridad, la integración de servicios y la disponibilidad del servicio de directorio.
 
-Adicionalmente, el proceso de validación permitió identificar las funcionalidades que no pudieron ser alcanzadas mediante la arquitectura de integración utilizada. Entre ellas se encuentran la autenticación multifactor y la recuperación autónoma de contraseñas, cuyas limitaciones fueron documentadas como parte de los resultados del proyecto.
+Adicionalmente, el proceso de validación reveló las funcionalidades no alcanzables mediante la arquitectura de integración utilizada. Entre ellas se encuentran la autenticación multifactor y la recuperación autónoma de contraseñas, cuyas limitaciones quedaron documentadas como parte de los resultados del proyecto.
 
 \section{Síntesis del cumplimiento}
 \label{sec:sintesis-cumplimiento}
 
-En conjunto, los objetivos planteados fueron alcanzados mediante la ejecución de las actividades definidas para la identificación de necesidades, selección de la tecnología, diseño, implementación y validación de la solución. Cada etapa produjo resultados que sirvieron como insumo para la siguiente, permitiendo mantener la correspondencia entre las necesidades identificadas, los requisitos definidos, la arquitectura propuesta y la solución implementada.
+La ejecución de las actividades definidas para la identificación de necesidades, la selección de la tecnología, el diseño, la implementación y la validación de la solución condujo al alcance conjunto de los objetivos planteados. Cada etapa produjo insumos para la siguiente, manteniendo la correspondencia entre las necesidades identificadas, los requisitos definidos, la arquitectura propuesta y la solución implementada.
 
-Las limitaciones encontradas durante la validación no impidieron el cumplimiento del propósito principal del proyecto, pero permitieron establecer con mayor precisión el alcance funcional de la solución obtenida. En consecuencia, el cumplimiento de los objetivos se establece con base en las funcionalidades efectivamente implementadas y verificadas, mientras que las capacidades que requieren mecanismos adicionales se plantean como oportunidades de trabajo futuro.
+Las limitaciones encontradas durante la validación no comprometieron el propósito principal del proyecto y ayudaron a precisar el alcance funcional de la solución obtenida. En consecuencia, el cumplimiento se declara sobre las funcionalidades efectivamente implementadas y verificadas, mientras que las capacidades que requieren mecanismos adicionales quedan planteadas como oportunidades de trabajo futuro.

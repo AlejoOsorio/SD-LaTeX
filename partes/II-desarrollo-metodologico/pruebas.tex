@@ -3,11 +3,11 @@
 
 \section{Metodología}
 La fase de pruebas tuvo como propósito verificar el funcionamiento de la solución de servicio de directorio implementada y determinar el grado de cumplimiento de los requisitos establecidos.
-La evaluación se realizó sobre la solución como un conjunto, considerando a FreeIPA como componente central para la gestión de identidades y su integración con OpenVPN, OpenProject y Xen Orchestra, así como la configuración de réplica implementada para proporcionar continuidad del servicio.
+La evaluación abarcó la solución como un conjunto, considerando a FreeIPA como componente central para la gestión de identidades y su integración con OpenVPN, OpenProject y Xen Orchestra, así como la configuración de réplica implementada para proporcionar continuidad del servicio.
 
 Las pruebas se diseñaron a partir de los comportamientos que debían ser demostrados por la solución, en lugar de establecer una correspondencia individual entre cada requisito y un caso de prueba. De esta manera, una misma prueba proporciona evidencia para uno o varios requisitos cuando estos involucran comportamientos relacionados. Este enfoque permite evitar la repetición de procedimientos y evidencias, manteniendo una relación directa entre los resultados obtenidos y los requisitos evaluados.
 
-La ejecución se realizó mediante escenarios controlados, en los cuales se establecieron previamente las condiciones del entorno, los datos de prueba y el comportamiento esperado. Posteriormente se ejecutó un conjunto de acciones reproducibles y se registró el comportamiento observado. Los resultados obtenidos fueron comparados con los resultados esperados para determinar el estado de cada prueba.
+La ejecución tuvo lugar en escenarios controlados, en los cuales quedaron definidas previamente las condiciones del entorno, los datos de prueba y el comportamiento esperado. Posteriormente se ejecutó un conjunto de acciones reproducibles y se registró el comportamiento observado. Los resultados obtenidos fueron comparados con los resultados esperados para determinar el estado de cada prueba.
 
 La evaluación utilizó tres estados:
 \begin{itemize}
@@ -78,7 +78,7 @@ Para mantener una ejecución uniforme, cada caso de prueba utiliza la siguiente 
 \endgroup
 \normalsize
 
-El resultado esperado se estableció antes de ejecutar cada prueba, con el propósito de disponer de un criterio objetivo de comparación. Una vez finalizada la ejecución, se documentó el resultado obtenido y se incorporaron las evidencias correspondientes.
+El resultado esperado quedó definido antes de ejecutar cada prueba, con el propósito de disponer de un criterio objetivo de comparación. Una vez finalizada la ejecución, se documentó el resultado obtenido y se incorporaron las evidencias correspondientes.
 
 La asignación de requisitos no implica que cada requisito tenga un caso de prueba independiente. Por ejemplo, una prueba de autorización diferenciada permite demostrar simultáneamente que las identidades son gestionadas de forma centralizada y que los permisos se mantienen diferenciados entre OpenVPN, OpenProject y Xen Orchestra. De esta forma, se evita repetir la creación de usuarios, configuraciones y procedimientos cuando estos ya han sido comprobados mediante otra prueba.
 
