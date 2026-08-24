@@ -1,0 +1,79 @@
+\MainChapter{Resultados}{\topBanner}\label{cap:resultados}
+\vspace*{0.7cm}
+
+\section{Resultados de la identificación y selección de la tecnología}
+\label{sec:resultados-seleccion}
+
+En esta sección se presentan los resultados obtenidos durante el proceso de identificación y selección de la tecnología para la implementación del servicio de directorio del Grupo de Investigación en Redes, Información y Distribución (GRID). A partir de las necesidades identificadas, los criterios de evaluación definidos y el análisis DAR realizado, se determinó la tecnología que presentó mayor correspondencia con los requerimientos establecidos para la solución.
+
+\subsection{Resultado del análisis DAR}
+\label{subsec:resultado-dar}
+
+El análisis DAR permitió comparar de manera estructurada las tecnologías consideradas para la implementación del servicio de directorio, tomando como referencia los criterios definidos durante la fase de identificación de tecnologías. Como resultado de esta evaluación, se seleccionó FreeIPA como la tecnología base para la implementación de la solución.
+
+La selección se fundamentó en su capacidad para proporcionar un servicio centralizado de gestión de identidades, administración de usuarios y grupos, aplicación de políticas de seguridad y mecanismos de autenticación mediante protocolos compatibles con los servicios considerados en el proyecto. Asimismo, la solución permitió establecer una arquitectura con capacidad de replicación, contribuyendo a la disponibilidad del servicio de directorio.
+
+\section{Resultados del diseño de la solución}
+\label{sec:resultados-diseno}
+
+Como resultado de la fase de diseño se obtuvo una arquitectura de servicio de directorio orientada a centralizar la gestión de identidades y el control de acceso de los servicios considerados en el proyecto. El diseño contempló la utilización de un servidor FreeIPA principal y un servidor réplica, junto con un punto de acceso común para los servicios que requieren autenticación mediante LDAP.
+
+La arquitectura resultante permitió establecer una separación entre los componentes destinados a la gestión de identidades y los servicios consumidores del directorio. De esta manera, los usuarios y grupos son administrados desde el servicio de directorio, mientras que los servicios integrados utilizan esta información para realizar los procesos de autenticación y autorización correspondientes.
+
+\section{Resultados de la implementación}
+\label{sec:resultados-implementacion}
+
+La implementación permitió desplegar el servicio de directorio utilizando FreeIPA y configurar los componentes requeridos para la gestión centralizada de identidades. Se configuraron las cuentas de usuario, grupos y políticas de seguridad necesarias para realizar las pruebas de integración con los servicios definidos en el alcance del proyecto.
+
+Asimismo, se implementó un segundo servidor FreeIPA como réplica del servidor principal. Esta configuración permitió disponer de una copia sincronizada de la información administrada por el servicio de directorio y establecer las condiciones necesarias para evaluar la continuidad del servicio ante la indisponibilidad de uno de los servidores.
+
+\subsection{Configuración del servicio de directorio}
+\label{subsec:resultado-configuracion-ipa}
+
+Como resultado de la configuración se establecieron las políticas de contraseñas y los mecanismos de administración de usuarios y grupos definidos para la solución. Estas configuraciones permitieron aplicar las restricciones de seguridad establecidas durante la definición de requisitos y disponer de una estructura de identidades que pudiera ser utilizada por los servicios integrados.
+
+\subsection{Configuración de la réplica}
+\label{subsec:resultado-replica}
+
+La configuración de la réplica permitió establecer la sincronización entre los servidores FreeIPA desplegados. Con ello se obtuvo una arquitectura con redundancia del servicio de directorio, reduciendo la dependencia de una única instancia para la disponibilidad de la información de identidades.
+
+La configuración también permitió realizar las pruebas relacionadas con la disponibilidad y replicación de la información, verificando el comportamiento de la solución ante escenarios de indisponibilidad del servidor principal.
+
+\subsection{Integración con los servicios}
+\label{subsec:resultado-integracion}
+
+La solución implementada permitió integrar el servicio de directorio con los servicios contemplados en el proyecto mediante el protocolo LDAP. Para cada servicio se configuraron los parámetros necesarios para consultar el directorio, autenticar los usuarios y aplicar las restricciones de acceso asociadas a los grupos definidos.
+
+Como resultado, se obtuvo un mecanismo centralizado mediante el cual las credenciales y pertenencia a grupos administradas en FreeIPA pueden ser utilizadas por los servicios integrados, evitando la necesidad de mantener de forma independiente las cuentas de usuario en cada servicio.
+
+\section{Resultados de las pruebas}
+\label{sec:resultados-pruebas}
+
+Los resultados de las pruebas permitieron verificar el comportamiento de la solución implementada frente a los requisitos establecidos para el servicio de directorio. Las pruebas fueron ejecutadas sobre el servicio de directorio, su configuración de replicación y los servicios integrados, utilizando los procedimientos definidos durante la etapa de validación.
+
+A partir de las evidencias obtenidas se determinó el grado de cumplimiento de cada requisito, diferenciando aquellos que fueron implementados satisfactoriamente de aquellos que presentaron limitaciones derivadas de la arquitectura seleccionada o del alcance establecido para el proyecto.
+
+\subsection{Cumplimiento de requisitos}
+\label{subsec:resultado-requisitos}
+
+La evaluación de los requisitos permitió determinar que la solución implementada satisface principalmente las necesidades relacionadas con la centralización de identidades, la administración de usuarios y grupos, la aplicación de políticas de seguridad, la integración mediante LDAP y la disponibilidad del servicio mediante replicación.
+
+El requisito relacionado con el control y monitoreo de accesos se abordó mediante la utilización de grupos para determinar la autorización de los usuarios en los servicios integrados. De esta forma, la pertenencia de un usuario a los grupos definidos determina si este puede acceder al servicio correspondiente.
+
+Por otra parte, el registro y trazabilidad de las operaciones relacionadas con el servicio de directorio se evaluó a partir de los mecanismos de registro proporcionados por FreeIPA y sus componentes. Estos mecanismos permiten disponer de información asociada a las operaciones realizadas sobre el servicio y constituyen un elemento de apoyo para las actividades de auditoría.
+
+Los resultados también permitieron identificar limitaciones en determinados requisitos. En particular, la autenticación multifactor no pudo ser incorporada directamente en las integraciones realizadas mediante LDAP, debido a que los mecanismos de autenticación utilizados por los servicios integrados no contemplan este factor dentro del flujo de autenticación implementado. De igual manera, la recuperación autónoma de contraseñas por parte de los usuarios no fue implementada, por lo que esta funcionalidad requiere mecanismos adicionales y no forma parte de la solución finalmente desplegada.
+
+\subsection{Resultado global de la validación}
+\label{subsec:resultado-global-validacion}
+
+En términos generales, los resultados obtenidos evidencian que la solución implementada permite centralizar la gestión de identidades del entorno evaluado y proporcionar un mecanismo común de autenticación y autorización para los servicios integrados. La incorporación de un servidor réplica complementa esta capacidad al proporcionar redundancia para el servicio de directorio.
+
+No obstante, la validación también permitió establecer que determinadas capacidades planteadas inicialmente requieren componentes o mecanismos adicionales a la integración LDAP utilizada en el proyecto. Estas limitaciones fueron consideradas en la evaluación final de la solución y permiten delimitar las funcionalidades efectivamente alcanzadas respecto de aquellas que podrían ser incorporadas en trabajos posteriores.
+
+\section{Síntesis de los resultados}
+\label{sec:sintesis-resultados}
+
+Como resultado del proyecto se obtuvo una solución de servicio de directorio basada en FreeIPA, integrada con los servicios definidos en el alcance y respaldada por una arquitectura de replicación. La solución permitió centralizar la administración de identidades, usuarios y grupos, aplicar políticas de seguridad y utilizar la información del directorio para controlar el acceso a los servicios integrados.
+
+Los resultados de las pruebas permitieron comprobar las funcionalidades implementadas y establecer el nivel de cumplimiento de los requisitos definidos. Asimismo, se identificaron las limitaciones asociadas principalmente a las capacidades de autenticación multifactor y recuperación de contraseñas cuando la integración se realiza mediante LDAP. En consecuencia, los resultados obtenidos permiten valorar la solución implementada de acuerdo con las capacidades efectivamente alcanzadas y con las condiciones establecidas en el alcance del proyecto.
