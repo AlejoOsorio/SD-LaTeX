@@ -13,7 +13,7 @@ De manera complementaria, se efectuó la configuración del esquema de red defin
 
 Finalmente, se llevó a cabo el proceso de instalación y configuración de la plataforma FreeIPA y de los servicios asociados a esta, verificando la correcta integración entre los distintos componentes y el cumplimiento de los requisitos funcionales y de seguridad establecidos para la infraestructura del grupo de investigación \ac{GRID}.
 
-\section{Instalación del servidor principal de FreeIPA}
+\section{Instalación del servidor principal de FreeIPA}\label{sec:instalacion-servidor-principal}
 
 Inicialmente, se llevó a cabo la creación de la máquina virtual destinada a alojar el servidor principal de la infraestructura. Sobre esta se instaló el sistema operativo Fedora Server 44, seleccionado de acuerdo con los requisitos y las recomendaciones de compatibilidad establecidas para la implementación de la plataforma FreeIPA. Asimismo, la máquina virtual se configuró de acuerdo con las especificaciones técnicas definidas durante la fase de diseño, considerando los recursos de procesamiento, memoria, almacenamiento y conectividad necesarios para el correcto funcionamiento del servicio implementado, como se muestra en la \autoref{fig:cracion-vm-ipa1}.
 
@@ -104,7 +104,7 @@ Finalmente, el asistente llevó a cabo la instalación y configuración de los d
 	\label{fig:ipa1-install-server-2}
 \end{figure}
 
-\section{Configuración del servidor FreeIPA}
+\section{Configuración del servidor FreeIPA}\label{sec:configuracion-servidor-freeipa}
 
 Una vez finalizada la instalación del servidor, se procedió a realizar la configuración inicial de la plataforma FreeIPA, incorporando los usuarios, grupos y políticas necesarios para el funcionamiento de la infraestructura y la integración de los servicios definidos durante la fase de diseño.
 
@@ -158,7 +158,7 @@ Con el fin de facilitar su administración y aplicar políticas específicas, to
 	\label{fig:service-accounts}
 \end{figure}
 
-\section{Instalación del servidor réplica de FreeIPA}
+\section{Instalación del servidor réplica de FreeIPA}\label{sec:instalacion-servidor-replica}
 
 La creación de la máquina virtual destinada a alojar el servidor de réplica se realizó siguiendo el mismo procedimiento empleado para el servidor principal. En consecuencia, se utilizaron las mismas especificaciones de procesamiento, memoria y almacenamiento definidas durante la fase de diseño.
 
@@ -234,7 +234,7 @@ Finalmente, se ejecutó el proceso de promoción del cliente a servidor de répl
 	\label{fig:check-replica-server}
 \end{figure}
 
-\section{Instalación de HAProxy}
+\section{Instalación de HAProxy}\label{sec:instalacion-haproxy}
 
 Con el fin de garantizar la alta disponibilidad del servicio de directorio mediante la redundancia de FreeIPA, fue necesaria la implementación de un servidor HAProxy como intermediario entre los clientes y los servidores FreeIPA. Esta decisión se tomó debido a que algunos de los servicios integrados con el directorio no disponen de mecanismos nativos de failover, por lo que no es posible definir automáticamente un servidor alternativo cuando uno de los servidores deja de estar disponible.
 
@@ -341,11 +341,11 @@ Finalmente, se realizó el mismo procedimiento en el servidor de réplica ipa2, 
 	\label{fig:certificado-servicio-servidor-replica}
 \end{figure}
 
-\section{Integración con los servicios}
+\section{Integración con los servicios}\label{sec:integracion-servicios}
 
 Una vez configurado el balanceador, se procedió a realizar la conexión de los servicios con FreeIPA. Para ello, se utilizó la identidad asociada al balanceador de carga, representada mediante el nombre virtual ipa.grid.uniquindio.edu.co. Esta identidad permite que los servicios integrados utilicen un único punto de acceso al directorio, delegando en HAProxy la distribución de las solicitudes entre el servidor principal y la réplica, de acuerdo con su disponibilidad. De esta manera, los servicios no necesitan establecer una dependencia directa con un servidor específico de FreeIPA, sino que utilizan la identidad común definida para la solución.
 
-\subsection{OpenVPN}
+\subsection{OpenVPN}\label{subsec:integracion-openvpn}
 
 Para realizar la integración de OpenVPN con el servicio de gestión de identidades FreeIPA mediante el protocolo \ac{LDAP}, fue necesario instalar previamente el complemento openvpn-auth-ldap. Este componente permite que el servidor OpenVPN utilice un directorio \ac{LDAP} como fuente para la autenticación de los usuarios, delegando en FreeIPA la validación de las credenciales y la aplicación de las reglas de autorización definidas. Por esta razón, como primer paso se realizó la instalación del complemento mediante el gestor de paquetes del sistema operativo, como se observa en la \autoref{fig:instalacion-openvpn-auth-ldap}.
 
@@ -430,7 +430,7 @@ Finalmente, para que los clientes de OpenVPN puedan proporcionar las credenciale
 	\label{fig:config-autenticacion-cliente-openvpn}
 \end{figure}
 
-\subsection{OpenProject}
+\subsection{OpenProject}\label{subsec:integracion-openproject}
 
 Para realizar la integración de OpenProject con el servicio de directorio, fue necesario configurar una conexión \ac{LDAP} desde la interfaz de administración de la plataforma. Para acceder a esta configuración, se ingresó al menú Perfil → Administración → Autenticación → Conexiones \ac{LDAP}, desde donde es posible administrar las conexiones con servidores de directorio.
 
@@ -498,7 +498,7 @@ Una vez guardada la configuración de la conexión \ac{LDAP}, OpenProject permit
 	\label{fig:validacion-conexion-openproject-freeipa}
 \end{figure}
 
-\subsection{Xen Orchestra}
+\subsection{Xen Orchestra}\label{subsec:integracion-xen-orchestra}
 
 Como primer paso, se procede a habilitar el complemento \ac{LDAP} en Xen Orchestra. Para ello, se ingresa a Configuración → Complementos (Plugins) y se localiza el complemento correspondiente a la autenticación \ac{LDAP}. Para habilitarlo, es necesario crear previamente una configuración asociada al complemento y guardarla. Una vez habilitado, se pueden establecer los diferentes parámetros requeridos para su integración con el servicio de directorio, los cuales son configurados en los siguientes pasos. El complemento \ac{LDAP} disponible en la sección de complementos se observa en la \autoref{fig:complemento-ldap-xen-orchestra}.
 

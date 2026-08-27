@@ -3,65 +3,181 @@
 
 En esta sección se presenta el grado de cumplimiento de los objetivos planteados para el desarrollo del proyecto. La evaluación parte de los resultados obtenidos durante las diferentes fases, así como de las evidencias generadas durante la implementación y validación de la solución.
 
-\section{Cumplimiento del objetivo general}
-\label{sec:cumplimiento-objetivo-general}
+% =========================================================
+% TABLA 1: OBJETIVO ESPECÍFICO 1
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 1}
+	\label{tab:cumplimiento-objetivo-1}
 
-El objetivo general del proyecto consistió en implementar un servicio de directorio para la infraestructura del grupo de investigación \ac{GRID} de la Universidad del Quindío.
+	\begin{tabular}{
+		|>{\raggedright\arraybackslash}p{0.38\textwidth}
+		|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 1}}}
+		\\
+		\hline
+		\multicolumn{2}{
+		|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|
+		}{\textit{Identificar la necesidad funcional y técnica del GRID con relación a un servicio de directorio}}
+		\\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                                                                                                                             &
+		\textbf{\textit{Observaciones}}
+		\\
+		\hline
+		Ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:caracterizacion-grid}}} \textbf{Caracterización del \ac{GRID}} y capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:identificacion-requisitos}}} \textbf{Identificación de requisitos}. Se realizaron procesos cuali-cuantitativos para obtener información del grupo de investigación y delimitar los aspectos que debía abordar la solución. &
+		\textbf{Paso 1: Análisis del entorno del grupo de investigación.} Se realizó una caracterización del grupo \ac{GRID}, incluyendo stakeholders, integrantes, áreas de trabajo, misión, visión e impacto del proyecto (capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:caracterizacion-grid}}}).\par\vspace{0.4em}
+		- \textbf{Entrevista} con integrante del grupo \ac{GRID} (sección \textcolor[HTML]{1B6B93}{\ref{sec:entrevista-grid}}).\par\vspace{0.6em}
+		\textbf{Paso 2: Identificación de necesidades, problemas y oportunidades.}\par\vspace{0.4em}
+		- Se identificaron las necesidades funcionales y técnicas relacionadas con la gestión de identidades y el servicio de directorio (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:identificacion-necesidades}}).\par\vspace{0.6em}
+		\textbf{Paso 3: Definición de requisitos.}\par\vspace{0.4em}
+		- Se definieron los requisitos funcionales R-01 a R-08 y los requisitos de seguridad asociados (sección \textcolor[HTML]{1B6B93}{\ref{sec:definicion-requisitos}}, ver \autoref{tab:requisitos}).                                                                                                                                                                                                       \\
+		\hline
+	\end{tabular}
+\end{table}
 
-Este objetivo se cumplió mediante la identificación de necesidades, la selección, el diseño y la implementación de una solución basada en FreeIPA. Dicha solución ofrece un servicio centralizado para la administración de usuarios y grupos, la aplicación de políticas de seguridad y la integración de los servicios contemplados mediante LDAP, junto con un servidor réplica que proporciona redundancia al servicio de directorio.
+% =========================================================
+% TABLA 2: OBJETIVO ESPECÍFICO 2
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 2}
+	\label{tab:cumplimiento-objetivo-2}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.40\textwidth}|>{\raggedright\arraybackslash}p{0.54\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 2}}}                                                                                                                                                                                                                                                      \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Caracterizar alternativas de software libres/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación GRID}}                                      \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                     & \textbf{\textit{Observaciones}} \\
+		\hline
+		Se realizó un Mapeo Sistemático de Literatura (\ac{SMS}) para identificar y caracterizar las alternativas de software libre y código abierto disponibles para la implementación de un servicio de directorio (ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:revision-literatura}}}). &
+		\textbf{Paso 1: Revisión sistemática de la literatura.}\par\vspace{0.4em}
+		- \textbf{Construcción de la bitácora} y definición de metas, preguntas de investigación y métricas (sección \textcolor[HTML]{1B6B93}{\ref{sec:construccion-bitacora}} y subsección \textcolor[HTML]{1B6B93}{\ref{subsec:planeacion}}).\par
+		- \textbf{Búsqueda de estudios}: definición de la estrategia, búsqueda en bases de datos y aplicación de criterios de inclusión y exclusión (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:estrategia-busqueda}}).\par
+		- \textbf{Eliminación de duplicados}, \textbf{priorización de estudios} y \textbf{estrategia de bola de nieve} (sección \textcolor[HTML]{1B6B93}{\ref{sec:eliminacion-duplicados}}, sección \textcolor[HTML]{1B6B93}{\ref{sec:priorizacion-estudios}} y sección \textcolor[HTML]{1B6B93}{\ref{sec:bola-de-nieve}}).\par\vspace{0.6em}
+		\textbf{Paso 2: Identificación de tecnologías candidatas.}\par\vspace{0.4em}
+		- El \ac{SMS} permitió identificar cuatro alternativas: \textit{OpenLDAP}, \textit{389 Directory Server}, \textit{ApacheDS} y \textit{OpenDJ} (sección \textcolor[HTML]{1B6B93}{\ref{sec:tecnologias}} y subsección \textcolor[HTML]{1B6B93}{\ref{subsec:tecnologias-identificadas}}, ver \autoref{tab:tecnologias_candidatas}).\par\vspace{0.6em}
+		\textbf{Paso 3: Incorporación de tecnología adicional.}\par\vspace{0.4em}
+		- Se incorporó \textit{FreeIPA} como alternativa adicional, al tratarse de una plataforma de código abierto orientada a la gestión centralizada de identidades (sección \textcolor[HTML]{1B6B93}{\ref{sec:incorporacion-tecnologia-adicional}}).\par
+		- Se consolidó el conjunto de cinco tecnologías candidatas para su posterior evaluación (sección \textcolor[HTML]{1B6B93}{\ref{sec:conjunto-tecnologias-candidatas}}).                                                                                                                                                          \\
+		\hline
+	\end{tabular}
+\end{table}
 
-La validación comprobó el funcionamiento de los componentes implementados y caracterizó el comportamiento de la solución frente a los requisitos establecidos. Si bien algunas funcionalidades planteadas inicialmente, como la autenticación multifactor y la recuperación autónoma de contraseñas, no fueron alcanzadas mediante la integración LDAP implementada, el proceso de validación las identificó y delimitó oportunamente. Por lo tanto, se considera cumplido el objetivo general dentro del alcance y las condiciones establecidas para el proyecto.
+% =========================================================
+% TABLA 3: OBJETIVO ESPECÍFICO 3
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 3}
+	\label{tab:cumplimiento-objetivo-3}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.43\textwidth}|>{\raggedright\arraybackslash}p{0.51\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 3}}}                                                                                                                                                                                                                                                                                                                                                                                     \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Seleccionar una alternativa de software libre/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación GRID}}                                                                                                                                                                    \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                                                                                                                                                    & \textbf{\textit{Observaciones}} \\
+		\hline
+		Se aplicó la metodología \textit{\textcolor[HTML]{1B6B93}{\ac{DAR}}} del marco \ac{CMMI} sobre las cinco tecnologías candidatas, a partir de criterios de evaluación derivados de los requisitos definidos (ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:dar}}}). Como resultado de la evaluación estructurada, se seleccionó \textit{\textcolor[HTML]{1B6B93}{FreeIPA}} como la tecnología base para la solución. &
+		\textbf{Paso 1: Definición de los criterios de evaluación.}\par\vspace{0.4em}
+		- Se definieron trece criterios derivados de los requisitos y de aspectos de gestión de identidades y seguridad, ponderados según su importancia para el proyecto (sección \textcolor[HTML]{1B6B93}{\ref{sec:dar-metodologia}} y subsección \textcolor[HTML]{1B6B93}{\ref{subsec:dar-lista-criterios}}).\par\vspace{0.6em}
+		\textbf{Paso 2: Ponderación y valoración de las alternativas.}\par\vspace{0.4em}
+		- Se asignó la ponderación a cada criterio y se valoraron las cinco alternativas en una escala de 0 a 5 (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:dar-ponderacion}}).\par\vspace{0.6em}
+		\textbf{Paso 3: Análisis \textit{\textcolor[HTML]{1B6B93}{DAR}} y selección.}\par\vspace{0.4em}
+		- \textit{FreeIPA} obtuvo la mayor puntuación ponderada global, destacándose por su gestión centralizada de identidades, políticas de contraseñas e infraestructura de certificados integrada (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:dar-analisis}}, resultados en \autoref{fig:dar} y sección \textcolor[HTML]{1B6B93}{\ref{sec:dar-resultados}}).                                                                                                  \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\section{Cumplimiento de los objetivos específicos}
-\label{sec:cumplimiento-objetivos-especificos}
+% =========================================================
+% TABLA 4: OBJETIVO ESPECÍFICO 4
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 4}
+	\label{tab:cumplimiento-objetivo-4}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 4}}}                                                                                                                                                                                                                       \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Diseñar el servicio de directorio para el GRID según la arquitectura de software seleccionada}}                                                                               \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                      & \textbf{\textit{Observaciones}} \\
+		\hline
+		Ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:disenio-solucion}}} \textbf{Diseño de la solución}. Se definió la arquitectura de la solución, los diagramas de modelado en \textit{ArchiMate} y las configuraciones necesarias para su funcionamiento. &
+		El diseño contempló:\par\vspace{0.4em}
+		- \textbf{Modelado en \textit{ArchiMate}}: vistas de negocio, aplicación, implementación, infraestructura y virtualización (sección \textcolor[HTML]{1B6B93}{\ref{sec:archimate-modelado}} y sección \textcolor[HTML]{1B6B93}{\ref{sec:diagramas}}).\par
+		- \textbf{Diseño de configuraciones}: política de contraseñas, modelo de identidades, cuentas de servicio y grupos de autorización (sección \textcolor[HTML]{1B6B93}{\ref{sec:diseno-configuraciones}}).\par
+		- \textbf{Definición de máquinas virtuales} y esquema de red (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:definicion-maquinas-virtuales}}).\par
+		La arquitectura incluye el servicio de directorio, los servicios consumidores de las identidades, los mecanismos de integración mediante \textit{LDAP} y un servidor réplica que aporta redundancia.                                                                                             \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\subsection{Objetivo específico 1}
-\label{subsec:cumplimiento-objetivo-1}
+% =========================================================
+% TABLA 5: OBJETIVO ESPECÍFICO 5
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 5}
+	\label{tab:cumplimiento-objetivo-5}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 5}}}                                                                                                                                                                                                                                                                                                                                   \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Implementar prototipo funcional del servicio de directorio para el GRID}}                                                                                                                                                                                                                 \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                                                                                                  & \textbf{\textit{Observaciones}} \\
+		\hline
+		Ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:implementacio}}} \textbf{Implementación}. Se desplegó y configuró \textit{\textcolor[HTML]{1B6B93}{FreeIPA}}, incluyendo la instalación del servidor principal, el servidor réplica y el balanceador \textit{HAProxy}, así como la integración con \textit{OpenVPN}, \textit{OpenProject} y \textit{Xen Orchestra}. &
+		La implementación abarcó:\par\vspace{0.4em}
+		- \textbf{Instalación del servidor principal} de \textit{FreeIPA} sobre \textit{Fedora Server} (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-servidor-principal}}).\par
+		- \textbf{Configuración del servidor}: creación de grupos, políticas de contraseñas y cuentas de servicio (sección \textcolor[HTML]{1B6B93}{\ref{sec:configuracion-servidor-freeipa}}).\par
+		- \textbf{Instalación del servidor réplica} y su incorporación a la infraestructura (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-servidor-replica}}).\par
+		- \textbf{Instalación de \textit{HAProxy}} como punto de acceso unificado con balanceo de carga (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-haproxy}}).\par
+		- \textbf{Integración con los servicios}: \textit{OpenVPN} (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-openvpn}}), \textit{OpenProject} (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-openproject}}) y \textit{Xen Orchestra} (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-xen-orchestra}}).                                                                 \\
+		\hline
+	\end{tabular}
+\end{table}
 
-\textit{Identificar la necesidad funcional y técnica del \ac{GRID} con relación a un servicio de directorio.}
+% =========================================================
+% TABLA 6: OBJETIVO ESPECÍFICO 6
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 6}
+	\label{tab:cumplimiento-objetivo-6}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 6}}}                                                                                                                                                                                                                                                                                                           \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Validar prototipo funcional del servicio de directorio implementado para el GRID}}                                                                                                                                                                                \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                                                                          & \textbf{\textit{Observaciones}} \\
+		\hline
+		Ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:pruebas}}} \textbf{Pruebas}. Se ejecutaron nueve pruebas que abordaron la integración, autenticación centralizada, autorización diferenciada, gestión del ciclo de vida de cuentas, políticas de seguridad, trazabilidad, replicación, continuidad ante fallas y recuperación del servicio. &
+		Las pruebas ejecutadas fueron (sección \textcolor[HTML]{1B6B93}{\ref{sec:ejecucion-pruebas}}):\par\vspace{0.4em}
+		- \textbf{PT-01}: Integración y autenticación centralizada (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt01}}).\par
+		- \textbf{PT-02}: Autorización diferenciada mediante grupos (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt02}}).\par
+		- \textbf{PT-03}: Gestión del ciclo de vida de las cuentas (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt03}}).\par
+		- \textbf{PT-04}: Aplicación de políticas de seguridad (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt04}}).\par
+		- \textbf{PT-05}: Registro y trazabilidad (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt05}}).\par
+		- \textbf{PT-06}: Revisión de permisos (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt06}}).\par
+		- \textbf{PT-07}: Replicación y sincronización (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt07}}).\par
+		- \textbf{PT-08}: Continuidad ante falla (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt08}}).\par
+		- \textbf{PT-09}: Recuperación y resincronización (subsección \textcolor[HTML]{1B6B93}{\ref{subsec:pt09}}).\par\vspace{0.4em}
+		Las limitaciones encontradas (autenticación multifactor y recuperación de contraseñas) quedaron documentadas como trabajo futuro, y la evaluación consolidada del cumplimiento de requisitos se presenta en la \autoref{tab:evaluacion-requisitos}.                                                                                                                                  \\
+		\hline
+	\end{tabular}
+\end{table}
 
-El proceso de identificación y caracterización de las necesidades, problemas y oportunidades presentes en el entorno del grupo de investigación dio respuesta a este objetivo. De ese ejercicio resultaron los aspectos que debía abordar la solución, así como los requisitos funcionales y de seguridad utilizados posteriormente como referencia para el diseño y la evaluación.
-
-\subsection{Objetivo específico 2}
-\label{subsec:cumplimiento-objetivo-2}
-
-\textit{Caracterizar alternativas de software libres/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación \ac{GRID}.}
-
-El estudio de las alternativas de software libre y código abierto disponibles para la implementación de servicios de directorio atendió este objetivo. El análisis caracterizó las tecnologías candidatas (ver \autoref{tab:tecnologias_candidatas}) como OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ y FreeIPA, en cuanto a sus funcionalidades, mecanismos de autenticación, seguridad, administración y esquemas de licenciamiento, conformando el insumo para su evaluación comparativa.
-
-\subsection{Objetivo específico 3}
-\label{subsec:cumplimiento-objetivo-3}
-
-\textit{Seleccionar una alternativa de software libre/código abierto para la implementación de un servicio de directorio en la infraestructura del grupo de investigación \ac{GRID}.}
-
-Este objetivo quedó cubierto al definir criterios de evaluación derivados de las necesidades previamente identificadas y aplicar sobre las alternativas caracterizadas el análisis DAR. Como resultado de esa evaluación estructurada, se seleccionó FreeIPA como la tecnología base para la solución.
-
-\subsection{Objetivo específico 4}
-\label{subsec:cumplimiento-objetivo-4}
-
-\textit{Diseñar el servicio de directorio para el \ac{GRID} según la arquitectura de software seleccionado.}
-
-Este propósito se materializó con la definición de la arquitectura de la solución y de los componentes requeridos para su funcionamiento. El diseño contempla el servicio de directorio, los servicios consumidores de las identidades, los mecanismos de integración mediante LDAP y un servidor réplica que aporta redundancia y mejora la disponibilidad del servicio.
-
-\subsection{Objetivo específico 5}
-\label{subsec:cumplimiento-objetivo-5}
-
-\textit{Implementar prototipo funcional del servicio de directorio para el \ac{GRID}.}
-
-Su cumplimiento corresponde al despliegue y configuración de FreeIPA, la creación y administración de usuarios y grupos, la aplicación de políticas de seguridad, la configuración de la réplica y la integración con los servicios definidos en el alcance del proyecto. La implementación permitió disponer de un servicio de directorio funcional sobre el cual se realizaron las pruebas de validación.
-
-\subsection{Objetivo específico 6}
-\label{subsec:cumplimiento-objetivo-6}
-
-\textit{Validar prototipo funcional del servicio de directorio implementado para el \ac{GRID}.}
-
-La ejecución de pruebas sobre el servicio de directorio, la réplica y los servicios integrados completó la verificación. Estas pruebas abordaron la administración de identidades, la autenticación, la autorización mediante grupos, la aplicación de políticas de seguridad, la integración de servicios y la disponibilidad del servicio de directorio.
-
-Adicionalmente, el proceso de validación reveló las funcionalidades no alcanzables mediante la arquitectura de integración utilizada. Entre ellas se encuentran la autenticación multifactor y la recuperación autónoma de contraseñas, cuyas limitaciones quedaron documentadas como parte de los resultados del proyecto.
-
-\section{Síntesis del cumplimiento}
-\label{sec:sintesis-cumplimiento}
-
-La ejecución de las actividades definidas para la identificación de necesidades, la selección de la tecnología, el diseño, la implementación y la validación de la solución condujo al alcance conjunto de los objetivos planteados. Cada etapa produjo insumos para la siguiente, manteniendo la correspondencia entre las necesidades identificadas, los requisitos definidos, la arquitectura propuesta y la solución implementada.
-
-Las limitaciones encontradas durante la validación no comprometieron el propósito principal del proyecto y ayudaron a precisar el alcance funcional de la solución obtenida. En consecuencia, el cumplimiento se declara sobre las funcionalidades efectivamente implementadas y verificadas, mientras que las capacidades que requieren mecanismos adicionales quedan planteadas como oportunidades de trabajo futuro.

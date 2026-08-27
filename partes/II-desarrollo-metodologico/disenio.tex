@@ -488,7 +488,7 @@ La utilización de un grupo dedicado para las cuentas de servicio permite centra
 
 En conjunto, la estructura del directorio, los grupos de autorización y las cuentas de servicio definen el modelo de gestión de identidades de la solución propuesta. Esta organización centraliza la administración de usuarios y credenciales, facilita la incorporación de nuevos servicios al directorio y establece la base sobre la cual se implementarán las integraciones \ac{LDAP} descritas en el capítulo de implementación.
 
-\subsection{Definición de máquinas virtuales}
+\subsection{Definición de máquinas virtuales}\label{subsec:definicion-maquinas-virtuales}
 
 Con el fin de garantizar la disponibilidad y continuidad del servicio de directorio, la arquitectura propuesta contempla el despliegue de dos servidores FreeIPA: un servidor principal y un servidor réplica. Esta configuración permite mantener una copia sincronizada de la información de identidades, políticas y servicios de autenticación, proporcionando tolerancia a fallos y continuidad operativa en caso de indisponibilidad de uno de los servidores.
 
