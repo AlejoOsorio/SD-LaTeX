@@ -8,6 +8,17 @@
 \setlength{\parskip}{0.7em}
 \setlength{\parindent}{0pt}
 
+% \makeatletter
+% El último valor de cada línea (3.2em / 3.8em) amplía la caja del número
+% \renewcommand*\l@section{\@dottedtocline{1}{1.5em}{3.2em}}
+% \renewcommand*\l@subsection{\@dottedtocline{2}{3.8em}{3.8em}}
+% \makeatother
+
+\makeatletter
+% Aumenta la caja del número de figura a 3.8em para que queden separados
+\renewcommand*\l@figure{\@dottedtocline{1}{1.5em}{2.8em}}
+\makeatother
+
 % ==================================================
 % GRÁFICOS VECTORIALES
 % ==================================================

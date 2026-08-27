@@ -1,6 +1,8 @@
 \MainChapter{Diseño de la solución}{\topBanner}\label{cap:disenio-solucion}
 \vspace*{0.7cm}
 
+En esta sección se presenta el diseño de la solución propuesta para la implementación del servicio de directorio, tomando como base los requisitos definidos y la tecnología seleccionada en capítulos anteriores. El contenido se organiza en cuatro partes. La primera describe el modelado arquitectónico de la solución mediante el lenguaje ArchiMate, que permitió representar las diferentes capas del sistema. La segunda expone la metodología de diseño empleada, estructurada en dos componentes complementarios: diagramas y configuraciones. La tercera presenta los diagramas arquitectónicos, organizados en vistas de negocio, aplicación, implementación, infraestructura, virtualización y una vista por capas que integra los niveles anteriores. Finalmente, la cuarta parte detalla las configuraciones de diseño, incluyendo la política de contraseñas, el modelo de identidades con su estructura LDAP, grupos de autorización y cuentas de servicio, así como las especificaciones de las máquinas virtuales que conforman la infraestructura.
+
 \section{Modelado del sistema en ArchiMate}\label{sec:archimate-modelado}
 
 ArchiMate es un lenguaje de modelado estandarizado por~\textit{The Open Group} que permite representar de manera estructurada los componentes y relaciones que conforman una arquitectura empresarial. Su utilización permite establecer una visión integrada de los elementos de negocio, aplicación y tecnología, facilitando la representación de las relaciones existentes entre las necesidades de la organización, los servicios de información y la infraestructura que los soporta~\citep{opengroup_archimate_overview}.
@@ -9,7 +11,7 @@ En el presente proyecto, ArchiMate se utilizó para modelar la arquitectura prop
 
 El modelo contempla principalmente los elementos relacionados con la gestión centralizada de identidades y el acceso a los servicios integrados, así como los componentes tecnológicos necesarios para proporcionar dicha funcionalidad. En este contexto, se representa a FreeIPA como componente central de la solución, encargado de proporcionar los servicios de directorio y gestión de identidades sobre los cuales se soporta la autenticación de los servicios integrados.
 
-La representación mediante ArchiMate permitió, además, establecer las relaciones entre los diferentes elementos de la arquitectura y proporcionar una visión general de la solución, facilitando la comprensión de su estructura y de las interacciones entre sus componentes. En el Anexo~\ref{tab:elementos-negocio-archimate} se especifica el significado de los principales elementos y relaciones utilizados en el modelado.
+La representación mediante ArchiMate permitió, además, establecer las relaciones entre los diferentes elementos de la arquitectura y proporcionar una visión general de la solución, facilitando la comprensión de su estructura y de las interacciones entre sus componentes. En los Anexos~\ref{tab:elementos-negocio-archimate}, \ref{tab:elementos-aplicacion-archimate}, \ref{tab:elementos-tecnologicos-archimate}, \ref{tab:elementos-estrategia-archimate} y \ref{tab:relaciones-archimate} se especifica el significado de los principales elementos y relaciones utilizados en el modelado.
 
 \section{Metodología de diseño}\label{sec:metodologia-diseno}
 
@@ -23,6 +25,8 @@ De esta manera, ambas partes del diseño se complementaron: los diagramas permit
 
 \section{Diagramas}\label{sec:diagramas}
 
+A continuación se presentan los diagramas arquitectónicos de la solución, modelados mediante el lenguaje ArchiMate. Cada vista permite analizar la arquitectura desde una perspectiva diferente, proporcionando una comprensión integral de los componentes que conforman la solución y de las relaciones entre ellos.
+
 \subsection{Vista de negocio}
 
 \subsubsection{Vista cooperación de actores}
@@ -34,7 +38,7 @@ En el diagrama se observa la participación de los actores externos, representad
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/actor-cooperation.png}
-	\caption{vista de cooperación de actores}
+	\caption{Vista de cooperación de actores}
 	\label{fig:actor-cooperation}
 \end{figure}
 
@@ -49,7 +53,7 @@ El segundo proceso corresponde a la gestión de accesos, el cual inicia cuando u
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/business-process.png}
-	\caption{vista de proceso de negocio}
+	\caption{Vista de procesos de negocio}
 	\label{fig:business-process}
 \end{figure}
 
@@ -64,7 +68,7 @@ El diagrama también muestra la cooperación entre estos componentes. El servido
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/application-services.png}
-	\caption{vista de componentes y servicios de aplicación}
+	\caption{Vista de componentes y servicios de aplicación de FreeIPA}
 	\label{fig:application-services}
 \end{figure}
 
@@ -79,7 +83,7 @@ En el servidor principal se despliegan los servicios que integran FreeIPA, inclu
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/implementation.png}
-	\caption{vista de implementación}
+	\caption{Vista de implementación de la arquitectura sobre la plataforma de virtualización}
 	\label{fig:implementation}
 \end{figure}
 
@@ -90,7 +94,7 @@ La \autoref{fig:infraestructure} presenta la infraestructura física y de red so
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/infraestructure.png}
-	\caption{vista de infraestructura}
+	\caption{Vista de infraestructura física y de red de la solución propuesta}
 	\label{fig:infraestructure}
 \end{figure}
 
@@ -105,7 +109,7 @@ Las dos primeras máquinas virtuales corresponden al servicio de directorio y es
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/virtualization.png}
-	\caption{vista de virtualización}
+	\caption{Vista de distribución de máquinas virtuales en el hipervisor XCP-ng}
 	\label{fig:virtualization}
 \end{figure}
 
@@ -124,7 +128,7 @@ Las relaciones entre las diferentes capas evidencian la trazabilidad de la arqui
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/layers.png}
-	\caption{vista por capas}
+	\caption{Vista por capas de la arquitectura}
 	\label{fig:layers}
 \end{figure}
 
@@ -148,7 +152,7 @@ Considerando las necesidades identificadas durante la fase de análisis, donde s
 >{\raggedright\arraybackslash}p{3.5cm}|
 >{\raggedright\arraybackslash}p{7.2cm}|}
 
-\caption{Especificación de parámetros}
+\caption{Parámetros de la política de contraseñas definidos para FreeIPA}
 \label{tab:password-params}
 \\
 \hline
@@ -159,6 +163,8 @@ Considerando las necesidades identificadas durante la fase de análisis, donde s
 \hline
 \endfirsthead
 
+\caption[]{Parámetros de la política de contraseñas definidos para FreeIPA (continuación)}
+\\
 \hline
 \textbf{Parámetro}                  &
 \textbf{Valor definido}             &
@@ -234,9 +240,7 @@ Como parte del diseño del servicio de directorio, es necesario definir la estru
 
 \subsubsection{Definición del nombre de dominio y del \texorpdfstring{\acs{FQDN}}{FQDN}}
 
-Aunque FreeIPA puede integrar un servicio \ac{DNS}, en la presente implementación dicho componente no será utilizado. No obstante, FreeIPA requiere la definición de un nombre de dominio y de un Nombre de Dominio Completamente Calificado (Fully Qualified Domain Name, \ac{FQDN}) para el servidor principal, ya que estos identificadores son utilizados por \ac{LDAP}, Kerberos y la infraestructura de certificados digitales para identificar de forma única al servidor y emitir los principales de servicio correspondientes.
-
-Para la infraestructura del grupo \ac{GRID} se definieron los parámetros presentados en la \autoref{tab:parametros-implementacion}.
+Aunque FreeIPA puede integrar un servicio \ac{DNS}, en la presente implementación dicho componente no será utilizado. No obstante, FreeIPA requiere la definición de un nombre de dominio y de un Nombre de Dominio Completamente Calificado (Fully Qualified Domain Name, \ac{FQDN}) para el servidor principal, ya que estos identificadores son utilizados por \ac{LDAP}, Kerberos y la infraestructura de certificados digitales para identificar de forma única al servidor y emitir los principales de servicio correspondientes. En atención a este requerimiento, para la infraestructura del grupo \ac{GRID} se definieron el dominio \ac{DNS}, el dominio \ac{LDAP} y el \ac{FQDN} del servidor, tal como se presenta en la \autoref{tab:parametros-implementacion}.
 
 \begingroup
 \fontsize{8.5pt}{9.5pt}\selectfont
@@ -248,7 +252,7 @@ Para la infraestructura del grupo \ac{GRID} se definieron los parámetros presen
 >{\raggedright\arraybackslash}p{3.8cm}|
 >{\raggedright\arraybackslash}p{6.9cm}|}
 
-\caption{Parámetros para la implementación.}
+\caption{Parámetros de dominio y \acs{FQDN} definidos para la infraestructura de FreeIPA}
 \label{tab:parametros-implementacion}
 \\
 \hline
@@ -292,16 +296,12 @@ La selección de estos valores garantiza la coherencia entre los servicios que c
 
 \subsubsection{Definición de la estructura del directorio \texorpdfstring{\acs{LDAP}}{LDAP}}
 
-Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (Directory Information Tree, \ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}.
-
-En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts. Esta organización facilita la administración de identidades y proporciona una estructura consistente para las consultas realizadas por las aplicaciones integradas.
-
-\autoref{fig:directory-tree} presenta la estructura lógica del directorio utilizada en la solución.
+Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (Directory Information Tree, \ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}. En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts, facilitando la administración de identidades y proporcionando una estructura consistente para las consultas realizadas por las aplicaciones integradas. La representación de esta estructura se muestra en la \autoref{fig:directory-tree}.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/disenio/directory-tree.png}
-	\caption{árbol del directorio}
+	\caption{Árbol de información del directorio (\acs{DIT}) definido en FreeIPA}
 	\label{fig:directory-tree}
 \end{figure}
 
@@ -313,9 +313,7 @@ Esta organización constituye la base sobre la cual las aplicaciones realizan la
 
 \subsubsection{Definición de grupos de autorización}
 
-Con el propósito de centralizar la administración del acceso a las aplicaciones integradas, se definieron grupos específicos dentro del directorio para cada uno de los servicios que consumen información desde FreeIPA. En lugar de asignar permisos individualmente a cada usuario, el acceso a las aplicaciones se determina mediante la pertenencia a dichos grupos.
-
-\autoref{tab:grupos-autorizacion} presenta los grupos definidos para la solución
+Con el propósito de centralizar la administración del acceso a las aplicaciones integradas, se definieron grupos específicos dentro del directorio para cada uno de los servicios que consumen información desde FreeIPA. En lugar de asignar permisos individualmente a cada usuario, el acceso a las aplicaciones se determina mediante la pertenencia a dichos grupos, tal como se presenta en la \autoref{tab:grupos-autorizacion}.
 
 \begingroup
 \fontsize{8.5pt}{9.5pt}\selectfont
@@ -375,7 +373,7 @@ Cada servicio realiza consultas \ac{LDAP} filtrando los usuarios pertenecientes 
 
 Las aplicaciones integradas requieren realizar consultas al directorio \ac{LDAP} para localizar la información del usuario y establecer el proceso de autenticación. Con este propósito se definieron cuentas de servicio, las cuales son utilizadas exclusivamente por las aplicaciones para establecer la conexión con el directorio y realizar operaciones de consulta. Estas cuentas poseen únicamente los privilegios necesarios para leer la información almacenada en el servicio de directorio, en concordancia con el principio de mínimo privilegio.
 
-Con el fin de mejorar el aislamiento de credenciales y la trazabilidad de las operaciones realizadas sobre el directorio, se definió una cuenta de servicio independiente para cada una de las aplicaciones integradas. Esta estrategia permite administrar las credenciales de forma individual, de manera que un eventual compromiso o rotación de la contraseña de una cuenta no afecte el funcionamiento de los demás servicios.
+Con el fin de mejorar el aislamiento de credenciales y la trazabilidad de las operaciones realizadas sobre el directorio, se definió una cuenta de servicio independiente para cada una de las aplicaciones integradas. Esta estrategia permite administrar las credenciales de forma individual, de manera que un eventual compromiso o rotación de la contraseña de una cuenta no afecte el funcionamiento de los demás servicios. Las cuentas de servicio definidas se presentan en la \autoref{tab:cuentas-servicio}.
 
 \begingroup
 \fontsize{8.5pt}{9.5pt}\selectfont
@@ -510,7 +508,7 @@ Ambas máquinas virtuales fueron diseñadas con características de hardware hom
 	\\
 	\hline
 	\rowcolor[gray]{0.85}
-	\textbf{Característica}      &
+	\textbf{Característica}        &
 	\textbf{Especificación}
 	\\
 	\hline
@@ -518,24 +516,24 @@ Ambas máquinas virtuales fueron diseñadas con características de hardware hom
 
 	\hline
 	\rowcolor[gray]{0.85}
-	\textbf{Característica}      &
+	\textbf{Característica}        &
 	\textbf{Especificación}
 	\\
 	\hline
 	\endhead
 
-	Nombre de la máquina         & ipa1                                                                        \\ \hline
-	Función                      & Servidor principal FreeIPA                                                  \\ \hline
-	Sistema operativo            & Fedora Server 44                                                            \\ \hline
-	Plataforma de virtualización & XCP-ng                                                                      \\ \hline
-	vCPU                         & 2                                                                           \\ \hline
-	Memoria \acs{RAM}                  & 4 \acs{GB}                                                                        \\ \hline
-	Almacenamiento               & 50 \acs{GB}                                                                       \\ \hline
-	Dirección \acs{IP}                 & 172.30.30.61                                                                \\ \hline
-	Nombre virtual               & ipa.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co  \\ \hline
-	Nombre de dominio (\acs{FQDN})     & ipa1.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co \\ \hline
-	Dominio IPA                  & grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co                  \\ \hline
-	Reino Kerberos               & \acs{GRID}.\allowbreak UNIQUINDIO.\allowbreak EDU.\allowbreak CO                  \\ \hline
+	Nombre de la máquina           & ipa1                                                                        \\ \hline
+	Función                        & Servidor principal FreeIPA                                                  \\ \hline
+	Sistema operativo              & Fedora Server 44                                                            \\ \hline
+	Plataforma de virtualización   & XCP-ng                                                                      \\ \hline
+	vCPU                           & 2                                                                           \\ \hline
+	Memoria \acs{RAM}              & 4 \acs{GB}                                                                  \\ \hline
+	Almacenamiento                 & 50 \acs{GB}                                                                 \\ \hline
+	Dirección \acs{IP}             & 172.30.30.61                                                                \\ \hline
+	Nombre virtual                 & ipa.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co  \\ \hline
+	Nombre de dominio (\acs{FQDN}) & ipa1.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co \\ \hline
+	Dominio IPA                    & grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co                  \\ \hline
+	Reino Kerberos                 & \acs{GRID}.\allowbreak UNIQUINDIO.\allowbreak EDU.\allowbreak CO            \\ \hline
 \end{longtable}
 \endgroup
 \normalsize
@@ -554,7 +552,7 @@ Ambas máquinas virtuales fueron diseñadas con características de hardware hom
 	\\
 	\hline
 	\rowcolor[gray]{0.85}
-	\textbf{Característica}      &
+	\textbf{Característica}        &
 	\textbf{Especificación}
 	\\
 	\hline
@@ -562,24 +560,24 @@ Ambas máquinas virtuales fueron diseñadas con características de hardware hom
 
 	\hline
 	\rowcolor[gray]{0.85}
-	\textbf{Característica}      &
+	\textbf{Característica}        &
 	\textbf{Especificación}
 	\\
 	\hline
 	\endhead
 
-	Nombre de la máquina         & ipa2                                                                        \\ \hline
-	Función                      & Servidor réplica FreeIPA                                                    \\ \hline
-	Sistema operativo            & Fedora Server 44                                                            \\ \hline
-	Plataforma de virtualización & XCP-ng                                                                      \\ \hline
-	vCPU                         & 2                                                                           \\ \hline
-	Memoria \acs{RAM}                  & 4 \acs{GB}                                                                        \\ \hline
-	Almacenamiento               & 50 \acs{GB}                                                                       \\ \hline
-	Dirección \acs{IP}                 & 172.30.30.62                                                                \\ \hline
-	Nombre virtual               & ipa.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co  \\ \hline
-	Nombre de dominio (\acs{FQDN})     & ipa2.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co \\ \hline
-	Dominio IPA                  & grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co                  \\ \hline
-	Reino Kerberos               & \acs{GRID}.\allowbreak UNIQUINDIO.\allowbreak EDU.\allowbreak CO                  \\ \hline
+	Nombre de la máquina           & ipa2                                                                        \\ \hline
+	Función                        & Servidor réplica FreeIPA                                                    \\ \hline
+	Sistema operativo              & Fedora Server 44                                                            \\ \hline
+	Plataforma de virtualización   & XCP-ng                                                                      \\ \hline
+	vCPU                           & 2                                                                           \\ \hline
+	Memoria \acs{RAM}              & 4 \acs{GB}                                                                  \\ \hline
+	Almacenamiento                 & 50 \acs{GB}                                                                 \\ \hline
+	Dirección \acs{IP}             & 172.30.30.62                                                                \\ \hline
+	Nombre virtual                 & ipa.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co  \\ \hline
+	Nombre de dominio (\acs{FQDN}) & ipa2.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co \\ \hline
+	Dominio IPA                    & grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co                  \\ \hline
+	Reino Kerberos                 & \acs{GRID}.\allowbreak UNIQUINDIO.\allowbreak EDU.\allowbreak CO            \\ \hline
 \end{longtable}
 \endgroup
 \normalsize
@@ -624,8 +622,8 @@ Las especificaciones técnicas de la máquina virtual destinada a HAProxy se pre
 	Sistema operativo            & Debian 12                                                             \\ \hline
 	Plataforma de virtualización & XCP-ng                                                                \\ \hline
 	vCPU                         & 2                                                                     \\ \hline
-	Memoria \acs{RAM}                  & 2 \acs{GB}                                                                  \\ \hline
-	Almacenamiento               & 20 \acs{GB}                                                                 \\ \hline
+	Memoria \acs{RAM}            & 2 \acs{GB}                                                            \\ \hline
+	Almacenamiento               & 20 \acs{GB}                                                           \\ \hline
 \end{longtable}
 \endgroup
 \normalsize
