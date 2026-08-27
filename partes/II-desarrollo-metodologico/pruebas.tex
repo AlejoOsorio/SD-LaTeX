@@ -126,9 +126,9 @@ La batería de pruebas se organizó en torno a los siguientes escenarios princip
 	PT-04                         & Aplicación de políticas de seguridad y credenciales & R-03, R-06 & Comprobar las restricciones configuradas sobre las credenciales y su aplicación.             \\ \hline
 	PT-05                         & Registro y trazabilidad de actividades              & R-05       & Verificar la generación y consulta de registros relacionados con identidades y accesos.      \\ \hline
 	PT-06                         & Revisión de permisos y control de acceso            & R-04       & Verificar la capacidad de consultar y revisar las autorizaciones configuradas.               \\ \hline
-	PT-07                         & Replicación y sincronización                        &            & Comprobar la sincronización de identidades entre el servidor principal y la réplica.         \\ \hline
-	PT-08                         & Continuidad ante falla del servidor principal       &            & Verificar que los servicios integrados pueden continuar operando mediante la réplica.        \\ \hline
-	PT-09                         & Recuperación y resincronización                     &            & Comprobar la recuperación del servidor principal y el restablecimiento de la sincronización. \\ \hline
+	PT-07                         & Replicación y sincronización                        & ---        & Comprobar la sincronización de identidades entre el servidor principal y la réplica.         \\ \hline
+	PT-08                         & Continuidad ante falla del servidor principal       & ---        & Verificar que los servicios integrados pueden continuar operando mediante la réplica.        \\ \hline
+	PT-09                         & Recuperación y resincronización                     & ---        & Comprobar la recuperación del servidor principal y el restablecimiento de la sincronización. \\ \hline
 \end{longtable}
 \endgroup
 \normalsize
@@ -327,48 +327,33 @@ La tercera cuenta correspondió al usuario utilizado en PT-01, cuya pertenencia 
 
 	\item \textbf{Consolidación de los resultados:} Finalmente, se consolidaron los resultados obtenidos durante los intentos de acceso de las tres cuentas para comparar el comportamiento de cada identidad frente a los servicios integrados, tal como se muestra en la \autoref{tab:pt02-consolidacion-resultados}.
 
-	      \begingroup
-	      \fontsize{8.5pt}{9.5pt}\selectfont
-	      \renewcommand{\arraystretch}{1.3}
-	      \setlength{\tabcolsep}{4pt}
-
-	      \begin{longtable}{|
-		      >{\raggedright\arraybackslash}p{2.5cm}|
-		      >{\raggedright\arraybackslash}p{3.0cm}|
-		      >{\raggedright\arraybackslash}p{2.5cm}|
-		      >{\raggedright\arraybackslash}p{2.5cm}|
-		      >{\raggedright\arraybackslash}p{3.0cm}|}
-
+	      \begin{table}[htbp]
+		      \centering
+		      \fontsize{8.5pt}{9.5pt}\selectfont
+		      \renewcommand{\arraystretch}{1.3}
+		      \setlength{\tabcolsep}{4pt}
 		      \caption{Consolidación de los resultados de acceso obtenidos en PT-02}
 		      \label{tab:pt02-consolidacion-resultados}
-		      \\
-		      \hline
-		      \rowcolor[gray]{0.85}
-		      \textbf{Cuenta}      &
-		      \textbf{Grupo}       &
-		      \textbf{OpenVPN}     &
-		      \textbf{OpenProject} &
-		      \textbf{Xen Orchestra}
-		      \\
-		      \hline
-		      \endfirsthead
-
-		      \hline
-		      \rowcolor[gray]{0.85}
-		      \textbf{Cuenta}      &
-		      \textbf{Grupo}       &
-		      \textbf{OpenVPN}     &
-		      \textbf{OpenProject} &
-		      \textbf{Xen Orchestra}
-		      \\
-		      \hline
-		      \endhead
-
-		      Cuenta 1             & OpenVPN       & Permitido & Rechazado & Rechazado \\ \hline
-		      Cuenta 2             & OpenProject   & Rechazado & Permitido & Rechazado \\ \hline
-		      Cuenta 3             & Xen Orchestra & Rechazado & Rechazado & Permitido
-	      \end{longtable}
-	      \endgroup
+		      \begin{tabular}{|
+			      >{\raggedright\arraybackslash}p{2.5cm}|
+			      >{\raggedright\arraybackslash}p{3.0cm}|
+			      >{\raggedright\arraybackslash}p{2.5cm}|
+			      >{\raggedright\arraybackslash}p{2.5cm}|
+			      >{\raggedright\arraybackslash}p{3.0cm}|}
+			      \hline
+			      \rowcolor[gray]{0.85}
+			      \textbf{Cuenta}      &
+			      \textbf{Grupo}       &
+			      \textbf{OpenVPN}     &
+			      \textbf{OpenProject} &
+			      \textbf{Xen Orchestra}
+			      \\
+			      \hline
+			      Cuenta 1             & OpenVPN       & Permitido & Rechazado & Rechazado \\ \hline
+			      Cuenta 2             & OpenProject   & Rechazado & Permitido & Rechazado \\ \hline
+			      Cuenta 3             & Xen Orchestra & Rechazado & Rechazado & Permitido \\ \hline
+		      \end{tabular}
+	      \end{table}
 	      \normalsize
 
 	      Esta consolidación permitió comprobar que la autorización se mantuvo diferenciada entre los tres servicios a partir de la pertenencia de las cuentas a los grupos definidos en FreeIPA.
@@ -600,12 +585,12 @@ La información registrada debe permitir relacionar el evento con la actividad r
 		      \hline
 		      \endhead
 
-		      Identidad que ejecutó la operación & admin@\acs{GRID}.UNIQUINDIO.EDU.CO & admin@\acs{GRID}.UNIQUINDIO.EDU.CO & Sí \\ \hline
-		      Operación                          & user mod                           & Modificación de usuario            & Sí \\ \hline
-		      Identidad afectada                 & juang                              & juang                              & Sí \\ \hline
-		      Atributo modificado                & title                              & title 'Prueba de auditoria'        & Sí \\ \hline
-		      Resultado                          & Operación exitosa                  & SUCCESS                            & Sí \\ \hline
-		      Fecha y hora                       & 20 de agosto de 2026, 18:29        & Thu Aug 20 18:29:07.901711 2026    & Sí \\ \hline
+		      Identidad que ejecutó la operación & \nolinkurl{admin@GRID.UNIQUINDIO.EDU.CO} & \nolinkurl{admin@GRID.UNIQUINDIO.EDU.CO} & Sí \\ \hline
+		      Operación                          & user mod                                 & Modificación de usuario                  & Sí \\ \hline
+		      Identidad afectada                 & juang                                    & juang                                    & Sí \\ \hline
+		      Atributo modificado                & title                                    & title 'Prueba de auditoria'              & Sí \\ \hline
+		      Resultado                          & Operación exitosa                        & SUCCESS                                  & Sí \\ \hline
+		      Fecha y hora                       & 20 de agosto de 2026, 18:29              & Thu Aug 20 18:29:07.901711 2026          & Sí \\ \hline
 	      \end{longtable}
 	      \endgroup
 	      \normalsize

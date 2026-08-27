@@ -51,7 +51,7 @@ Una vez finalizada la instalación del sistema operativo, se realizaron las conf
 	\label{fig:hostname-ipa1}
 \end{figure}
 
-Posteriormente, se agregó la entrada correspondiente al servidor en el archivo /etc/hosts, asociando la dirección \ac{IP} \textbf{172.30.30.61} con el nombre de dominio \textbf{ipa1.grid.uniquindio.edu.co} y su nombre corto \textbf{ipa1}. Esta configuración permite la correcta resolución local del nombre del servidor, requisito necesario para el adecuado funcionamiento y la instalación de FreeIPA. El resultado de esta modificación se ilustra en la \autoref{fig:hosts-ipa1}.
+Posteriormente, se agregó la entrada correspondiente al servidor en el archivo \path{/etc/hosts}, asociando la dirección \ac{IP} \textbf{172.30.30.61} con el nombre de dominio \textbf{\nolinkurl{ipa.grid.uniquindio.edu.co}} y su nombre corto \textbf{ipa1}. Esta configuración permite la correcta resolución local del nombre del servidor, requisito necesario para el adecuado funcionamiento y la instalación de FreeIPA. El resultado de esta modificación se ilustra en la \autoref{fig:hosts-ipa1}.
 
 \begin{figure}[H]
 	\centering
@@ -292,7 +292,7 @@ Para ello, se creó en FreeIPA un host fantasma (\textit{ghost host}) asociado a
 	\label{fig:creacion-host-servicio}
 \end{figure}
 
-Una vez creado el host, se registró el servicio \ac{LDAP} asociado al nombre ipa.grid.uniquindio.edu.co mediante ipa service-add. Esta operación permite crear en FreeIPA el principal de servicio ldap/ipa.grid.uniquindio.edu.co@\ac{GRID}.UNIQUINDIO.EDU.CO, identificando el servicio \ac{LDAP} que será utilizado bajo el nombre virtual. Esto resulta importante para que la infraestructura de Kerberos y los mecanismos de autenticación de FreeIPA reconozcan correctamente el servicio independientemente del servidor físico que atienda la solicitud. La creación del servicio \ac{LDAP} asociado al nombre virtual se muestra en la \autoref{fig:adicion-servicio-host}.
+Una vez creado el host, se registró el servicio \ac{LDAP} asociado al nombre \nolinkurl{ipa.grid.uniquindio.edu.co} mediante el comando \texttt{ipa service-add}. Esta operación permite crear en FreeIPA el principal de servicio \nolinkurl{ldap/ipa.grid.uniquindio.edu.co@GRID.UNIQUINDIO.EDU.CO}, el cual identifica el servicio \ac{LDAP} que se utilizará bajo la identidad virtual. Esta configuración es fundamental para que la infraestructura de Kerberos y los mecanismos de autenticación de FreeIPA reconozcan correctamente el servicio, independientemente del servidor físico que atienda la solicitud. El proceso de adición del servicio se ilustra en la \autoref{fig:adicion-servicio-host}.
 
 \begin{figure}[H]
 	\centering
@@ -358,9 +358,9 @@ Para realizar la integración de OpenVPN con el servicio de gestión de identida
 
 Para establecer la conexión \ac{LDAPS} entre OpenVPN y FreeIPA, primero fue necesario obtener el certificado de la autoridad certificadora (\acs{CA}) utilizada por FreeIPA. Desde la interfaz de línea de comandos del servidor FreeIPA, este certificado se encuentra disponible en la ruta /etc/ipa/ca.crt, desde donde puede ser copiado al servidor que ejecuta OpenVPN.
 
-Como alternativa, el certificado puede obtenerse mediante la interfaz web de FreeIPA utilizando la ruta https://ipa.grid.uniquindio.edu.co/ipa/config/ca.crt. Al acceder a esta dirección se obtiene directamente el certificado de la autoridad certificadora utilizado por FreeIPA.
+Como alternativa, el certificado puede obtenerse mediante la interfaz web de FreeIPA utilizando la URL \nolinkurl{https://ipa.grid.uniquindio.edu.co/ipa/config/ca.crt}. Al acceder a esta dirección se obtiene directamente el certificado de la autoridad certificadora utilizado por FreeIPA.
 
-Una vez obtenido el certificado, se creó el archivo ca.crt en la ruta /etc/openvpn/auth/ca.crt del servidor OpenVPN, almacenando en este el certificado de la autoridad certificadora de FreeIPA. La disposición del certificado en esta ubicación permite utilizarlo como referencia para la validación de la conexión segura con el servicio \ac{LDAP} y constituye un elemento necesario para los siguientes pasos de configuración del complemento openvpn-auth-ldap. El archivo ca.crt en la ubicación correspondiente se muestra en la \autoref{fig:ubicacion-ca-crt-openvpn}.
+Una vez obtenido el certificado, se creó el archivo ca.crt en la ruta \path{/etc/openvpn/auth/ca.crt} del servidor OpenVPN, almacenando en este el certificado de la autoridad certificadora de FreeIPA. La disposición del certificado en esta ubicación permite utilizarlo como referencia para la validación de la conexión segura con el servicio \ac{LDAP} y constituye un elemento necesario para los siguientes pasos de configuración del complemento openvpn-auth-ldap. El archivo ca.crt en la ubicación correspondiente se muestra en la \autoref{fig:ubicacion-ca-crt-openvpn}.
 
 \begin{figure}[H]
 	\centering
@@ -371,7 +371,7 @@ Una vez obtenido el certificado, se creó el archivo ca.crt en la ruta /etc/open
 
 Una vez instalado el complemento y ubicado el certificado de la autoridad certificadora en la ruta correspondiente, se procedió a configurar los parámetros necesarios para establecer la comunicación entre OpenVPN y FreeIPA. Esta configuración se realiza mediante el archivo auth-ldap.conf, utilizado por openvpn-auth-ldap para definir tanto los parámetros de conexión al directorio como los criterios mediante los cuales se buscan y autorizan los usuarios.
 
-El paquete proporciona un archivo de configuración de ejemplo ubicado en /usr/share/doc/openvpn-auth-ldap/examples/auth-ldap.conf, el cual contiene diferentes parámetros para establecer una conexión \ac{LDAP}. A partir de este archivo se seleccionaron y adaptaron únicamente los parámetros necesarios para la infraestructura implementada. La configuración resultante se presenta en la \autoref{fig:config-openvpn-auth-ldap}.
+El paquete proporciona un archivo de configuración de ejemplo ubicado en \path{/usr/share/doc/openvpn-auth-ldap/examples/auth-ldap.conf}, el cual contiene diferentes parámetros para establecer una conexión \ac{LDAP}. A partir de este archivo se seleccionaron y adaptaron únicamente los parámetros necesarios para la infraestructura implementada. La configuración resultante se presenta en la \autoref{fig:config-openvpn-auth-ldap}.
 
 \begin{figure}[H]
 	\centering
@@ -380,7 +380,7 @@ El paquete proporciona un archivo de configuración de ejemplo ubicado en /usr/s
 	\label{fig:config-openvpn-auth-ldap}
 \end{figure}
 
-Dentro del bloque \texttt{<\ac{LDAP}>} se definieron inicialmente los parámetros relacionados con la conexión al servidor de directorio. El parámetro \texttt{URL} se configuró con \texttt{ldaps://ipa.grid.uniquindio.edu.co}, utilizando el nombre virtual asignado al servicio de directorio. De esta manera, OpenVPN no establece una dependencia directa con \texttt{ipa1} o \texttt{ipa2}, sino que dirige las solicitudes hacia HAProxy, que posteriormente determina cuál de los servidores FreeIPA disponibles atenderá la conexión.
+Dentro del bloque \texttt{<LDAP>} se definieron inicialmente los parámetros relacionados con la conexión al servidor de directorio. El parámetro \texttt{URL} se configuró con el valor \nolinkurl{ldaps://ipa.grid.uniquindio.edu.co}, utilizando el nombre virtual asignado al servicio. De esta manera, OpenVPN no establece una dependencia directa con los nodos \texttt{ipa1} o \texttt{ipa2}, sino que dirige las solicitudes hacia HAProxy, el cual posteriormente determina cuál de los servidores FreeIPA disponibles atenderá la conexión.
 
 Para realizar las consultas al directorio se configuró el parámetro \texttt{BindDN} con la cuenta de servicio \texttt{svc-openvpn}, utilizando su \ac{DN} completo:
 
@@ -412,7 +412,7 @@ Una vez finalizada la configuración del archivo \texttt{auth-ldap.conf}, se pro
 	\texttt{plugin /usr/lib/openvpn/openvpn-auth-ldap.so /etc/openvpn/auth/auth-ldap.conf}
 \end{center}
 
-La incorporación de esta directiva en el archivo de configuración del servidor OpenVPN se observa en la \autoref{fig:activacion-openvpn-auth-ldap}.
+En la \autoref{fig:activacion-openvpn-auth-ldap} se observa la incorporación de esta directiva en el archivo de configuración del servidor OpenVPN.
 
 \begin{figure}[H]
 	\centering
@@ -463,10 +463,9 @@ El siguiente apartado corresponde a la configuración de la cuenta de servicio p
 	\label{fig:cuenta-servicio-ldap-openproject}
 \end{figure}
 
-Posteriormente, se configuraron los parámetros correspondientes a los detalles de búsqueda dentro del directorio \ac{LDAP}. En el campo Base \ac{DN} se estableció dc=grid,dc=uniquindio,dc=edu,dc=co, correspondiente a la raíz del directorio de FreeIPA. Esta configuración permite que OpenProject realice las búsquedas de usuarios y grupos dentro del dominio \ac{LDAP} definido para la infraestructura.
+Posteriormente, se configuraron los parámetros correspondientes a los detalles de búsqueda dentro del directorio \ac{LDAP}. En el campo \texttt{Base DN} se estableció \nolinkurl{dc=grid,dc=uniquindio,dc=edu,dc=co}, correspondiente a la raíz del directorio de FreeIPA. Esta configuración permite que OpenProject realice las búsquedas de usuarios y grupos dentro del dominio \ac{LDAP} definido para la infraestructura.
 
-Para limitar los usuarios que pueden ser sincronizados y autenticarse mediante esta conexión, se definió el filtro (memberOf=cn=openproject,cn=groups,cn=accounts,dc=grid,dc=uniquindio,
-dc=edu,dc=co) el cual está asociado al grupo openproject. De esta manera, OpenProject no considera de forma indiscriminada todas las cuentas existentes en FreeIPA, sino únicamente aquellas que cumplen con la pertenencia al grupo destinado al servicio. Esta configuración permite utilizar los grupos definidos previamente en FreeIPA como mecanismo de control de acceso para OpenProject.
+Para limitar los usuarios que pueden ser sincronizados y autenticarse mediante esta conexión, se definió el filtro \nolinkurl{(memberOf=cn=openproject,cn=groups,cn=accounts,dc=grid,dc=uniquindio,dc=edu,dc=co)}, dc=edu,dc=co) el cual está asociado al grupo openproject. De esta manera, OpenProject no considera de forma indiscriminada todas las cuentas existentes en FreeIPA, sino únicamente aquellas que cumplen con la pertenencia al grupo destinado al servicio. Esta configuración permite utilizar los grupos definidos previamente en FreeIPA como mecanismo de control de acceso para OpenProject.
 
 Asimismo, se mantuvo habilitada la opción de creación automática de usuarios, permitiendo que una cuenta de FreeIPA que cumpla con los criterios establecidos pueda ser creada automáticamente en OpenProject durante su primera autenticación. Esto evita tener que crear manualmente en OpenProject cada una de las cuentas que ya se encuentran administradas desde el servicio centralizado de identidades. Los parámetros de búsqueda de usuarios configurados se observan en la \autoref{fig:base-dn-busqueda-openproject}.
 
@@ -510,7 +509,7 @@ Como primer paso, se procede a habilitar el complemento \ac{LDAP} en Xen Orchest
 	\label{fig:complemento-ldap-xen-orchestra}
 \end{figure}
 
-Para iniciar la configuración del complemento, el primer parámetro que se establece es la \ac{URI} del servidor \ac{LDAP}, la cual permite definir la dirección y el puerto mediante los que Xen Orchestra establece la comunicación con el servicio de directorio. En este caso, se utiliza la \ac{URI} ldap://ipa.grid.uniquindio.edu.co:389, correspondiente al punto de acceso \ac{LDAP} definido para la infraestructura. Esta dirección permite que el complemento realice las consultas de autenticación contra el servicio de directorio a través de la identidad establecida para la infraestructura. La configuración de la \ac{URI} del servidor \ac{LDAP} en el complemento se muestra en la \autoref{fig:config-uri-ldap-xen-orchestra}.
+Para iniciar la configuración del complemento, el primer parámetro que se establece es la \ac{URI} del servidor \ac{LDAP}, la cual permite definir la dirección y el puerto mediante los que Xen Orchestra establece la comunicación con el servicio de directorio. En este caso, se utiliza la \ac{URI} \nolinkurl{ldap://ipa.grid.uniquindio.edu.co:389}, correspondiente al punto de acceso \ac{LDAP} definido para la infraestructura. Esta dirección permite que el complemento realice las consultas de autenticación contra el servicio de directorio a través de la identidad establecida para la infraestructura. La configuración de la \ac{URI} del servidor \ac{LDAP} en el complemento se muestra en la \autoref{fig:config-uri-ldap-xen-orchestra}.
 
 \begin{figure}[H]
 	\centering
@@ -521,7 +520,7 @@ Para iniciar la configuración del complemento, el primer parámetro que se esta
 
 Posteriormente, se configuraron los parámetros relacionados con la seguridad de la conexión y el ámbito de búsqueda dentro del directorio. En primer lugar, se estableció la ruta /home/node/ca.crt correspondiente al certificado de la autoridad certificadora de FreeIPA, el cual será utilizado para validar el certificado presentado por el servidor \ac{LDAP}. Para mantener la verificación de la identidad del servidor, se habilitó la opción Check certificate. Asimismo, se activó Use StartTLS, permitiendo que la conexión inicialmente establecida mediante \ac{LDAP} sea protegida mediante \ac{TLS}.
 
-Finalmente, se definió como base del directorio el \ac{DN} dc=grid,dc=uniquindio,dc=edu,dc=co. Este valor determina el punto de inicio dentro del árbol \ac{LDAP} a partir del cual el complemento realizará las búsquedas de usuarios y grupos. La combinación de estos parámetros permite establecer una conexión \ac{LDAP} cifrada y validar la identidad del servidor antes de realizar las consultas al directorio. La configuración del certificado, la seguridad \ac{TLS} y la base del directorio se observa en la \autoref{fig:config-tls-base-xen-orchestra}.
+Finalmente, se definió como base del directorio el \ac{DN} \nolinkurl{dc=grid,dc=uniquindio,dc=edu,dc=co}. Este valor determina el punto de inicio dentro del árbol \ac{LDAP} a partir del cual el complemento realizará las búsquedas de usuarios y grupos. La combinación de estos parámetros permite establecer una conexión \ac{LDAP} cifrada y validar la identidad del servidor antes de realizar las consultas al directorio. La configuración del certificado, la seguridad \ac{TLS} y la base del directorio se observa en la \autoref{fig:config-tls-base-xen-orchestra}.
 
 \begin{figure}[H]
 	\centering
