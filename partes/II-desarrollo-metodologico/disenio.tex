@@ -33,7 +33,7 @@ A continuación se presentan los diagramas arquitectónicos de la solución, mod
 
 La \autoref{fig:actor-cooperation} presenta la vista de cooperación de actores, cuyo propósito es representar las interacciones entre los diferentes actores organizacionales que participan en la operación del Grupo de Investigación \ac{GRID} y la forma en que colaboran para la prestación de los servicios académicos y administrativos. Esta vista permite identificar las responsabilidades de cada actor, los flujos de información y los principales artefactos documentales que soportan el funcionamiento de los procesos de negocio.
 
-En el diagrama se observa la participación de los actores externos, representados por los estudiantes, docentes y administradores, así como los actores internos que conforman el grupo de investigación \ac{GRID}, entre ellos la directiva, el área de cursos de ingesis y el área de relaciones contractuales. Las relaciones establecidas evidencian las actividades de cooperación necesarias para el desarrollo de los cursos, la gestión administrativa y la vinculación del personal docente
+En el diagrama se observa la participación de los actores externos, representados por los estudiantes, docentes y administradores, así como los actores internos que conforman el grupo de investigación \ac{GRID}, entre ellos la directiva, el área de cursos de ingesis y el área de relaciones contractuales. Las relaciones establecidas evidencian las actividades de cooperación necesarias para el desarrollo de los cursos, la gestión administrativa y la vinculación del personal docente.
 
 \begin{figure}[H]
 	\centering
@@ -59,11 +59,11 @@ El segundo proceso corresponde a la gestión de accesos, el cual inicia cuando u
 
 \subsection{Vista de aplicación}
 
-La \autoref{fig:application-services} presenta la vista de componentes y servicios de aplicación, cuyo propósito es describir la estructura lógica de la solución implementada y las interacciones entre los componentes que conforman el servicio de directorio centralizado. Esta vista permite identificar cómo cada componente de FreeIPA coopera para proporcionar los servicios de autenticación, autorización y administración de identidades consumidos por las aplicaciones institucionales.
+La \autoref{fig:application-services} presenta la vista de componentes y servicios de aplicación, cuyo propósito es describir la estructura lógica de la solución implementada y las interacciones entre los componentes que conforman el servicio de directorio centralizado. Esta vista permite identificar cómo cada componente de FreeIPA coopera para proporcionar los servicios de autenticación, autorización y gestión de identidades consumidos por las aplicaciones institucionales.
 
 En el núcleo de la arquitectura se encuentra FreeIPA, representado como el contenedor lógico que integra los diferentes componentes responsables de la gestión de identidades. Entre estos se encuentra 389 Directory Server, encargado del almacenamiento y administración de la información del directorio \ac{LDAP}; Kerberos (\acs{KDC}), responsable de la autenticación mediante tickets y de la validación de identidades; Dogtag Certificate Authority, encargado de la emisión y administración de certificados digitales; Policy Engine, que implementa la evaluación de las políticas de autorización y control de acceso; y Web \acs{UI} + \ac{API}, que proporciona la interfaz administrativa y los servicios necesarios para la gestión del directorio.
 
-El diagrama también muestra la cooperación entre estos componentes. El servidor de directorio constituye el repositorio central de identidades, siendo consultado por el servicio Kerberos durante los procesos de autenticación y por el motor de políticas para la evaluación de las reglas de autorización. De igual forma, la interfaz de administración consulta y actualiza la información almacenada en el directorio, mientras que la autoridad certificadora interactúa con esta para gestionar los certificados digitales asociados a usuarios y servicios.
+El diagrama también muestra la cooperación entre estos componentes. El servicio de directorio constituye el repositorio central de identidades, siendo consultado por el servicio Kerberos durante los procesos de autenticación y por el motor de políticas para la evaluación de las reglas de autorización. De igual forma, la interfaz de administración consulta y actualiza la información almacenada en el directorio, mientras que la autoridad certificadora interactúa con esta para gestionar los certificados digitales asociados a usuarios y servicios.
 
 \begin{figure}[H]
 	\centering
@@ -78,7 +78,7 @@ La \autoref{fig:implementation} presenta la vista de implementación, cuyo prop�
 
 La arquitectura se encuentra desplegada sobre un hipervisor XCP-ng, el cual aloja las máquinas virtuales que conforman la solución. Estas se agrupan en dos dominios funcionales: el primero corresponde a los servidores de autenticación, donde se encuentran el servidor principal, el servidor réplica de FreeIPA y el balanceador de carga; el segundo agrupa las aplicaciones consumidoras, conformadas por OpenVPN, OpenProject y Xen Orchestra, cada una instalada sobre su respectivo sistema operativo y con los componentes adicionales requeridos para integrarse con el servicio de directorio.
 
-En el servidor principal se despliegan los servicios que integran FreeIPA, incluyendo 389 Directory Server, Kerberos, Dogtag y el servicio \ac{LDAP}/\ac{LDAPS}, el cual constituye el punto de acceso utilizado por las aplicaciones para realizar procesos de autenticación y consulta de identidades. El servidor de directorio administra la información almacenada en la base de datos \ac{LMDB}, donde residen los datos del directorio \ac{LDAP} y sobre la cual se ejecutan las operaciones de creación, consulta, actualización y eliminación de registros. Paralelamente, el servidor réplica mantiene una copia sincronizada de estos componentes mediante un esquema de replicación Multi-Master \ac{LDAP}, garantizando la disponibilidad y continuidad del servicio ante fallos del nodo principal.
+En el servidor principal se despliegan los servicios que integran FreeIPA, incluyendo 389 Directory Server, Kerberos, Dogtag y el servicio \ac{LDAP}/\ac{LDAPS}, el cual constituye el punto de acceso utilizado por las aplicaciones para realizar procesos de autenticación y consulta de identidades. El servicio de directorio administra la información almacenada en la base de datos \ac{LMDB}, donde residen los datos del directorio \ac{LDAP} y sobre la cual se ejecutan las operaciones de creación, consulta, actualización y eliminación de registros. Paralelamente, el servidor réplica mantiene una copia sincronizada de estos componentes mediante un esquema de replicación Multi-Master \ac{LDAP}, garantizando la disponibilidad y continuidad del servicio ante fallos del nodo principal.
 
 \begin{figure}[H]
 	\centering
@@ -121,9 +121,9 @@ En la capa de negocio se representan los actores involucrados en la administraci
 
 La capa de aplicación muestra la estructura lógica de FreeIPA y los componentes que cooperan para ofrecer los servicios de identidad. El 389 Directory Server actúa como repositorio central de usuarios, grupos y políticas; Kerberos proporciona los mecanismos de autenticación; Dogtag administra los certificados digitales; Policy Engine evalúa las reglas de autorización; y Web \acs{UI} + \ac{API} ofrece la interfaz para la administración del directorio. La interacción entre estos componentes permite implementar una plataforma unificada para la gestión de identidades y el control de acceso.
 
-Finalmente, la capa de infraestructura representa el entorno sobre el cual se despliega la solución. En esta se observa un servidor físico que ejecuta un hipervisor encargado de alojar dos máquinas virtuales: una correspondiente al servidor principal de FreeIPA y otra destinada a la réplica del servicio. Ambas mantienen un mecanismo de replicación que garantiza la sincronización de la información del directorio y mejora la disponibilidad del servicio frente a posibles fallos.
+Finalmente, la capa de infraestructura representa el entorno sobre el cual se despliega la solución. En esta se observa un servidor físico que ejecuta un hipervisor encargado de alojar dos máquinas virtuales: una correspondiente al servidor principal de FreeIPA y otra destinada a la réplica del servicio. Ambas mantienen un mecanismo de replicación que permite mantener sincronizada la información del directorio y mejorar la disponibilidad del servicio ante la indisponibilidad de uno de los servidores.
 
-Las relaciones entre las diferentes capas evidencian la trazabilidad de la arquitectura. Los servicios de negocio delegan la gestión de identidades y la autenticación en los componentes de FreeIPA, mientras que estos son soportados por la infraestructura de virtualización donde se encuentran desplegados el servidor principal y el servidor réplica. De esta manera, la vista demuestra cómo la arquitectura propuesta integra los objetivos del negocio con la implementación tecnológica, asegurando una solución centralizada, segura y con capacidad de alta disponibilidad para la administración de identidades del Grupo de Investigación \ac{GRID}.
+Las relaciones entre las diferentes capas evidencian la trazabilidad de la arquitectura. Los servicios de negocio delegan la gestión de identidades y la autenticación en los componentes de FreeIPA, mientras que estos son soportados por la infraestructura de virtualización donde se encuentran desplegados el servidor principal y el servidor réplica. De esta manera, la vista permite relacionar los objetivos del negocio con los componentes tecnológicos que soportan la solución. La arquitectura resultante centraliza la gestión de identidades y establece mecanismos de control de acceso, replicación y balanceo orientados a proporcionar continuidad del servicio ante escenarios de indisponibilidad de uno de los servidores.
 
 \begin{figure}[H]
 	\centering
@@ -136,7 +136,7 @@ Las relaciones entre las diferentes capas evidencian la trazabilidad de la arqui
 
 \subsection{Política de contraseñas}
 
-Como parte del diseño del servicio de directorio se definió una política de contraseñas centralizada que será aplicada por FreeIPA sobre todas las identidades administradas por la plataforma. El propósito de esta política es establecer requisitos mínimos para la creación, utilización y administración de credenciales, garantizando un nivel homogéneo de seguridad para los servicios OpenVPN, Xen Orchestra y OpenProject integrados en la infraestructura del grupo de investigación \ac{GRID}.
+Como parte del diseño del servicio de directorio se definió una política de contraseñas centralizada que será aplicada por FreeIPA sobre todas las identidades administradas por la plataforma. El propósito de esta política es establecer requisitos mínimos para la creación, utilización y administración de credenciales, aplicando criterios homogéneos para las cuentas administradas por el servicio de directorio y los servicios integrados.
 
 La definición de la política se fundamenta en los controles establecidos por la norma ISO/IEC 27002:2022, particularmente en los controles 5.17 Información de autenticación (\textit{Authentication Information}) y 8.5 Autenticación segura (\textit{Secure Authentication}) \citep{ISO27002}. El primero establece que la información de autenticación debe controlarse y protegerse a lo largo de su ciclo de vida, abarcando aspectos como su creación, distribución, almacenamiento y renovación, mientras que el segundo exige que las tecnologías y procedimientos de autenticación implementados resistan los intentos de acceso no autorizado y el uso indebido de las credenciales. A partir de estos controles, la política se estructuró en cuatro familias de parámetros: reglas de creación de contraseñas, gestión del ciclo de vida de las credenciales, mecanismos de protección frente a intentos reiterados de acceso y registro de eventos para fines de auditoría.
 
@@ -236,7 +236,7 @@ La implementación de esta política permitirá que todos los servicios integrad
 
 \subsection{Diseño del modelo de identidades}
 
-Como parte del diseño del servicio de directorio, es necesario definir la estructura lógica de las identidades que serán administradas por FreeIPA. Esta estructura establece la organización de los usuarios, grupos y cuentas de servicio que posteriormente serán utilizados por las aplicaciones integradas para llevar a cabo los procesos de autenticación y autorización. De esta manera, se garantiza que la administración de identidades permanezca centralizada y que los diferentes servicios consuman una fuente única de información.
+Como parte del diseño del servicio de directorio, es necesario definir la estructura lógica de las identidades que serán administradas por FreeIPA. Esta estructura establece la organización de los usuarios, grupos y cuentas de servicio que posteriormente serán utilizados por las aplicaciones integradas para llevar a cabo los procesos de autenticación y autorización. Esta estructura permite centralizar la gestión de identidades y establecer una fuente común de información para los servicios integrados.
 
 \subsubsection{Definición del nombre de dominio y del \texorpdfstring{\acs{FQDN}}{FQDN}}
 
@@ -296,7 +296,7 @@ La selección de estos valores garantiza la coherencia entre los servicios que c
 
 \subsubsection{Definición de la estructura del directorio \texorpdfstring{\acs{LDAP}}{LDAP}}
 
-Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (Directory Information Tree, \ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}. En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts, facilitando la administración de identidades y proporcionando una estructura consistente para las consultas realizadas por las aplicaciones integradas. La representación de esta estructura se muestra en la \autoref{fig:directory-tree}.
+Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (Directory Information Tree, \ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}. En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts, facilitando la gestión de identidades y proporcionando una estructura consistente para las consultas realizadas por las aplicaciones integradas. La representación de esta estructura se muestra en la \autoref{fig:directory-tree}.
 
 \begin{figure}[H]
 	\centering
@@ -305,7 +305,7 @@ Una vez definido el dominio de la infraestructura, es necesario establecer la or
 	\label{fig:directory-tree}
 \end{figure}
 
-La raíz del árbol corresponde al dominio \ac{LDAP} dc=grid,dc=uniquindio,dc=edu,dc=co, obtenido a partir del dominio institucional. Bajo esta raíz, FreeIPA agrupa los objetos relacionados con la administración de identidades dentro del contenedor cn=accounts.
+La raíz del árbol corresponde al dominio \ac{LDAP} dc=grid,dc=uniquindio,dc=edu,dc=co, obtenido a partir del dominio institucional. Bajo esta raíz, FreeIPA agrupa los objetos relacionados con la gestión de identidades dentro del contenedor cn=accounts.
 
 El contenedor cn=users almacena tanto las cuentas de los usuarios finales como las cuentas de servicio utilizadas por las aplicaciones para realizar consultas \ac{LDAP}. Por su parte, el contenedor cn=groups reúne los grupos empleados para implementar los mecanismos de autorización de los servicios y para administrar las políticas aplicadas a las cuentas de servicio.
 
@@ -420,7 +420,7 @@ Xen Orchestra                       \\
 
 Con el propósito de simplificar la administración de las cuentas de servicio, todas ellas se agrupan en el grupo ldap-service-accounts. Sobre este grupo se aplica una política de contraseñas específica para cuentas de servicio, de modo que toda cuenta incorporada al grupo queda sujeta automáticamente a dicha política, sin necesidad de configurarla de forma individual.
 
-Con el fin de garantizar que esta política prevalezca sobre la política global del dominio, se le asigna una prioridad numérica superior. De esta manera, cuando una cuenta pertenece al grupo ldap-service-accounts, FreeIPA aplica la política específica para cuentas de servicio en lugar de la política general utilizada para los usuarios finales.
+Con el fin de establecer que esta política prevalezca sobre la política global del dominio, se le asigna una prioridad numérica superior. De esta manera, cuando una cuenta pertenece al grupo ldap-service-accounts, FreeIPA aplica la política específica para cuentas de servicio en lugar de la política general utilizada para los usuarios finales.
 
 La política de contraseñas definida para el grupo ldap-service-accounts se resume en la \autoref{tab:politica-service-accounts}
 
@@ -478,7 +478,7 @@ Contraseña sin expiración.      \\
 \hline
 
 Justificación                   &
-Garantizar la disponibilidad continua de las integraciones sin afectar las políticas aplicadas a los usuarios finales. \\
+Evitar la expiración de las credenciales utilizadas por las integraciones, reduciendo la necesidad de intervención administrativa asociada a la renovación de estas cuentas y manteniendo separadas sus políticas respecto de las aplicadas a los usuarios finales. \\
 \hline
 \endlongtable
 \endgroup
@@ -486,11 +486,11 @@ Garantizar la disponibilidad continua de las integraciones sin afectar las polí
 
 La utilización de un grupo dedicado para las cuentas de servicio permite centralizar la administración de las políticas de seguridad y facilita la incorporación de nuevas aplicaciones al servicio de directorio, ya que únicamente es necesario crear la cuenta correspondiente y asociarla al grupo definido.
 
-En conjunto, la estructura del directorio, los grupos de autorización y las cuentas de servicio definen el modelo de gestión de identidades de la solución propuesta. Esta organización centraliza la administración de usuarios y credenciales, facilita la incorporación de nuevos servicios al directorio y establece la base sobre la cual se implementarán las integraciones \ac{LDAP} descritas en el capítulo de implementación.
+En conjunto, la estructura del directorio, los grupos de autorización y las cuentas de servicio definen el modelo de gestión de identidades de la solución propuesta. Esta organización centraliza la administración de usuarios y credenciales, facilita la incorporación de nuevos servicios al directorio y define los elementos necesarios para implementar las integraciones \ac{LDAP} descritas en el capítulo de implementación.
 
 \subsection{Definición de máquinas virtuales}\label{subsec:definicion-maquinas-virtuales}
 
-Con el fin de garantizar la disponibilidad y continuidad del servicio de directorio, la arquitectura propuesta contempla el despliegue de dos servidores FreeIPA: un servidor principal y un servidor réplica. Esta configuración permite mantener una copia sincronizada de la información de identidades, políticas y servicios de autenticación, proporcionando tolerancia a fallos y continuidad operativa en caso de indisponibilidad de uno de los servidores.
+Con el fin de proporcionar redundancia y favorecer la disponibilidad y continuidad del servicio de directorio, la arquitectura propuesta contempla el despliegue de dos servidores FreeIPA: un servidor principal y un servidor réplica. Esta configuración permite mantener una copia sincronizada de la información de identidades, políticas y servicios de autenticación, orientada a proporcionar tolerancia a fallos y continuidad operativa ante la indisponibilidad de uno de los servidores.
 
 Ambas máquinas virtuales fueron diseñadas con características de hardware homogéneas para asegurar un comportamiento consistente durante los procesos de replicación y administración del servicio. Asimismo, los dos servidores ejecutan la misma distribución del sistema operativo y la misma versión de FreeIPA, reduciendo posibles problemas de compatibilidad durante la sincronización de datos. Las especificaciones técnicas de cada servidor FreeIPA se presentan en la \autoref{tab:ficha-servidor-principal} y la \autoref{tab:ficha-servidor-replica}.
 

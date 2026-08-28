@@ -7,9 +7,9 @@ En esta sección se describe el proceso de implementación de la solución de se
 
 Para el desarrollo de la fase de implementación se utilizó un servidor tipo torre perteneciente a la infraestructura del grupo de investigación \ac{GRID}, sobre el cual se desplegó el entorno destinado a la ejecución de la arquitectura definida durante la etapa de diseño. Este enfoque permitió disponer de una infraestructura controlada para llevar a cabo la instalación, configuración, integración y validación de cada uno de los componentes del sistema.
 
-Con el propósito de optimizar el uso de los recursos disponibles y garantizar el aislamiento de los servicios, se implementó un esquema de virtualización mediante la creación de las máquinas virtuales correspondientes a cada uno de los elementos de la solución. Asimismo, se realizó la asignación de los recursos de procesamiento, memoria y almacenamiento de acuerdo con los requisitos particulares de cada servicio, considerando aspectos relacionados con el rendimiento, la disponibilidad y la escalabilidad de la infraestructura.
+Con el propósito de aprovechar los recursos disponibles y mantener el aislamiento de los servicios, se implementó un esquema de virtualización mediante la creación de las máquinas virtuales correspondientes a cada uno de los elementos de la solución. Asimismo, se realizó la asignación de los recursos de procesamiento, memoria y almacenamiento de acuerdo con los requisitos particulares de cada servicio, considerando aspectos relacionados con el rendimiento, la disponibilidad y la escalabilidad de la infraestructura.
 
-De manera complementaria, se efectuó la configuración del esquema de red definido para el proyecto, incluyendo el direccionamiento de los equipos, la resolución de nombres, la definición de los nombres de dominio completamente calificados (\ac{FQDN}), la sincronización horaria y la aplicación de las reglas de seguridad necesarias para garantizar el correcto funcionamiento de los servicios implementados.
+De manera complementaria, se efectuó la configuración del esquema de red definido para el proyecto, incluyendo el direccionamiento de los equipos, la resolución de nombres, la definición de los nombres de dominio completamente calificados (\ac{FQDN}), la sincronización horaria y la aplicación de las reglas de seguridad necesarias para permitir el funcionamiento de los servicios implementados.
 
 Finalmente, se llevó a cabo el proceso de instalación y configuración de la plataforma FreeIPA y de los servicios asociados a esta, verificando la correcta integración entre los distintos componentes y el cumplimiento de los requisitos funcionales y de seguridad establecidos para la infraestructura del grupo de investigación \ac{GRID}.
 
@@ -84,7 +84,7 @@ Posteriormente, se ejecutó el comando ipa-server-install, el cual inicia el pro
 
 Entre los parámetros configurados se encuentra el \ac{FQDN} ipa1.grid.uniquindio.edu.co, utilizado para identificar de manera única el servidor dentro de la infraestructura. A partir de este valor se determinó el dominio grid.uniquindio.edu.co, mientras que el dominio de Kerberos (realm) se estableció como \ac{GRID}.UNIQUINDIO.EDU.CO, siguiendo la convención de utilizar letras mayúsculas para este tipo de identificadores.
 
-Asimismo, se definieron las credenciales correspondientes al usuario Directory Manager, encargado de las tareas administrativas del servidor de directorios, y al usuario admin, utilizado para la administración de la plataforma FreeIPA. Del mismo modo, se configuró el nombre de NetBIOS \ac{GRID}, necesario para garantizar la compatibilidad con determinados servicios y mecanismos de interoperabilidad.
+Asimismo, se definieron las credenciales correspondientes al usuario Directory Manager, encargado de las tareas administrativas del servicio de directorios, y al usuario admin, utilizado para la administración de la plataforma FreeIPA. Del mismo modo, se configuró el nombre de NetBIOS \ac{GRID}, necesario para garantizar la compatibilidad con determinados servicios y mecanismos de interoperabilidad.
 
 Por otra parte, el instalador detectó la dirección \ac{IP} 172.30.30.61, correspondiente al servidor principal, la cual fue utilizada como base para la configuración de red del servicio.
 
@@ -236,7 +236,7 @@ Finalmente, se ejecutó el proceso de promoción del cliente a servidor de répl
 
 \section{Instalación de HAProxy}\label{sec:instalacion-haproxy}
 
-Con el fin de garantizar la alta disponibilidad del servicio de directorio mediante la redundancia de FreeIPA, fue necesaria la implementación de un servidor HAProxy como intermediario entre los clientes y los servidores FreeIPA. Esta decisión se tomó debido a que algunos de los servicios integrados con el directorio no disponen de mecanismos nativos de failover, por lo que no es posible definir automáticamente un servidor alternativo cuando uno de los servidores deja de estar disponible.
+Con el fin de proporcionar redundancia y favorecer la disponibilidad y continuidad del servicio de directorio, la arquitectura propuesta contempla el despliegue de dos servidores FreeIPA. Esta decisión se tomó debido a que algunos de los servicios integrados con el directorio no disponen de mecanismos nativos de failover, por lo que no es posible definir automáticamente un servidor alternativo cuando uno de los servidores deja de estar disponible.
 
 En este contexto, HAProxy proporciona un único punto de acceso al servicio de directorio y distribuye las solicitudes entre el servidor principal y el servidor de réplica mediante el algoritmo Round Robin. De esta forma, mientras ambos servidores se encuentren disponibles, las solicitudes son distribuidas entre ellos. Adicionalmente, se configuraron comprobaciones de disponibilidad (health checks) mediante \ac{LDAP}, permitiendo que HAProxy identifique cuándo un servidor deja de responder y lo retire temporalmente del conjunto de servidores disponibles. Así, las solicitudes continúan siendo atendidas por el servidor que permanece operativo, contribuyendo a garantizar la continuidad de los procesos de autenticación y autorización.
 
@@ -258,7 +258,7 @@ Posteriormente, se realizó la instalación del sistema operativo y la configura
 	\label{fig:config-ip-haproxy}
 \end{figure}
 
-Una vez instalado y configurado el sistema operativo, se procedió con la instalación de HAProxy, estableciendo el componente encargado de recibir y gestionar las solicitudes dirigidas al servicio de directorio. En la \autoref{fig:instalacion-haproxy} se observa el proceso de instalación del proxy.
+Una vez instalado y configurado el sistema operativo, se procedió con la instalación de HAProxy, estableciendo el componente encargado de recibir y gestionar las solicitudes dirigidas al servicio de directorio. En la \autoref{fig:instalacion-haproxy} se observa el proceso de instalación del balanceador.
 
 \begin{figure}[H]
 	\centering
@@ -301,7 +301,7 @@ Una vez creado el host, se registró el servicio \ac{LDAP} asociado al nombre \n
 	\label{fig:adicion-servicio-host}
 \end{figure}
 
-Posteriormente, el servicio \ac{LDAP} se asoció tanto al servidor principal ipa1 como al servidor de réplica ipa2. De esta manera, ambos servidores quedan registrados como miembros del mismo servicio \ac{LDAP}, permitiendo que el nombre virtual utilizado por los clientes pueda ser atendido por cualquiera de los dos nodos de FreeIPA. Esta configuración constituye un elemento fundamental para la alta disponibilidad del servicio de directorio, ya que vincula el servicio lógico ldap/ipa.grid.uniquindio.edu.co con los dos servidores que se encuentran detrás de HAProxy. La incorporación del servicio en ambos servidores se observa en la \autoref{fig:incorporacion-servicio-freeipa}.
+Posteriormente, el servicio \ac{LDAP} se asoció tanto al servidor principal ipa1 como al servidor de réplica ipa2. De esta manera, ambos servidores quedan registrados como miembros del mismo servicio \ac{LDAP}, permitiendo que el nombre virtual utilizado por los clientes pueda ser atendido por cualquiera de los dos nodos de FreeIPA. Esta configuración constituye un mecanismo de redundancia para el acceso al servicio de directorio, ya que vincula el servicio lógico \nolinkurl{ldap/ipa.grid.uniquindio.edu.co} con los dos servidores que se encuentran detrás de HAProxy. La incorporación del servicio en ambos servidores se observa en la \autoref{fig:incorporacion-servicio-freeipa}.
 
 \begin{figure}[H]
 	\centering
@@ -343,7 +343,7 @@ Finalmente, se realizó el mismo procedimiento en el servidor de réplica ipa2, 
 
 \section{Integración con los servicios}\label{sec:integracion-servicios}
 
-Una vez configurado el balanceador, se procedió a realizar la conexión de los servicios con FreeIPA. Para ello, se utilizó la identidad asociada al balanceador de carga, representada mediante el nombre virtual ipa.grid.uniquindio.edu.co. Esta identidad permite que los servicios integrados utilicen un único punto de acceso al directorio, delegando en HAProxy la distribución de las solicitudes entre el servidor principal y la réplica, de acuerdo con su disponibilidad. De esta manera, los servicios no necesitan establecer una dependencia directa con un servidor específico de FreeIPA, sino que utilizan la identidad común definida para la solución.
+Una vez configurado el balanceador, se realizó la conexión de los servicios con FreeIPA. Para ello, se utilizó la identidad asociada al balanceador de carga, representada mediante el nombre virtual ipa.grid.uniquindio.edu.co. Esta identidad permite que los servicios integrados utilicen un único punto de acceso al directorio, delegando en HAProxy la distribución de las solicitudes entre el servidor principal y la réplica, de acuerdo con su disponibilidad. De esta manera, los servicios no necesitan establecer una dependencia directa con un servidor específico de FreeIPA, sino que utilizan la identidad común definida para la solución.
 
 \subsection{OpenVPN}\label{subsec:integracion-openvpn}
 
@@ -380,7 +380,7 @@ El paquete proporciona un archivo de configuración de ejemplo ubicado en \path{
 	\label{fig:config-openvpn-auth-ldap}
 \end{figure}
 
-Dentro del bloque \texttt{<LDAP>} se definieron inicialmente los parámetros relacionados con la conexión al servidor de directorio. El parámetro \texttt{URL} se configuró con el valor \nolinkurl{ldaps://ipa.grid.uniquindio.edu.co}, utilizando el nombre virtual asignado al servicio. De esta manera, OpenVPN no establece una dependencia directa con los nodos \texttt{ipa1} o \texttt{ipa2}, sino que dirige las solicitudes hacia HAProxy, el cual posteriormente determina cuál de los servidores FreeIPA disponibles atenderá la conexión.
+Dentro del bloque \texttt{<LDAP>} se definieron inicialmente los parámetros relacionados con la conexión al servicio de directorio. El parámetro \texttt{URL} se configuró con el valor \nolinkurl{ldaps://ipa.grid.uniquindio.edu.co}, utilizando el nombre virtual asignado al servicio. De esta manera, OpenVPN no establece una dependencia directa con los nodos \texttt{ipa1} o \texttt{ipa2}, sino que dirige las solicitudes hacia HAProxy, el cual posteriormente determina cuál de los servidores FreeIPA disponibles atenderá la conexión.
 
 Para realizar las consultas al directorio se configuró el parámetro \texttt{BindDN} con la cuenta de servicio \texttt{svc-openvpn}, utilizando su \ac{DN} completo:
 
@@ -489,7 +489,7 @@ El campo Administrador se dejó sin configurar, debido a que no se utilizó un a
 	\label{fig:mapeo-atributos-ldap-openproject}
 \end{figure}
 
-Una vez guardada la configuración de la conexión \ac{LDAP}, OpenProject permite realizar una prueba para verificar la comunicación con el servidor de directorio y validar los parámetros configurados. Al ejecutar esta prueba, la plataforma confirmó que la conexión con el servicio FreeIPA se estableció correctamente, mostrando el mensaje «Conexión exitosa». Este resultado permite comprobar que los parámetros de conexión, seguridad y autenticación definidos previamente son aceptados por el servidor de directorio. La conexión \ac{LDAP} configurada y el resultado satisfactorio de la prueba de conectividad se muestran en la \autoref{fig:validacion-conexion-openproject-freeipa}.
+Una vez guardada la configuración de la conexión \ac{LDAP}, OpenProject permite realizar una prueba para verificar la comunicación con el servicio de directorio y validar los parámetros configurados. Al ejecutar esta prueba, la plataforma confirmó que la conexión con el servicio FreeIPA se estableció correctamente, mostrando el mensaje «Conexión exitosa». Este resultado permite comprobar que los parámetros de conexión, seguridad y autenticación definidos previamente son aceptados por el servidor de directorio. La conexión \ac{LDAP} configurada y el resultado satisfactorio de la prueba de conectividad se muestran en la \autoref{fig:validacion-conexion-openproject-freeipa}.
 
 \begin{figure}[H]
 	\centering

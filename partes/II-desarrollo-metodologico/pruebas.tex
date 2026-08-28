@@ -162,7 +162,7 @@ La ejecución detallada de cada caso se presenta en la siguiente sección, incor
 		      \label{fig:figura-1}
 	      \end{figure}
 
-	\item \textbf{Validación de la autenticación en OpenVPN:} Se utilizaron las credenciales de la cuenta de prueba para realizar la autenticación mediante OpenVPN. Una vez realizado el proceso, se verificó el resultado de la conexión para comprobar que las credenciales gestionadas por FreeIPA fueran aceptadas por el servicio, tal como se muestra en la \autoref{fig:figura-2}.
+	\item \textbf{Validación de la autenticación en OpenVPN:} Se utilizaron las credenciales de la cuenta de prueba para realizar la autenticación mediante OpenVPN. Una vez realizado el proceso, se verificó la conexión para comprobar la aceptación de las credenciales gestionadas por FreeIPA, tal como se muestra en la \autoref{fig:figura-2}.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-2.png}
@@ -192,7 +192,7 @@ Asimismo, la integración de FreeIPA con los tres sistemas permitió evidenciar 
 
 \subsection{PT-02 - Autorización diferenciada mediante grupos}\label{subsec:pt02}
 \textbf{Requisitos asociados:} R-01, R-04.\\
-\textbf{Objetivo:} Verificar que la pertenencia de los usuarios a grupos de autorización definidos en FreeIPA permite establecer permisos diferenciados entre OpenVPN, OpenProject y Xen Orchestra, comprobando que cada cuenta puede acceder al servicio para el cual se encuentra autorizada y que el acceso a los demás servicios es rechazado.\\
+\textbf{Objetivo:} Verificar que la pertenencia de los usuarios a grupos de autorización definidos en FreeIPA permite establecer permisos diferenciados entre OpenVPN, OpenProject y Xen Orchestra, comprobando que cada cuenta puede acceder al servicio para el cual está autorizada y que los intentos de acceso a los demás servicios son rechazados.\\
 \textbf{Resultado esperado:} Cada cuenta debe poder acceder únicamente al servicio asociado al grupo al que pertenece. Los intentos de acceso a los demás servicios deben ser rechazados.
 
 Por tanto, el comportamiento esperado se resume en la \autoref{tab:pt02-comportamiento-esperado}:
@@ -523,7 +523,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 \end{itemize}
 \textbf{Procedimiento y evidencias:}
 \begin{enumerate}
-	\item \textbf{Identificación de los mecanismos de registro:} Se consultaron los mecanismos de registro disponibles en el servidor de FreeIPA con el propósito de identificar los registros relacionados con las actividades de autenticación y administración de identidades, como se presenta en la \autoref{fig:figura-22}.
+	\item \textbf{Identificación de los mecanismos de registro:} Se consultaron los mecanismos de registro disponibles en el servidor de FreeIPA con el propósito de identificar los registros relacionados con las actividades de autenticación y gestión de identidades, como se presenta en la \autoref{fig:figura-22}.
 	      \begin{figure}[H]
 		      \centering
 		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-22.png}
