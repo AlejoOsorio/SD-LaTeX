@@ -1,12 +1,12 @@
-\newcommand\FrontPageBackground{%
-	\includegraphics[scale=1,width=\paperwidth,height=\paperheight]{\frontispieceBackground}
+\newcommand\frontpagebackground{%
+	\includegraphics[scale=1,width=\paperwidth,height=\paperheight]{\frontispiecebackground}
 }
 
-\newcommand\CoverBackground{%
-	\includegraphics[width=\paperwidth,height=\paperheight]{\coverBackground}%
+\newcommand\coverbackground{%
+	\includegraphics[width=\paperwidth,height=\paperheight]{\coverimage}%
 }
 
-\newcommand\InsertBlankPage{
+\newcommand\insertblankpage{
 	\clearpage
 	\thispagestyle{empty}
 	\vspace*{\fill}
@@ -18,7 +18,7 @@
 }
 
 % Comando para secciones preliminares (sin numeración pero en índice)
-\newcommand{\PrelimChapter}[2]{%
+\newcommand{\prelimchapter}[2]{%
 
 	% Nueva página
 	\cleardoublepage
@@ -66,7 +66,7 @@
 }
 
 % Comando para capítulos numerados
-\newcommand{\MainChapter}[2]{%
+\newcommand{\mainchapter}[2]{%
 
 	% Nueva página
 	\cleardoublepage
@@ -115,28 +115,28 @@
 	}%
 }
 
-\newcommand{\CommonFooter}{%
+\newcommand{\commonfooter}{%
 	\begin{tikzpicture}[remember picture, overlay]
 		\node[anchor=south, inner sep=0pt]
-		at ([xshift=\bannerXOffset, yshift=\bannerYOffset]current page.south)
+		at ([xshift=\bannerxoffset, yshift=\banneryoffset]current page.south)
 		{%
-			\includegraphics[width=\paperwidth, height=\bannerHeight]{\bottomBanner}%
+			\includegraphics[width=\paperwidth, height=\bannerheight]{\bottombanner}%
 		};
 
 		\node[anchor=south west, text=black, font=\bfseries]
-		at ([xshift=\pageNumXOffset, yshift=\pageNumYOffset]current page.south west)
+		at ([xshift=\pagenumxoffset, yshift=\pagenumyoffset]current page.south west)
 		{\thepage};
 	\end{tikzpicture}%
 }
 
 % Comando para partes del documento (diseño centrado con posición personalizable)
-% Uso: \PartCover[xpos,ypos]{Título}{imagen.png}
-%      \PartCover*[xpos,ypos]{Título}{imagen.png} (versión sin numeración de parte)
+% Uso: \partcover[xpos,ypos]{Título}{imagen.png}
+%      \partcover*[xpos,ypos]{Título}{imagen.png} (versión sin numeración de parte)
 % xpos: desplazamiento horizontal en puntos desde el centro (positivo = derecha, negativo = izquierda)
 % ypos: desplazamiento vertical en puntos desde el centro (positivo = arriba, negativo = abajo)
 \makeatletter
-\newcommand{\PartCover}{\@ifstar{\PartCoverStar}{\PartCoverNormal}}
-\newcommand{\PartCoverNormal}[3][0pt,0pt]{%
+\newcommand{\partcover}{\@ifstar{\partcoverstar}{\partcovernormal}}
+\newcommand{\partcovernormal}[3][0pt,0pt]{%
 	\cleardoublepage%
 	\thispagestyle{empty}%
 	\refstepcounter{part}%
@@ -165,7 +165,7 @@
 	\phantom{.}%
 	\newpage%
 }
-\newcommand{\PartCoverStar}[3][0pt,0pt]{%
+\newcommand{\partcoverstar}[3][0pt,0pt]{%
 	\cleardoublepage%
 	\thispagestyle{empty}%
 	\phantomsection%
@@ -200,7 +200,7 @@
 	\def\ypos{#2}%
 }
 
-\newcommand{\AppendixChapter}[1]{%
+\newcommand{\appendixchapter}[1]{%
 	\phantomsection
 	\refstepcounter{chapter}
 
@@ -222,7 +222,7 @@
 	\markboth{Apéndice \thechapter: #1}{Apéndice \thechapter: #1}
 }
 
-\newcommand{\DBFigure}[4]{%
+\newcommand{\dbfigure}[4]{%
 	\begin{figure}[H]
 		\centering
 		\includegraphics[width=\textwidth,keepaspectratio]{#1}
