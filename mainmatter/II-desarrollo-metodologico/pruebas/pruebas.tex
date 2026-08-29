@@ -157,7 +157,7 @@ La ejecución detallada de cada caso se presenta en la siguiente sección, incor
 	\item \textbf{Verificación de la identidad en FreeIPA:} Se verificó en FreeIPA la existencia de la cuenta de prueba y su estado, comprobando que la identidad se encontrara registrada y habilitada para su utilización en los servicios integrados, como se observa en la \autoref{fig:figura-1}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-1.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-1.png}
 		      \caption{Cuenta de prueba registrada y habilitada en FreeIPA.}
 		      \label{fig:figura-1}
 	      \end{figure}
@@ -165,7 +165,7 @@ La ejecución detallada de cada caso se presenta en la siguiente sección, incor
 	\item \textbf{Validación de la autenticación en OpenVPN:} Se utilizaron las credenciales de la cuenta de prueba para realizar la autenticación mediante OpenVPN. Una vez realizado el proceso, se verificó la conexión para comprobar la aceptación de las credenciales gestionadas por FreeIPA, tal como se muestra en la \autoref{fig:figura-2}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-2.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-2.png}
 		      \caption{Autenticación de la cuenta de prueba mediante OpenVPN.}
 		      \label{fig:figura-2}
 	      \end{figure}
@@ -173,7 +173,7 @@ La ejecución detallada de cada caso se presenta en la siguiente sección, incor
 	\item \textbf{Validación de la autenticación en OpenProject:} Se utilizaron las mismas credenciales de la cuenta de prueba para realizar la autenticación en OpenProject. Posteriormente, se verificó el acceso obtenido en el sistema, como se observa en la \autoref{fig:figura-3}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-3.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-3.png}
 		      \caption{Autenticación de la cuenta de prueba en OpenProject.}
 		      \label{fig:figura-3}
 	      \end{figure}
@@ -181,7 +181,7 @@ La ejecución detallada de cada caso se presenta en la siguiente sección, incor
 	\item \textbf{Validación de la autenticación en Xen Orchestra:} Finalmente, se utilizaron las mismas credenciales de la cuenta de prueba para realizar la autenticación en Xen Orchestra. Se verificó el resultado del proceso y el acceso al sistema, tal como se presenta en la \autoref{fig:figura-4}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-4.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-4.png}
 		      \caption{Autenticación de la cuenta de prueba en Xen Orchestra.}
 		      \label{fig:figura-4}
 	      \end{figure}
@@ -296,7 +296,7 @@ La tercera cuenta correspondió al usuario utilizado en PT-01, cuya pertenencia 
 	\item \textbf{Verificación de la pertenencia a los grupos:} Se consultó en FreeIPA la configuración de las tres cuentas de prueba, verificando que cada una perteneciera únicamente al grupo de autorización correspondiente al servicio para el cual se encontraba habilitada, como se muestra en la \autoref{fig:figura-5}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-5.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-5.png}
 		      \caption{Pertenencia de las cuentas de prueba a los grupos de autorización en FreeIPA.}
 		      \label{fig:figura-5}
 	      \end{figure}
@@ -304,7 +304,7 @@ La tercera cuenta correspondió al usuario utilizado en PT-01, cuya pertenencia 
 	\item \textbf{Validación del usuario autorizado para OpenVPN:} Se utilizaron las credenciales de la cuenta 1 para realizar intentos de autenticación en los tres servicios. El acceso a OpenVPN fue utilizado para comprobar el permiso correspondiente al grupo al que pertenecía la cuenta, mientras que los intentos realizados en OpenProject y Xen Orchestra permitieron comprobar el comportamiento ante servicios para los cuales no contaba con autorización. Los resultados se ilustran en la \autoref{fig:figura-6}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-6.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-6.png}
 		      \caption{Acceso de la Cuenta 1 a OpenVPN y rechazo del acceso a los servicios no autorizados.}
 		      \label{fig:figura-6}
 	      \end{figure}
@@ -312,7 +312,7 @@ La tercera cuenta correspondió al usuario utilizado en PT-01, cuya pertenencia 
 	\item \textbf{Validación del usuario autorizado para OpenProject:} Se utilizaron las credenciales de la cuenta 2 para realizar intentos de autenticación en OpenVPN, OpenProject y Xen Orchestra. En este caso, el acceso autorizado correspondió a OpenProject, mientras que los intentos realizados en los otros dos servicios permitieron comprobar la restricción de acceso. En la \autoref{fig:figura-7} se observan los resultados obtenidos.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-7.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-7.png}
 		      \caption{Acceso de la Cuenta 2 a OpenProject y rechazo del acceso a los servicios no autorizados.}
 		      \label{fig:figura-7}
 	      \end{figure}
@@ -320,7 +320,7 @@ La tercera cuenta correspondió al usuario utilizado en PT-01, cuya pertenencia 
 	\item \textbf{Validación del usuario autorizado para Xen Orchestra:} Se utilizaron las credenciales de la cuenta 3 para realizar los intentos de autenticación en los tres servicios. El acceso a Xen Orchestra permitió comprobar la autorización correspondiente, mientras que los intentos realizados en OpenVPN y OpenProject permitieron verificar el rechazo de accesos no autorizados, tal como se presenta en la \autoref{fig:figura-8}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-8.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-8.png}
 		      \caption{Acceso de la Cuenta 3 a Xen Orchestra y rechazo del acceso a los servicios no autorizados.}
 		      \label{fig:figura-8}
 	      \end{figure}
@@ -380,7 +380,7 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Creación de la cuenta:} Se creó una nueva cuenta de usuario en FreeIPA, proporcionando los atributos requeridos para su identificación y gestión. Una vez finalizada la creación, se verificó que la cuenta haya quedado registrada correctamente en el directorio, como se observa en la \autoref{fig:figura-9}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-9.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-9.png}
 		      \caption{Creación y estado inicial de la cuenta de prueba en FreeIPA.}
 		      \label{fig:figura-9}
 	      \end{figure}
@@ -388,7 +388,7 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Actualización de la información de la cuenta:} Se modificaron los atributos definidos para la cuenta de prueba y se verificó posteriormente que los cambios fueran reflejados en la información almacenada en FreeIPA, tal como se muestra en la \autoref{fig:figura-10}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-10.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-10.png}
 		      \caption{Actualización de los atributos de la cuenta de prueba en FreeIPA.}
 		      \label{fig:figura-10}
 	      \end{figure}
@@ -396,7 +396,7 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Habilitación de la cuenta y validación del acceso:} Se verificó que la cuenta se encontrará habilitada y con autorización de acceso a uno de los servicios, posteriormente se realizó un intento de autenticación en el servicio autorizado. El acceso se verificó utilizando las credenciales asociadas a la cuenta administrada por FreeIPA, como se presenta en la \autoref{fig:figura-11}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-11.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-11.png}
 		      \caption{Estado habilitado de la cuenta y acceso autorizado al servicio integrado.}
 		      \label{fig:figura-11}
 	      \end{figure}
@@ -404,14 +404,14 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Deshabilitación de la cuenta y validación del acceso:} Se deshabilitó la cuenta desde FreeIPA, como se observa en la \autoref{fig:figura-12}, y posteriormente se realizó un nuevo intento de autenticación en el servicio utilizado en el paso anterior. El resultado obtenido se contrastó con el estado de la cuenta en el directorio, tal como se presenta en la \autoref{fig:figura-xx}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-12.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-12.png}
 		      \caption{Cuenta deshabilitada en FreeIPA.}
 		      \label{fig:figura-12}
 	      \end{figure}
 
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-xx.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-xx.png}
 		      \caption{Rechazo del acceso al servicio integrado tras la deshabilitación de la cuenta en FreeIPA}
 		      \label{fig:figura-xx}
 	      \end{figure}
@@ -419,14 +419,14 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Habilitación nuevamente de la cuenta:} Se habilitó nuevamente la cuenta en FreeIPA, como se muestra en la \autoref{fig:figura-13}, y se realizó un nuevo intento de acceso al servicio integrado, con el propósito de verificar si el cambio de estado permitía recuperar la capacidad de autenticación. El resultado se presenta en la \autoref{fig:figura-14}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-13.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-13.png}
 		      \caption{Habilitación de la cuenta de prueba en FreeIPA}
 		      \label{fig:figura-13}
 	      \end{figure}
 
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-14.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-14.png}
 		      \caption{Recuperación del acceso al servicio integrado tras la habilitación de la cuenta en FreeIPA}
 		      \label{fig:figura-14}
 	      \end{figure}
@@ -434,14 +434,14 @@ Se espera que una cuenta creada pueda ser gestionada desde FreeIPA, que sus atri
 	\item \textbf{Eliminación de la cuenta:} Se realizó la eliminación de la cuenta de forma preservada, como se observa en la \autoref{fig:figura-15}. Posteriormente, se verificó el estado resultante de la identidad y se realizó un intento de autenticación para comprobar el efecto de la revocación sobre el acceso, tal como se presenta en la \autoref{fig:figura-16}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-15.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-15.png}
 		      \caption{Revocación de la cuenta de prueba.}
 		      \label{fig:figura-15}
 	      \end{figure}
 
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-16.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-16.png}
 		      \caption{Rechazo del acceso al servicio integrado tras la revocación de la cuenta de prueba}
 		      \label{fig:figura-16}
 	      \end{figure}
@@ -468,7 +468,7 @@ Asimismo, ante la realización de intentos consecutivos de autenticación incorr
 	\item \textbf{Verificación de las políticas configuradas:} Se consultó la configuración de las políticas de contraseñas establecidas en FreeIPA, verificando los parámetros definidos para las credenciales de los usuarios, como se presenta en la \autoref{fig:figura-17}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-17.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-17.png}
 		      \caption{Políticas de contraseñas configuradas en FreeIPA.}
 		      \label{fig:figura-17}
 	      \end{figure}
@@ -476,7 +476,7 @@ Asimismo, ante la realización de intentos consecutivos de autenticación incorr
 	\item \textbf{Validación de la longitud mínima de la contraseña:} Se intentó establecer para la cuenta de prueba una contraseña que no cumpliera con la longitud mínima definida en la política. Posteriormente, se verificó la respuesta de FreeIPA ante el intento de establecer la credencial, tal como se observa en la \autoref{fig:figura-18}. El rechazo permitió comprobar que la política configurada se aplicó durante la modificación de las credenciales.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-18.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-18.png}
 		      \caption{Rechazo de una contraseña que no cumple la longitud mínima establecida.}
 		      \label{fig:figura-18}
 	      \end{figure}
@@ -484,7 +484,7 @@ Asimismo, ante la realización de intentos consecutivos de autenticación incorr
 	\item \textbf{Validación de los requisitos de complejidad:} Se realizó un intento de establecer una contraseña que no cumpliera con los requisitos de complejidad definidos en la política. Se verificó la respuesta generada por FreeIPA ante la credencial que no cumplía las condiciones establecidas, como se presenta en la \autoref{fig:figura-19}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-19.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-19.png}
 		      \caption{Rechazo de una contraseña que no cumple los requisitos de complejidad.}
 		      \label{fig:figura-19}
 	      \end{figure}
@@ -492,7 +492,7 @@ Asimismo, ante la realización de intentos consecutivos de autenticación incorr
 	\item \textbf{Validación de la contraseña que cumple las políticas:} Se estableció una contraseña que cumplía las condiciones definidas por la política de credenciales. Posteriormente, se realizó un intento de autenticación utilizando la nueva contraseña, tal como se muestra en la \autoref{fig:figura-20}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-20.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-20.png}
 		      \caption{Establecimiento de una contraseña que cumple las políticas y autenticación exitosa.}
 		      \label{fig:figura-20}
 	      \end{figure}
@@ -500,7 +500,7 @@ Asimismo, ante la realización de intentos consecutivos de autenticación incorr
 	\item \textbf{Validación del control ante intentos de autenticación fallidos:} Se realizaron intentos consecutivos de autenticación utilizando credenciales incorrectas, con el propósito de verificar el comportamiento definido para los intentos fallidos y el bloqueo de la cuenta. Los resultados se observan en la \autoref{fig:figura-21}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-21.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-21.png}
 		      \caption{Aplicación de la política ante intentos consecutivos de autenticación fallidos.}
 		      \label{fig:figura-21}
 	      \end{figure}
@@ -526,7 +526,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 	\item \textbf{Identificación de los mecanismos de registro:} Se consultaron los mecanismos de registro disponibles en el servidor de FreeIPA con el propósito de identificar los registros relacionados con las actividades de autenticación y gestión de identidades, como se presenta en la \autoref{fig:figura-22}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-22.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-22.png}
 		      \caption{Registros de FreeIPA utilizados para la consulta de actividades de gestión de identidades y accesos.}
 		      \label{fig:figura-22}
 	      \end{figure}
@@ -534,7 +534,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 	\item \textbf{Generación de una actividad de gestión de identidad:} Se realizó una operación sobre la cuenta de prueba desde FreeIPA, utilizando una actividad previamente definida para la validación, como se observa en la \autoref{fig:figura-23}. La operación se ejecutó de manera controlada con el propósito de posteriormente localizar el evento correspondiente en los registros.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-23.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-23.png}
 		      \caption{Actividad de gestión de identidad realizada sobre la cuenta de prueba.}
 		      \label{fig:figura-23}
 	      \end{figure}
@@ -542,7 +542,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 	\item \textbf{Consulta del registro generado:} Una vez realizada la operación, se consultaron los registros correspondientes en el servidor para localizar la actividad generada, tal como se presenta en la \autoref{fig:figura-24}. Se verificó la información disponible en el evento registrado y su correspondencia con la operación realizada sobre la cuenta de prueba.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-24.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-24.png}
 		      \caption{Registro de la actividad de gestión realizada sobre la cuenta de prueba.}
 		      \label{fig:figura-24}
 	      \end{figure}
@@ -615,7 +615,7 @@ La información registrada debe permitir relacionar el evento con la actividad r
 	\item \textbf{Consulta de los grupos de autorización:} Se consultaron en FreeIPA los grupos utilizados para controlar el acceso a OpenVPN, OpenProject y Xen Orchestra. Se verificó la existencia de los grupos que permiten el acceso a los servicios integrados, como se muestra en la \autoref{fig:figura-25}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-25.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-25.png}
 		      \caption{Grupos de autorización configurados en FreeIPA para los servicios integrados.}
 		      \label{fig:figura-25}
 	      \end{figure}
@@ -623,21 +623,21 @@ La información registrada debe permitir relacionar el evento con la actividad r
 	\item \textbf{Consulta de los usuarios pertenecientes a los grupos:} Se consultó la composición de cada grupo de autorización para identificar los usuarios que se encontraban asociados a cada servicio. Esta consulta permitió establecer la relación entre las identidades gestionadas y los permisos asignados mediante los grupos. En la \autoref{fig:figura-26} se observan los usuarios del grupo openproject, en la \autoref{fig:figura-27} los del grupo openvpn, y en la \autoref{fig:figura-28} los del grupo xenorchestra.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-26.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-26.png}
 		      \caption{Usuarios pertenecientes al grupo de autorización openproject.}
 		      \label{fig:figura-26}
 	      \end{figure}
 
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-27.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-27.png}
 		      \caption{Usuarios pertenecientes al grupo de autorización openvpn.}
 		      \label{fig:figura-27}
 	      \end{figure}
 
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-28.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-28.png}
 		      \caption{Usuarios pertenecientes al grupo de autorización xenorchestra.}
 		      \label{fig:figura-28}
 	      \end{figure}
@@ -663,7 +663,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 	\item \textbf{Verificación de la topología de replicación:} Se consultó desde la interfaz web de administración de FreeIPA la topología configurada, con el propósito de verificar la existencia del servidor principal y del servidor réplica dentro de la infraestructura del servicio de directorio, como se presenta en la \autoref{fig:figura-29}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-29.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-29.png}
 		      \caption{Estado de la topología de replicación de FreeIPA}
 		      \label{fig:figura-29}
 	      \end{figure}
@@ -671,7 +671,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 	\item \textbf{Verificación inicial de la identidad:} Se seleccionó una cuenta de prueba para realizar la validación de la replicación. Desde la \ac{CLI} del servidor principal se consultó la información de la cuenta, estableciendo los atributos que posteriormente serían utilizados como referencia para comprobar su sincronización, tal como se observa en la \autoref{fig:figura-30}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-30.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-30.png}
 		      \caption{Información inicial de la cuenta de prueba consultada desde el servidor principal.}
 		      \label{fig:figura-30}
 	      \end{figure}
@@ -679,7 +679,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 	\item \textbf{Creación o modificación de la identidad en el servidor principal:} Se realizó una operación de gestión sobre la cuenta de prueba desde el servidor principal, como se presenta en la \autoref{fig:figura-31}. Posteriormente, se consultó nuevamente la información mediante la \ac{CLI} para comprobar que el cambio hubiera sido aplicado correctamente en el servidor de origen.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-31.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-31.png}
 		      \caption{Cambio realizado sobre la cuenta de prueba desde el servidor principal.}
 		      \label{fig:figura-31}
 	      \end{figure}
@@ -687,7 +687,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 	\item \textbf{Verificación del cambio en el servidor réplica:} Una vez realizado el cambio, se consultó desde la \ac{CLI} del servidor réplica la misma cuenta y sus atributos, con el propósito de comprobar que la información hubiera sido replicada, como se muestra en la \autoref{fig:figura-32}. La comparación de ambas consultas permitió establecer de manera directa la correspondencia entre la información existente en el servidor principal y la almacenada en el servidor réplica.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-32.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-32.png}
 		      \caption{Información de la cuenta de prueba replicada en el servidor réplica.}
 		      \label{fig:figura-32}
 	      \end{figure}
@@ -695,7 +695,7 @@ La creación de una cuenta en el servidor principal debe reflejarse en el servid
 	\item \textbf{Validación de la replicación en sentido inverso:} Se realizó una modificación sobre una identidad desde el servidor réplica y posteriormente se consultó la misma información desde el servidor principal, tal como se presenta en la \autoref{fig:figura-33}. Esto permitió comprobar el comportamiento de la replicación en ambos sentidos.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-33.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-33.png}
 		      \caption{Cambio realizado desde el servidor réplica y reflejado en el servidor principal.}
 		      \label{fig:figura-33}
 	      \end{figure}
@@ -723,7 +723,7 @@ Una vez restablecido el servidor principal, ambos servidores deben recuperar su 
 	\item \textbf{Verificación del funcionamiento normal:} Se verificó inicialmente el estado operativo de los servidores principal y réplica y se realizó una autenticación con la cuenta de prueba para establecer el funcionamiento normal del servicio antes de generar la condición de falla, como se observa en la \autoref{fig:figura-34}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-34.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-34.png}
 		      \caption{Estado operativo de los servidores y autenticación previa a la falla.}
 		      \label{fig:figura-34}
 	      \end{figure}
@@ -731,7 +731,7 @@ Una vez restablecido el servidor principal, ambos servidores deben recuperar su 
 	\item \textbf{Indisponibilidad del servidor principal:} Se interrumpió de manera controlada la disponibilidad del servidor principal de FreeIPA, simulando una condición de falla del servidor, como se presenta en la \autoref{fig:figura-35}. Una vez aplicada la condición, se verificó que el servidor principal deja de estar disponible para las operaciones del servicio de directorio.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-35.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-35.png}
 		      \caption{Indisponibilidad controlada del servidor principal de FreeIPA.}
 		      \label{fig:figura-35}
 	      \end{figure}
@@ -739,7 +739,7 @@ Una vez restablecido el servidor principal, ambos servidores deben recuperar su 
 	\item \textbf{Verificación de la disponibilidad del servidor réplica:} Con el servidor principal fuera de servicio, se verificó el estado del servidor réplica para comprobar que permaneciera operativo y que contiene la información de las identidades previamente replicadas, tal como se observa en la \autoref{fig:figura-36}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-36.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-36.png}
 		      \caption{Estado operativo del servidor réplica durante la indisponibilidad del servidor principal.}
 		      \label{fig:figura-36}
 	      \end{figure}
@@ -747,7 +747,7 @@ Una vez restablecido el servidor principal, ambos servidores deben recuperar su 
 	\item \textbf{Validación de la autenticación durante la falla:} Mientras el servidor principal permaneció indisponible, se realizó un nuevo intento de autenticación utilizando la cuenta de prueba en el servicio integrado. Se verificó si el servicio podía continuar utilizando la información disponible en el servidor réplica, como se presenta en la \autoref{fig:figura-37}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-37.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-37.png}
 		      \caption{Autenticación realizada durante la indisponibilidad del servidor principal.}
 		      \label{fig:figura-37}
 	      \end{figure}
@@ -755,7 +755,7 @@ Una vez restablecido el servidor principal, ambos servidores deben recuperar su 
 	\item \textbf{Restablecimiento del servidor principal:} Una vez finalizada la validación, se restableció la disponibilidad del servidor principal y se verificó nuevamente el estado de la infraestructura de FreeIPA, tal como se muestra en la \autoref{fig:figura-38}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-38.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-38.png}
 		      \caption{Recuperación del servidor principal y estado de la infraestructura después de la prueba.}
 		      \label{fig:figura-38}
 	      \end{figure}
@@ -782,7 +782,7 @@ Los cambios realizados sobre las identidades durante la indisponibilidad del ser
 	\item \textbf{Verificación del estado previo a la recuperación:} Se verificó que el servidor réplica permaneciera operativo y que el servidor principal se encuentre indisponible, como se presenta en la \autoref{fig:figura-39}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-39.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-39.png}
 		      \caption{Estado de los servidores antes de iniciar la recuperación del servidor principal.}
 		      \label{fig:figura-39}
 	      \end{figure}
@@ -790,7 +790,7 @@ Los cambios realizados sobre las identidades durante la indisponibilidad del ser
 	\item \textbf{Generación de un cambio durante la indisponibilidad:} Mientras el servidor principal permaneció fuera de servicio, se realizó una modificación sobre una identidad desde el servidor réplica, tal como se observa en la \autoref{fig:figura-40}. El cambio se utilizó como referencia para comprobar posteriormente la sincronización de la información una vez restablecido el servidor principal.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-40.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-40.png}
 		      \caption{Modificación realizada sobre la identidad desde el servidor réplica durante la indisponibilidad del servidor principal.}
 		      \label{fig:figura-40}
 	      \end{figure}
@@ -798,7 +798,7 @@ Los cambios realizados sobre las identidades durante la indisponibilidad del ser
 	\item \textbf{Restablecimiento del servidor principal:} Se restableció la disponibilidad del servidor principal y se verificó que los servicios necesarios para la operación de FreeIPA se encontrarán nuevamente activos, como se presenta en la \autoref{fig:figura-41}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-41.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-41.png}
 		      \caption{Restablecimiento del servidor principal de FreeIPA.}
 		      \label{fig:figura-41}
 	      \end{figure}
@@ -806,7 +806,7 @@ Los cambios realizados sobre las identidades durante la indisponibilidad del ser
 	\item \textbf{Verificación de la información modificada:} Se consultó desde el servidor principal la identidad que había sido modificada durante su indisponibilidad. Se verificó que el cambio realizado desde el servidor réplica se encontrase reflejado en el servidor principal, tal como se muestra en la \autoref{fig:figura-42}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-42.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-42.png}
 		      \caption{Cambio realizado durante la falla y posteriormente sincronizado en el servidor principal.}
 		      \label{fig:figura-42}
 	      \end{figure}
@@ -814,7 +814,7 @@ Los cambios realizados sobre las identidades durante la indisponibilidad del ser
 	\item \textbf{Validación de la sincronización posterior:} Finalmente, se verificó que ambos servidores conservaran la misma información de la identidad utilizada durante la prueba y que la replicación continuaba operativa después de la recuperación del servidor principal, como se presenta en la \autoref{fig:figura-43}.
 	      \begin{figure}[H]
 		      \centering
-		      \includegraphics[width=0.85\textwidth]{imagenes/figuras/II-desarrollo-metodologico/pruebas/figura-43.png}
+		      \includegraphics[width=0.85\textwidth]{mainmatter/II-desarrollo-metodologico/pruebas/imagenes/figura-43.png}
 		      \caption{Información sincronizada entre el servidor principal y el servidor réplica después de la recuperación.}
 		      \label{fig:figura-43}
 	      \end{figure}

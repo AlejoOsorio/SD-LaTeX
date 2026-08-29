@@ -19,7 +19,7 @@ Inicialmente, se llevó a cabo la creación de la máquina virtual destinada a a
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/create-ipa1-vm.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/create-ipa1-vm.png}
 	\caption{Creación de la máquina virtual del servidor principal}
 	\label{fig:cracion-vm-ipa1}
 \end{figure}
@@ -28,7 +28,7 @@ Posteriormente, se realizó la instalación del sistema operativo sobre la máqu
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/install-os.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/install-os.png}
 	\caption{Instalación del sistema operativo Fedora Server 44 en el servidor principal}
 	\label{fig:install-os}
 \end{figure}
@@ -37,7 +37,7 @@ Como parte de la configuración inicial del sistema, se configuró la interfaz d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-ip-ipa1.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-ip-ipa1.png}
 	\caption{Configuración de la interfaz de red de la máquina virtual}
 	\label{fig:config-ip}
 \end{figure}
@@ -46,7 +46,7 @@ Una vez finalizada la instalación del sistema operativo, se realizaron las conf
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/hostname-ipa1.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/hostname-ipa1.png}
 	\caption{Configuración del nombre de dominio completamente calificado (\acs{FQDN})}
 	\label{fig:hostname-ipa1}
 \end{figure}
@@ -55,7 +55,7 @@ Posteriormente, se agregó la entrada correspondiente al servidor en el archivo 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/hosts-ipa1.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/hosts-ipa1.png}
 	\caption{Configuración del archivo /etc/hosts}
 	\label{fig:hosts-ipa1}
 \end{figure}
@@ -66,7 +66,7 @@ Esta configuración permite que los diferentes componentes de la infraestructura
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/firewall-ipa1.png}
+	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/firewall-ipa1.png}
 	\caption{Configuración de las reglas del cortafuegos para los servicios de FreeIPA}
 	\label{fig:firewall-ipa1}
 \end{figure}
@@ -75,7 +75,7 @@ Una vez completadas las configuraciones previas del sistema, se procedió a la i
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/install-package-ipa1.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/install-package-ipa1.png}
 	\caption{Instalación del paquete freeipa-server}
 	\label{fig:install-package-ipa1}
 \end{figure}
@@ -92,14 +92,14 @@ Finalmente, el asistente llevó a cabo la instalación y configuración de los d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/ipa1-install-server-1.png}
+	\includegraphics[width=0.6\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/ipa1-install-server-1.png}
 	\caption{Proceso de instalación y configuración inicial de FreeIPA parte 1}
 	\label{fig:ipa1-install-server}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.6\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/ipa1-install-server-2.png}
+	\includegraphics[width=0.6\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/ipa1-install-server-2.png}
 	\caption{Proceso de instalación y configuración inicial de FreeIPA parte 2}
 	\label{fig:ipa1-install-server-2}
 \end{figure}
@@ -116,7 +116,7 @@ En particular, se crearon los grupos openproject, openvpn y xenorchestra, destin
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/user-groups.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/user-groups.png}
 	\caption{Grupos de usuarios configurados en FreeIPA}
 	\label{fig:user-groups}
 \end{figure}
@@ -131,7 +131,7 @@ De igual manera, se limitó a cinco el número máximo de intentos fallidos de a
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/global-password.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/global-password.png}
 	\caption{Configuración de la política global de contraseñas}
 	\label{fig:global-password}
 \end{figure}
@@ -140,7 +140,7 @@ Posteriormente, se creó una política específica para el grupo ldap-service-ac
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/service-password.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/service-password.png}
 	\caption{Política de contraseñas para las cuentas de servicio}
 	\label{fig:service-password}
 \end{figure}
@@ -153,7 +153,7 @@ Con el fin de facilitar su administración y aplicar políticas específicas, to
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/service-accounts.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/service-accounts.png}
 	\caption{Cuentas de servicio configuradas en FreeIPA}
 	\label{fig:service-accounts}
 \end{figure}
@@ -166,7 +166,7 @@ La principal diferencia con respecto a la configuración anterior correspondió 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-ip-ipa2.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-ip-ipa2.png}
 	\caption{Configuración de red del servidor de réplica}
 	\label{fig:config-ip-ipa2}
 \end{figure}
@@ -177,7 +177,7 @@ Como primer paso, se configuró el nombre de dominio completamente calificado (\
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/hostname-ipa2.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/hostname-ipa2.png}
 	\caption{Configuración del \acs{FQDN} del servidor de réplica}
 	\label{fig:hostname-ipa2}
 \end{figure}
@@ -186,7 +186,7 @@ Posteriormente, se habilitaron los servicios correspondientes a \ac{LDAP} y \ac{
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/firewall-ipa2.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/firewall-ipa2.png}
 	\caption{Configuración del cortafuegos del servidor de réplica}
 	\label{fig:firewall-ipa2}
 \end{figure}
@@ -195,7 +195,7 @@ A continuación, se instaló el paquete freeipa-server, que incorpora las herram
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/install-package-ipa2.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/install-package-ipa2.png}
 	\caption{Instalación del paquete freeipa-server}
 	\label{fig:install-package-ipa2}
 \end{figure}
@@ -204,7 +204,7 @@ Una vez completado este proceso, se instaló el cliente de FreeIPA, estableciend
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/install-client-ipa2}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/install-client-ipa2}
 	\caption{Instalación del cliente de FreeIPA}
 	\label{fig:install-client-ipa2}
 \end{figure}
@@ -213,7 +213,7 @@ Posteriormente, desde el servidor principal se añadió el nuevo equipo al grupo
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/ipa1-add-ipa2.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/ipa1-add-ipa2.png}
 	\caption{Incorporación del servidor al grupo ipaservers}
 	\label{fig:ipa1-add-ipa2}
 \end{figure}
@@ -222,14 +222,14 @@ Finalmente, se ejecutó el proceso de promoción del cliente a servidor de répl
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/promotion-client-to-server.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/promotion-client-to-server.png}
 	\caption{Promoción del cliente a servidor de réplica}
 	\label{fig:promotion-client-to-server}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/check-replica-server.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/check-replica-server.png}
 	\caption{Verificación del servidor de réplica}
 	\label{fig:check-replica-server}
 \end{figure}
@@ -244,7 +244,7 @@ Como primer paso, se creó la máquina virtual destinada a alojar HAProxy. Para 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-vm-haproxy.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-vm-haproxy.png}
 	\caption{Configuración de la máquina virtual destinada a la implementación de HAProxy}
 	\label{fig:config-vm-haproxy}
 \end{figure}
@@ -253,7 +253,7 @@ Posteriormente, se realizó la instalación del sistema operativo y la configura
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-ip-haproxy.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-ip-haproxy.png}
 	\caption{Configuración de la dirección \acs{IP} del servidor HAProxy}
 	\label{fig:config-ip-haproxy}
 \end{figure}
@@ -262,7 +262,7 @@ Una vez instalado y configurado el sistema operativo, se procedió con la instal
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/instalacion-haproxy.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/instalacion-haproxy.png}
 	\caption{Instalación de HAProxy}
 	\label{fig:instalacion-haproxy}
 \end{figure}
@@ -274,7 +274,7 @@ De forma complementaria, se estructuró la entrada para la comunicación cifrada
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-balanceo-freeipa-haproxy.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-balanceo-freeipa-haproxy.png}
 	\caption{Configuración de HAProxy para el balanceo de los servidores FreeIPA}
 	\label{fig:config-balanceo-freeipa-haproxy}
 \end{figure}
@@ -287,7 +287,7 @@ Para ello, se creó en FreeIPA un host fantasma (\textit{ghost host}) asociado a
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/creacion-host-servicio.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/creacion-host-servicio.png}
 	\caption{Creación del host destinado a la configuración del servicio}
 	\label{fig:creacion-host-servicio}
 \end{figure}
@@ -296,7 +296,7 @@ Una vez creado el host, se registró el servicio \ac{LDAP} asociado al nombre \n
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/adicion-servicio-host.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/adicion-servicio-host.png}
 	\caption{Adición del servicio al host configurado}
 	\label{fig:adicion-servicio-host}
 \end{figure}
@@ -305,7 +305,7 @@ Posteriormente, el servicio \ac{LDAP} se asoció tanto al servidor principal ipa
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/incorporacion-servicio-freeipa.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/incorporacion-servicio-freeipa.png}
 	\caption{Incorporación del servicio en los servidores FreeIPA}
 	\label{fig:incorporacion-servicio-freeipa}
 \end{figure}
@@ -314,7 +314,7 @@ Posteriormente, se verificó la configuración del servicio mediante la consulta
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/verificacion-servicio-ldap-virtual.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/verificacion-servicio-ldap-virtual.png}
 	\caption{Verificación del servicio \acs{LDAP} configurado para el nombre virtual}
 	\label{fig:verificacion-servicio-ldap-virtual}
 \end{figure}
@@ -327,7 +327,7 @@ En el servidor principal se consultó la solicitud de certificado correspondient
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/certificado-servicio-servidor-principal.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/certificado-servicio-servidor-principal.png}
 	\caption{Configuración y verificación del certificado del servicio en el servidor principal}
 	\label{fig:certificado-servicio-servidor-principal}
 \end{figure}
@@ -336,7 +336,7 @@ Finalmente, se realizó el mismo procedimiento en el servidor de réplica ipa2, 
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/certificado-servicio-servidor-replica.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/certificado-servicio-servidor-replica.png}
 	\caption{Configuración y verificación del certificado del servicio en el servidor de réplica}
 	\label{fig:certificado-servicio-servidor-replica}
 \end{figure}
@@ -351,7 +351,7 @@ Para realizar la integración de OpenVPN con el servicio de gestión de identida
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/instalacion-openvpn-auth-ldap.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/instalacion-openvpn-auth-ldap.png}
 	\caption{Instalación del complemento openvpn-auth-ldap}
 	\label{fig:instalacion-openvpn-auth-ldap}
 \end{figure}
@@ -364,7 +364,7 @@ Una vez obtenido el certificado, se creó el archivo ca.crt en la ruta \path{/et
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/ubicacion-ca-crt-openvpn.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/ubicacion-ca-crt-openvpn.png}
 	\caption{Archivo ca.crt ubicado en /etc/openvpn/auth/}
 	\label{fig:ubicacion-ca-crt-openvpn}
 \end{figure}
@@ -375,7 +375,7 @@ El paquete proporciona un archivo de configuración de ejemplo ubicado en \path{
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-openvpn-auth-ldap.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-openvpn-auth-ldap.png}
 	\caption{Configuración del complemento openvpn-auth-ldap para la integración con FreeIPA}
 	\label{fig:config-openvpn-auth-ldap}
 \end{figure}
@@ -416,7 +416,7 @@ En la \autoref{fig:activacion-openvpn-auth-ldap} se observa la incorporación de
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/activacion-openvpn-auth-ldap.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/activacion-openvpn-auth-ldap.png}
 	\caption{Activación del complemento openvpn-auth-ldap en la configuración del servidor OpenVPN}
 	\label{fig:activacion-openvpn-auth-ldap}
 \end{figure}
@@ -425,7 +425,7 @@ Finalmente, para que los clientes de OpenVPN puedan proporcionar las credenciale
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-autenticacion-cliente-openvpn.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-autenticacion-cliente-openvpn.png}
 	\caption{Configuración de autenticación mediante usuario y contraseña en el cliente OpenVPN}
 	\label{fig:config-autenticacion-cliente-openvpn}
 \end{figure}
@@ -438,7 +438,7 @@ En esta sección se creó una nueva conexión \ac{LDAP}, en cuyo formulario se d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-inicial-ldap-openproject.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-inicial-ldap-openproject.png}
 	\caption{Configuración inicial de la conexión \acs{LDAP} en OpenProject}
 	\label{fig:config-inicial-ldap-openproject}
 \end{figure}
@@ -449,7 +449,7 @@ Adicionalmente, se habilitó la opción de validación del certificado \ac{SSL},
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/seguridad-tls-certificado-openproject.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/seguridad-tls-certificado-openproject.png}
 	\caption{Configuración de seguridad \acs{TLS} y validación del certificado de la conexión \acs{LDAP}}
 	\label{fig:seguridad-tls-certificado-openproject}
 \end{figure}
@@ -458,7 +458,7 @@ El siguiente apartado corresponde a la configuración de la cuenta de servicio p
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/cuenta-servicio-ldap-openproject.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/cuenta-servicio-ldap-openproject.png}
 	\caption{Configuración de la cuenta de servicio para la conexión \acs{LDAP} de OpenProject}
 	\label{fig:cuenta-servicio-ldap-openproject}
 \end{figure}
@@ -471,7 +471,7 @@ Asimismo, se mantuvo habilitada la opción de creación automática de usuarios,
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/base-dn-busqueda-openproject.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/base-dn-busqueda-openproject.png}
 	\caption{Configuración de la base \acs{DN} y los criterios de búsqueda de usuarios en OpenProject}
 	\label{fig:base-dn-busqueda-openproject}
 \end{figure}
@@ -484,7 +484,7 @@ El campo Administrador se dejó sin configurar, debido a que no se utilizó un a
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/mapeo-atributos-ldap-openproject.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/mapeo-atributos-ldap-openproject.png}
 	\caption{Mapeo de atributos \acs{LDAP} para los usuarios de OpenProject}
 	\label{fig:mapeo-atributos-ldap-openproject}
 \end{figure}
@@ -493,7 +493,7 @@ Una vez guardada la configuración de la conexión \ac{LDAP}, OpenProject permit
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/validacion-conexion-openproject-freeipa.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/validacion-conexion-openproject-freeipa.png}
 	\caption{Validación de la conexión entre OpenProject y FreeIPA}
 	\label{fig:validacion-conexion-openproject-freeipa}
 \end{figure}
@@ -504,7 +504,7 @@ Como primer paso, se procede a habilitar el complemento \ac{LDAP} en Xen Orchest
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/complemento-ldap-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/complemento-ldap-xen-orchestra.png}
 	\caption{Complemento \acs{LDAP} disponible en Xen Orchestra}
 	\label{fig:complemento-ldap-xen-orchestra}
 \end{figure}
@@ -513,7 +513,7 @@ Para iniciar la configuración del complemento, el primer parámetro que se esta
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-uri-ldap-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-uri-ldap-xen-orchestra.png}
 	\caption{Configuración de la \acs{URI} del servidor \acs{LDAP} en el complemento de Xen Orchestra}
 	\label{fig:config-uri-ldap-xen-orchestra}
 \end{figure}
@@ -524,7 +524,7 @@ Finalmente, se definió como base del directorio el \ac{DN} \nolinkurl{dc=grid,d
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-tls-base-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-tls-base-xen-orchestra.png}
 	\caption{Configuración del certificado, seguridad \acs{TLS} y base del directorio \acs{LDAP} en Xen Orchestra}
 	\label{fig:config-tls-base-xen-orchestra}
 \end{figure}
@@ -535,7 +535,7 @@ Adicionalmente, se configuró el filtro de usuario, mediante el cual se establec
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-credenciales-filtro-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-credenciales-filtro-xen-orchestra.png}
 	\caption{Configuración de las credenciales y filtro de búsqueda de usuarios \acs{LDAP} para Xen Orchestra}
 	\label{fig:config-credenciales-filtro-xen-orchestra}
 \end{figure}
@@ -546,7 +546,7 @@ Una vez definidos los parámetros necesarios, se procedió a guardar la configur
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/config-final-ldap-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/config-final-ldap-xen-orchestra.png}
 	\caption{Configuración final del complemento \acs{LDAP} en Xen Orchestra}
 	\label{fig:config-final-ldap-xen-orchestra}
 \end{figure}
@@ -557,14 +557,14 @@ Los datos utilizados para la prueba se presentan en la \autoref{fig:datos-prueba
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/datos-prueba-ldap-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/datos-prueba-ldap-xen-orchestra.png}
 	\caption{Datos utilizados para la prueba del complemento \acs{LDAP} en Xen Orchestra}
 	\label{fig:datos-prueba-ldap-xen-orchestra}
 \end{figure}
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.8\textwidth]{imagenes/figuras/II-desarrollo-metodologico/implementacion/resultado-prueba-ldap-xen-orchestra.png}
+	\includegraphics[width=0.8\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/resultado-prueba-ldap-xen-orchestra.png}
 	\caption{Resultado de la prueba de funcionamiento del complemento \acs{LDAP} en Xen Orchestra}
 	\label{fig:resultado-prueba-ldap-xen-orchestra}
 \end{figure}
