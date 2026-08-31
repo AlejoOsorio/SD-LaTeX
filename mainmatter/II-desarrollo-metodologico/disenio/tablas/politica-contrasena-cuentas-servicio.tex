@@ -1,0 +1,58 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+>{\raggedright\arraybackslash}p{3.5cm}|
+>{\raggedright\arraybackslash}p{10.0cm}|}
+
+\caption{Política de contraseñas para el grupo ldap-service-accounts.}
+\label{tab:politica-service-accounts}
+\\
+\hline
+\rowcolor[gray]{0.85}
+\textbf{Elemento}               &
+\textbf{Descripción}
+\\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor[gray]{0.85}
+\textbf{Elemento}               &
+\textbf{Descripción}
+\\
+\hline
+\endhead
+
+Grupo                           &
+ldap-service-accounts           \\
+\hline
+
+Propósito                       &
+Agrupar las cuentas de servicio utilizadas por las aplicaciones integradas. \\
+\hline
+
+Miembros                        &
+svc-openproject, svc-openvpn y svc-xenorchestra. \\
+\hline
+
+Política asociada              &
+Política de contraseña para cuentas de servicio. \\
+\hline
+
+Prioridad                       &
+10                              \\
+\hline
+
+Configuración principal        &
+Contraseña sin expiración.      \\
+\hline
+
+Justificación                   &
+Evitar la expiración de las credenciales utilizadas por las integraciones, reduciendo la necesidad de intervención administrativa asociada a la renovación de estas cuentas y manteniendo separadas sus políticas respecto de las aplicadas a los usuarios finales. \\
+\hline
+\endlongtable
+\endgroup
+\normalsize

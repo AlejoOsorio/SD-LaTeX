@@ -1,0 +1,40 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+	>{\raggedright\arraybackslash}p{2.5cm}|
+	>{\raggedright\arraybackslash}p{2.5cm}|
+	>{\raggedright\arraybackslash}p{4.0cm}|
+	>{\raggedright\arraybackslash}p{4.5cm}|}
+
+	\caption{Cuentas y grupos de autorización asignados para PT-02}
+	\label{tab:pt02-datos-prueba}
+	\\
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{Cuenta}                &
+	\textbf{Usuario}               &
+	\textbf{Grupo de autorización} &
+	\textbf{Servicio autorizado}
+	\\
+	\hline
+	\endfirsthead
+
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{Cuenta}                &
+	\textbf{Usuario}               &
+	\textbf{Grupo de autorización} &
+	\textbf{Servicio autorizado}
+	\\
+	\hline
+	\endhead
+
+	Cuenta 1                       & pedrom  & Grupo openvpn      & OpenVPN       \\ \hline
+	Cuenta 2                       & juang   & Grupo openproject  & OpenProject   \\ \hline
+	Cuenta 3                       & sergiop & Grupo xenorchestra & Xen Orchestra \\ \hline
+\end{longtable}
+\endgroup
+\normalsize

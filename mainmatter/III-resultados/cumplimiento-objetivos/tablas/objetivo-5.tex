@@ -1,0 +1,26 @@
+% =========================================================
+% TABLA 5: OBJETIVO ESPECÍFICO 5
+% =========================================================
+\begin{table}[htbp]
+	\centering
+	\caption{Cumplimiento del Objetivo Específico 5}
+	\label{tab:cumplimiento-objetivo-5}
+	\begin{tabular}{|>{\raggedright\arraybackslash}p{0.38\textwidth}|>{\raggedright\arraybackslash}p{0.56\textwidth}|}
+		\hline
+		\rowcolor[HTML]{1B6B93}
+		\multicolumn{2}{|c|}{\color{white}\textbf{\textit{Objetivo específico 5}}}                                                                                                                                                                                                                                                                                                                                   \\
+		\hline
+		\multicolumn{2}{|>{\centering\arraybackslash}p{\dimexpr0.94\textwidth+2\tabcolsep+\arrayrulewidth\relax}|}{\textit{Implementar prototipo funcional del servicio de directorio para el GRID}}                                                                                                                                                                                                                 \\
+		\hline
+		\textbf{\textit{Detalle de cumplimiento}}                                                                                                                                                                                                                                                                                                                                  & \textbf{\textit{Observaciones}} \\
+		\hline
+		Ver capítulo \textcolor[HTML]{1B6B93}{\textbf{\ref{cap:implementacio}}} \textbf{Implementación}. Se desplegó y configuró \textit{\textcolor[HTML]{1B6B93}{FreeIPA}}, incluyendo la instalación del servidor principal, el servidor réplica y el balanceador \textit{HAProxy}, así como la integración con \textit{OpenVPN}, \textit{OpenProject} y \textit{Xen Orchestra}. &
+		La implementación abarcó:\par\vspace{0.4em}
+		- \textbf{Instalación del servidor principal} de \textit{FreeIPA} sobre \textit{Fedora Server} (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-servidor-principal}}).\par
+		- \textbf{Configuración del servidor}: creación de grupos, políticas de contraseñas y cuentas de servicio (sección \textcolor[HTML]{1B6B93}{\ref{sec:configuracion-servidor-freeipa}}).\par
+		- \textbf{Instalación del servidor réplica} y su incorporación a la infraestructura (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-servidor-replica}}).\par
+		- \textbf{Instalación de \textit{HAProxy}} como punto de acceso unificado con balanceo de carga (sección \textcolor[HTML]{1B6B93}{\ref{sec:instalacion-haproxy}}).\par
+		- \textbf{Integración con los servicios}: \textit{OpenVPN} (sección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-openvpn}}), \textit{OpenProject} (sección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-openproject}}) y \textit{Xen Orchestra} (sección \textcolor[HTML]{1B6B93}{\ref{subsec:integracion-xen-orchestra}}).                                                                          \\
+		\hline
+	\end{tabular}
+\end{table}

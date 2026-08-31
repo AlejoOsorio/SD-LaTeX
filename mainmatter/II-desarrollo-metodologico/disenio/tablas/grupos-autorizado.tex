@@ -1,0 +1,51 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+>{\raggedright\arraybackslash}p{2.8cm}|
+>{\raggedright\arraybackslash}p{3.5cm}|
+>{\raggedright\arraybackslash}p{7.2cm}|}
+
+\caption{Grupos de autorización.}
+\label{tab:grupos-autorizacion}
+\\
+\hline
+\rowcolor[gray]{0.85}
+\textbf{Grupo}                  &
+\textbf{Servicio asociado}     &
+\textbf{Propósito}
+\\
+\hline
+\endfirsthead
+
+\hline
+\rowcolor[gray]{0.85}
+\textbf{Grupo}                  &
+\textbf{Servicio asociado}     &
+\textbf{Propósito}
+\\
+\hline
+\endhead
+
+openproject                         &
+OpenProject                         &
+Autoriza el acceso a la plataforma de gestión de proyectos mediante autenticación \ac{LDAP}.
+\\
+\hline
+
+openvpn                             &
+OpenVPN                             &
+Autoriza a los usuarios que pueden establecer conexiones \ac{VPN} con la infraestructura.
+\\
+\hline
+
+xenorchestra                        &
+Xen Orchestra                       &
+Autoriza el acceso a la plataforma de administración de virtualización.
+\\
+\hline
+\endlongtable
+\endgroup
+\normalsize

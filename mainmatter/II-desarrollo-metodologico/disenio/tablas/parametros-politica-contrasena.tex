@@ -1,0 +1,87 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+>{\raggedright\arraybackslash}p{2.8cm}|
+>{\raggedright\arraybackslash}p{3.5cm}|
+>{\raggedright\arraybackslash}p{7.2cm}|}
+
+\caption{Parámetros de la política de contraseñas definidos para FreeIPA}
+\label{tab:password-params}
+\\
+\hline
+\textbf{Parámetro}                  &
+\textbf{Valor definido}             &
+\textbf{Justificación}
+\\
+\hline
+\endfirsthead
+
+\caption[]{Parámetros de la política de contraseñas definidos para FreeIPA (continuación)}
+\\
+\hline
+\textbf{Parámetro}                  &
+\textbf{Valor definido}             &
+\textbf{Justificación}
+\\
+\hline
+\endhead
+
+Longitud mínima                     &
+12 caracteres                       &
+Incrementa la entropía de las credenciales y dificulta ataques por fuerza bruta.
+\\
+\hline
+
+Complejidad                         &
+Al menos una letra mayúscula, una letra minúscula, un número y un carácter especial &
+Reduce la probabilidad de contraseñas predecibles y mejora su resistencia frente a ataques de diccionario.
+\\
+\hline
+
+Historial de contraseñas            &
+5 contraseñas                       &
+Evita la reutilización inmediata de credenciales previamente utilizadas.
+\\
+\hline
+
+Antigüedad mínima                   &
+1 día                               &
+Impide el cambio reiterado de contraseñas con el propósito de eludir el historial configurado.
+\\
+\hline
+
+Vigencia máxima                     &
+180 días                            &
+Favorece la renovación periódica de credenciales sin generar una carga excesiva para los usuarios.
+\\
+\hline
+
+Intentos fallidos                   &
+5                                   &
+Reduce el riesgo de ataques automatizados por fuerza bruta.
+\\
+\hline
+
+Bloqueo de cuenta                   &
+5 minutos                           &
+Mitiga intentos reiterados de autenticación sin afectar significativamente la disponibilidad del servicio.
+\\
+\hline
+
+Contraseña temporal                 &
+Cambio obligatorio en el primer inicio de sesión &
+Garantiza que únicamente el usuario conozca su contraseña definitiva.
+\\
+\hline
+
+Auditoría                           &
+Registro de autenticaciones, cambios de contraseña, bloqueos y restablecimientos &
+Permite la trazabilidad de eventos y facilita los procesos de auditoría y respuesta ante incidentes.
+\\
+\hline
+\endlongtable
+\endgroup
+\normalsize % Restablece explícitamente el tamaño de letra para el texto posterior

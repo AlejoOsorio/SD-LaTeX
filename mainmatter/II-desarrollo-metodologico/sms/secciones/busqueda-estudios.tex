@@ -1,0 +1,68 @@
+\newpage
+\section{Búsqueda de estudios}
+
+Esta etapa comprendió las siguientes secciones:
+\begin{enumerate}
+	\item Estrategia de búsqueda, ya sea independiente o combinada;
+	\item Identificación general de estudios;
+	\item Revisión de estudio; y finalmente,
+	\item Selección de estudios para incluir en el \ac{SMS}.
+\end{enumerate}
+
+
+\subsection{Estrategia de búsqueda}\label{subsec:estrategia-busqueda}
+
+La estrategia de búsqueda empleada en este estudio combinó consultas estructuradas en bases de datos científicas con la técnica de búsqueda en bola de nieve (\textit{snowballing}). Esta integración metodológica permitió ampliar el alcance del proceso de identificación de literatura relevante, favoreciendo la recuperación de estudios adicionales a partir de las referencias bibliográficas y citaciones de los trabajos inicialmente seleccionados. Como resultado, fue posible identificar investigaciones de interés que podrían no haber sido localizadas mediante la aplicación exclusiva de estrategias de búsqueda tradicionales, fortaleciendo así la exhaustividad y cobertura del mapeo sistemático.
+
+
+\subsection{Búsqueda en bases de datos}\label{subsec:busqueda-bases-datos}
+
+Para la realización del \ac{SMS}, se seleccionaron las bases de datos Web of Science, IEEE Xplore, Springer, ScienceDirect y Taylor \& Francis. La elección de estas fuentes se fundamentó en su reconocida relevancia dentro de la comunidad científica, así como en la amplitud y calidad de la literatura que indexa en el área de investigación objeto de estudio. Adicionalmente, su disponibilidad y cobertura temática permitieron garantizar el acceso a publicaciones científicas actualizadas y pertinentes, contribuyendo a la rigurosidad y confiabilidad del proceso de búsqueda y selección de la evidencia científica.
+
+
+\subsubsection{Identificación de estudios mediante búsqueda en bases de datos}\label{subsubsec:identificacion-estudios}
+
+En esta etapa fue necesario definir un marco de referencia que facilitara la identificación y selección de las palabras clave más adecuadas para la construcción de la cadena de búsqueda empleada en las bases de datos seleccionadas. Con este propósito, se utilizó el modelo \ac{PICOC} como guía metodológica para estructurar y delimitar los términos de búsqueda relacionados con el objeto de estudio. La aplicación de este modelo permitió sistematizar el proceso de definición de palabras clave, favoreciendo la consistencia y trazabilidad de la estrategia de búsqueda. El resultado de este procedimiento se presenta en las \autoref{tab:modelo-picoc} y \autoref{tab:palabras-clave-picoc}.
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/picoc}
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/palabras-clave-picoc}
+
+Los términos de búsqueda identificados a partir del modelo \ac{PICOC} y presentados en la \autoref{tab:palabras-clave-picoc} fueron complementados mediante la incorporación de sinónimos y conceptos relacionados, con el fin de ampliar la cobertura y sensibilidad del proceso de recuperación de estudios. El conjunto resultante de términos se muestra en la \autoref{tab:palabras-clave}. Estos términos constituyeron la base para la cadena de búsqueda utilizada en cada una de las bases de datos seleccionadas.
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/palabras-clave}
+
+Con el objetivo de filtrar los resultados obtenidos y centrar el análisis en estudios relevantes para la investigación, se definieron criterios de inclusión y exclusión, los cuales se presentan en la \autoref{tab:criterios-inclusion-exclusion}. Estos criterios orientaron el proceso de selección de estudios, permitiendo identificar aquellos trabajos alineados con objetivos del \ac{SMS} y descartar aquellos que no contribuían de manera significativa a la respuesta de las preguntas de investigación ni al desarrollo del análisis.
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/criterios-inclusion-exclusion}
+
+
+\subsubsection{Búsqueda en bases de datos}\label{par:busqueda-bases-datos}
+
+La cadena de búsqueda correspondiente a cada una de las bases de datos seleccionadas se presenta en la \autoref{tab:cadena-busqueda}.
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/cadena-busqueda}
+
+
+\subsubsection{Métricas de la búsqueda sin criterios de inclusión/exclusión}\label{subsubsec:resumen-busqueda}
+
+La \autoref{tab:bases-sin-exclusion} presenta la cantidad de publicaciones recuperadas en las bases de datos consultadas durante la búsqueda inicial, previa a la aplicación de los criterios de inclusión y exclusión. En esta etapa se identificaron un total de 1720 registros, distribuidos entre \ac{WOS} (39), Springer (38), ScienceDirect (1019), IEEE Xplore (10) y Taylor \& Francis (614). El detalle de esta búsqueda preliminar se presenta en el apéndice \ref{sec:busqueda-sin-criterios}.
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/bases-sin-exclusion}
+
+
+\subsubsection{Métricas de la búsqueda con criterios de inclusión/exclusión}\label{subsec:resumen-busqueda-citerios}
+
+Esta búsqueda aplicó los criterios de inclusión y exclusión previamente definidos. Si bien se utilizó la misma cadena de búsqueda, esta etapa se diferencia por la aplicación de filtros específicos en cada base de datos. Las evidencias correspondientes a este proceso pueden consultarse en el apéndice~\ref{sec:busqueda-con-criterios}.
+
+La \autoref{tab:bases-con-exclusion} presenta los resultados obtenidos tras la aplicación de los criterios de inclusión y exclusión. En contraste con la búsqueda inicial, en esta fase los filtros aplicados redujeron de manera significativa la cantidad de publicaciones recuperadas. En total, se identificaron 159 documentos, distribuidos de la siguiente manera: \ac{WOS} (3), IEEE Xplore (1), Springer (1), ScienceDirect (132) y Taylor \& Francis (22).
+
+\input{mainmatter/II-desarrollo-metodologico/sms/tablas/bases-con-exclusion}
+
+El resultado del proceso de búsqueda en bases de datos puede observarse en la \autoref{fig:resumen-busqueda-bases}. Como se aprecia, tras la aplicación de los criterios de inclusión y exclusión se descartaron 1561 estudios, lo que representa una pérdida del 90.76\% respecto a los resultados de la búsqueda inicial.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.7\textwidth]{mainmatter/II-desarrollo-metodologico/sms/imagenes/resumen-busqueda-bases.png}
+	\caption{Diagrama resumen del proceso de búsqueda en bases de datos}
+	\label{fig:resumen-busqueda-bases}
+\end{figure}

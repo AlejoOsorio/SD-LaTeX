@@ -1,0 +1,47 @@
+\section{Metodología}
+La fase de pruebas tuvo como propósito verificar el funcionamiento de la solución de servicio de directorio implementada y determinar el grado de cumplimiento de los requisitos establecidos. La evaluación abarcó la solución como un conjunto, considerando a FreeIPA como componente central para la gestión de identidades y su integración con OpenVPN, OpenProject y Xen Orchestra, así como la configuración de réplica implementada para proporcionar continuidad del servicio.
+
+Las pruebas se diseñaron a partir de los comportamientos que debían ser demostrados por la solución, en lugar de establecer una correspondencia individual entre cada requisito y un caso de prueba. De esta manera, una misma prueba proporciona evidencia para uno o varios requisitos cuando estos involucran comportamientos relacionados. Este enfoque permite evitar la repetición de procedimientos y evidencias, manteniendo una relación directa entre los resultados obtenidos y los requisitos evaluados.
+
+La ejecución tuvo lugar en escenarios controlados, en los cuales quedaron definidas previamente las condiciones del entorno, los datos de prueba y el comportamiento esperado. Posteriormente se ejecutó un conjunto de acciones reproducibles y se registró el comportamiento observado. Los resultados obtenidos fueron comparados con los resultados esperados para determinar el estado de cada prueba.
+
+La evaluación utilizó tres estados:
+\begin{itemize}
+	\item \textbf{Cumple:} el comportamiento observado coincide con el resultado esperado y proporciona evidencia suficiente del cumplimiento del requisito asociado.
+	\item \textbf{Cumple parcialmente:} la solución proporciona parte de la funcionalidad requerida, pero presenta limitaciones respecto al alcance establecido para el requisito.
+	\item \textbf{No cumple:} la funcionalidad requerida no se encuentra disponible o no fue posible demostrar su funcionamiento durante las pruebas.
+\end{itemize}
+
+Las evidencias obtenidas durante la ejecución permitieron relacionar los resultados de las pruebas con los requisitos R-01 a R-08 y establecer el nivel de cumplimiento de la solución.
+
+\subsection{Tipos de pruebas}
+Las pruebas se organizaron de acuerdo con el comportamiento que se pretendía verificar. Se contemplaron los siguientes tipos:
+\begin{itemize}
+	\item \textbf{Pruebas funcionales:} permiten verificar las operaciones relacionadas con la gestión de identidades y credenciales, incluyendo la creación, actualización, habilitación, deshabilitación, revocación y expiración de cuentas, así como la aplicación de las políticas configuradas.
+	\item \textbf{Pruebas de integración:} permiten comprobar que OpenVPN, OpenProject y Xen Orchestra utilizan el servicio de directorio para realizar la gestión y autenticación de las identidades, verificando que las credenciales centralizadas pueden ser utilizadas de acuerdo con los permisos definidos para cada sistema.
+	\item \textbf{Pruebas de seguridad y control de acceso:} permiten comprobar la aplicación de las políticas de credenciales y la autorización diferenciada mediante grupos y permisos, incluyendo escenarios de acceso permitido y rechazado.
+	\item \textbf{Pruebas de auditoría:} permiten verificar la generación y consulta de registros asociados a actividades relevantes de gestión de identidades, autenticación y acceso.
+	\item \textbf{Pruebas de disponibilidad y continuidad:} permiten verificar la sincronización entre el servidor principal y la réplica, el comportamiento de la solución ante la indisponibilidad del servidor principal y la recuperación posterior de la infraestructura.
+\end{itemize}
+
+\subsection{Condición de ejecución}
+Las pruebas se ejecutaron sobre el entorno construido durante la fase de implementación. Se conservaron las configuraciones necesarias para reproducir el funcionamiento habitual de la solución, evitando realizar modificaciones adicionales que pudieran alterar el comportamiento que se pretendía evaluar.
+
+\subsection{Diseño de los casos de prueba}
+Los casos de prueba son diseñados a partir de los comportamientos que deben ser demostrados por la solución. Los casos son asociados a uno o varios requisitos cuando el mismo escenario permite obtener evidencia suficiente para su evaluación.
+
+Para mantener una ejecución uniforme, cada caso de prueba utiliza la siguiente estructura, definida en la \autoref{tab:estructura-casos-prueba}:
+
+\input{mainmatter/II-desarrollo-metodologico/pruebas/tablas/estructura-casos-prueba.tex}
+
+El resultado esperado quedó definido antes de ejecutar cada prueba, con el propósito de disponer de un criterio objetivo de comparación. Una vez finalizada la ejecución, se documentó el resultado obtenido y se incorporaron las evidencias correspondientes.
+
+La asignación de requisitos no implica que cada requisito tenga un caso de prueba independiente. Por ejemplo, una prueba de autorización diferenciada permite demostrar simultáneamente que las identidades son gestionadas de forma centralizada y que los permisos se mantienen diferenciados entre OpenVPN, OpenProject y Xen Orchestra. De esta forma, se evita repetir la creación de usuarios, configuraciones y procedimientos cuando estos ya han sido comprobados mediante otra prueba.
+
+La batería de pruebas se organizó en torno a los siguientes escenarios principales, presentados en la \autoref{tab:bateria-pruebas}:
+
+\input{mainmatter/II-desarrollo-metodologico/pruebas/tablas/escenarios-pruebas.tex}
+
+Las pruebas PT-07, PT-08 y PT-09 no se asociaron directamente con un requisito R-01--R-08, debido a que evalúan características de la arquitectura implementada relacionadas con la replicación, disponibilidad y recuperación. No obstante, sus resultados se consideran en la evaluación general de la solución, debido a que permiten verificar la continuidad del servicio de directorio sobre el cual dependen los sistemas integrados.
+
+La ejecución detallada de cada caso se presenta en la siguiente sección, incorporando el procedimiento realizado, los resultados obtenidos y las evidencias que permiten sustentar posteriormente la evaluación de los requisitos.

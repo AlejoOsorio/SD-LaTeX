@@ -1,0 +1,49 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+>{\raggedright\arraybackslash}p{2.8cm}|
+>{\raggedright\arraybackslash}p{3.8cm}|
+>{\raggedright\arraybackslash}p{6.9cm}|}
+
+\caption{Parámetros de dominio y \acs{FQDN} definidos para la infraestructura de FreeIPA}
+\label{tab:parametros-implementacion}
+\\
+\hline
+\textbf{Parámetro}                  &
+\textbf{Valor definido}             &
+\textbf{Justificación}
+\\
+\hline
+\endfirsthead
+
+\hline
+\textbf{Parámetro}                  &
+\textbf{Valor definido}             &
+\textbf{Justificación}
+\\
+\hline
+\endhead
+
+Dominio \acs{DNS}                         &
+grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co &
+Corresponde al dominio institucional existente de la infraestructura \ac{GRID}. Este dominio ya es administrado por el servicio \ac{DNS} institucional y únicamente es referenciado por FreeIPA para la construcción de las identidades y de la estructura del directorio.
+\\
+\hline
+
+Dominio \acs{LDAP} (Base \acs{DN})              &
+dc=grid,\allowbreak dc=uniquindio,\allowbreak dc=edu,\allowbreak dc=co &
+Se deriva directamente del dominio \ac{DNS}, donde cada componente del nombre de dominio se representa mediante un componente de dominio (Domain Component, dc), conforme al modelo de organización jerárquica utilizado por \ac{LDAP}.
+\\
+\hline
+
+\acs{FQDN} del servidor                   &
+ipa1.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co &
+Identifica de manera única al servidor FreeIPA dentro de la infraestructura. Este nombre es utilizado por Kerberos para generar los principales de servicio, por la autoridad certificadora para emitir los certificados digitales y por los clientes para establecer conexiones seguras con los servicios proporcionados por FreeIPA.
+\\
+\hline
+\endlongtable
+\endgroup
+\normalsize % Restablece explícitamente el tamaño de letra para el texto posterior

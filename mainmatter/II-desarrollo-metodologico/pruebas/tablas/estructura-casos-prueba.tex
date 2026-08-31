@@ -1,0 +1,41 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+	>{\raggedright\arraybackslash}p{4.0cm}|
+	>{\raggedright\arraybackslash}p{9.5cm}|}
+
+	\caption{Estructura de los casos de prueba}
+	\label{tab:estructura-casos-prueba}
+	\\
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{Campo}             &
+	\textbf{Descripción}
+	\\
+	\hline
+	\endfirsthead
+
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{Campo}             &
+	\textbf{Descripción}
+	\\
+	\hline
+	\endhead
+
+	ID                         & Identificador único asignado al caso de prueba.                                                                \\ \hline
+	Nombre                     & Denominación que describe de forma breve el comportamiento evaluado.                                           \\ \hline
+	Requisitos asociados       & Requisitos que pueden ser evaluados mediante la prueba.                                                        \\ \hline
+	Objetivo                   & Comportamiento específico que se pretende verificar.                                                           \\ \hline
+	Resultado esperado         & Comportamiento que debería producirse si la solución funciona de acuerdo con lo establecido.                   \\ \hline
+	Precondiciones             & Condiciones que deben cumplirse antes de iniciar la prueba.                                                    \\ \hline
+	Datos de prueba            & Usuarios, grupos, credenciales u otros elementos utilizados durante la ejecución.                              \\ \hline
+	Procedimiento y evidencias & Secuencia de los procedimientos realizados, indicando cada literal y acompañándolo de su respectiva evidencia. \\ \hline
+	Estado                     & Clasificación final de la prueba como cumple, cumple parcialmente o no cumple.                                 \\ \hline
+	Observaciones              & Información adicional relevante sobre la ejecución, incidencias o limitaciones identificadas.                  \\ \hline
+\end{longtable}
+\endgroup
+\normalsize

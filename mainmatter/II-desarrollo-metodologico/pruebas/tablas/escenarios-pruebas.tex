@@ -1,0 +1,46 @@
+\begingroup
+\fontsize{8.5pt}{9.5pt}\selectfont
+\renewcommand{\arraystretch}{1.3}
+\setlength{\tabcolsep}{4pt}
+
+\begin{longtable}{|
+	>{\raggedright\arraybackslash}p{1.5cm}|
+	>{\raggedright\arraybackslash}p{4.0cm}|
+	>{\raggedright\arraybackslash}p{2.5cm}|
+	>{\raggedright\arraybackslash}p{5.5cm}|}
+
+	\caption{Escenarios principales de la batería de pruebas}
+	\label{tab:bateria-pruebas}
+	\\
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{ID}                   &
+	\textbf{Caso de prueba}       &
+	\textbf{Requisitos asociados} &
+	\textbf{Propósito principal}
+	\\
+	\hline
+	\endfirsthead
+
+	\hline
+	\rowcolor[gray]{0.85}
+	\textbf{ID}                   &
+	\textbf{Caso de prueba}       &
+	\textbf{Requisitos asociados} &
+	\textbf{Propósito principal}
+	\\
+	\hline
+	\endhead
+
+	PT-01                         & Integración y autenticación centralizada            & R-01, R-08 & Verificar el uso de las identidades de FreeIPA en los tres servicios.                        \\ \hline
+	PT-02                         & Autorización diferenciada mediante grupos           & R-01, R-04 & Comprobar que los permisos se mantienen diferenciados por sistema.                           \\ \hline
+	PT-03                         & Gestión del ciclo de vida de las cuentas            & R-02       & Verificar las operaciones principales sobre las identidades y su efecto sobre el acceso.     \\ \hline
+	PT-04                         & Aplicación de políticas de seguridad y credenciales & R-03, R-06 & Comprobar las restricciones configuradas sobre las credenciales y su aplicación.             \\ \hline
+	PT-05                         & Registro y trazabilidad de actividades              & R-05       & Verificar la generación y consulta de registros relacionados con identidades y accesos.      \\ \hline
+	PT-06                         & Revisión de permisos y control de acceso            & R-04       & Verificar la capacidad de consultar y revisar las autorizaciones configuradas.               \\ \hline
+	PT-07                         & Replicación y sincronización                        & ---        & Comprobar la sincronización de identidades entre el servidor principal y la réplica.         \\ \hline
+	PT-08                         & Continuidad ante falla del servidor principal       & ---        & Verificar que los servicios integrados pueden continuar operando mediante la réplica.        \\ \hline
+	PT-09                         & Recuperación y resincronización                     & ---        & Comprobar la recuperación del servidor principal y el restablecimiento de la sincronización. \\ \hline
+\end{longtable}
+\endgroup
+\normalsize
