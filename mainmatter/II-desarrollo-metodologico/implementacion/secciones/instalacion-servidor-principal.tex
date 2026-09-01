@@ -32,7 +32,7 @@ Una vez finalizada la instalación del sistema operativo, se realizaron las conf
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/implementacion/imagenes/nombre-host-ipa1.png}
-	\caption{Configuración del nombre de dominio completamente calificado (\acs{FQDN})}
+	\caption[Configuración del nombre de dominio]{Configuración del nombre de dominio completamente calificado del servidor principal de FreeIPA}
 	\label{fig:nombre-host-ipa1}
 \end{figure}
 
@@ -67,7 +67,7 @@ Una vez completadas las configuraciones previas del sistema, se procedió a la i
 
 Posteriormente, se ejecutó el comando ipa-server-install, el cual inicia el proceso de instalación y configuración de FreeIPA a través de un asistente interactivo. Debido a que el nombre de dominio completamente calificado (\ac{FQDN}) ya había sido definido previamente como ipa1.grid.uniquindio.edu.co, el instalador detectó automáticamente parte de la información requerida y propuso los valores predeterminados correspondientes.
 
-Entre los parámetros configurados se encuentra el \ac{FQDN} ipa1.grid.uniquindio.edu.co, utilizado para identificar de manera única el servidor dentro de la infraestructura. A partir de este valor se determinó el dominio grid.uniquindio.edu.co, mientras que el dominio de Kerberos (realm) se estableció como \nolinkurl{GRID.UNIQUINDIO.EDU.CO}, siguiendo la convención de utilizar letras mayúsculas para este tipo de identificadores.
+Entre los parámetros configurados se encuentra el \ac{FQDN} \nolinkurl{ipa1.grid.uniquindio.edu.co}, utilizado para identificar de manera única el servidor dentro de la infraestructura. A partir de este valor se determinó el dominio grid.uniquindio.edu.co, mientras que el dominio de Kerberos (realm) se estableció como \nolinkurl{GRID.UNIQUINDIO.EDU.CO}, siguiendo la convención de utilizar letras mayúsculas para este tipo de identificadores.
 
 Asimismo, se definieron las credenciales correspondientes al usuario Directory Manager, encargado de las tareas administrativas del servicio de directorios, y al usuario admin, utilizado para la administración de la plataforma FreeIPA. Del mismo modo, se configuró el nombre de NetBIOS \ac{GRID}, necesario para garantizar la compatibilidad con determinados servicios y mecanismos de interoperabilidad.
 
