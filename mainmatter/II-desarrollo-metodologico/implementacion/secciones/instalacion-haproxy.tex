@@ -4,7 +4,7 @@ Con el fin de proporcionar redundancia y favorecer la disponibilidad y continuid
 
 En este contexto, HAProxy proporciona un único punto de acceso al servicio de directorio y distribuye las solicitudes entre el servidor principal y el servidor de réplica mediante el algoritmo Round Robin. De esta forma, mientras ambos servidores se encuentren disponibles, las solicitudes son distribuidas entre ellos. Adicionalmente, se configuraron comprobaciones de disponibilidad (health checks) mediante \ac{LDAP}, permitiendo que HAProxy identifique cuándo un servidor deja de responder y lo retire temporalmente del conjunto de servidores disponibles. Así, las solicitudes continúan siendo atendidas por el servidor que permanece operativo, contribuyendo a garantizar la continuidad de los procesos de autenticación y autorización.
 
-Como primer paso, se creó la máquina virtual destinada a alojar HAProxy. Para ello, se utilizó una plantilla basada en Debian 12 (Bookworm), asignando un procesador virtual, 1 \ac{GB} de memoria \ac{RAM} y 10 \ac{GB} de almacenamiento. Estos recursos fueron definidos de acuerdo con las características del servicio, considerando que HAProxy actúa como un componente ligero encargado principalmente de recibir, verificar y redirigir las conexiones hacia los servidores FreeIPA. La configuración utilizada para la creación de la máquina virtual se muestra en la \autoref{fig:configuracion-vm-haproxy}.
+Como primer paso, se creó la máquina virtual destinada a alojar HAProxy. Para ello, se utilizó una plantilla basada en Debian 12 (Bookworm), asignando un procesador virtual, 1 \ac{GB} de memoria \acs{RAM} y 10 \ac{GB} de almacenamiento. Estos recursos fueron definidos de acuerdo con las características del servicio, considerando que HAProxy actúa como un componente ligero encargado principalmente de recibir, verificar y redirigir las conexiones hacia los servidores FreeIPA. La configuración utilizada para la creación de la máquina virtual se muestra en la \autoref{fig:configuracion-vm-haproxy}.
 
 \begin{figure}[H]
 	\centering
@@ -13,7 +13,7 @@ Como primer paso, se creó la máquina virtual destinada a alojar HAProxy. Para 
 	\label{fig:configuracion-vm-haproxy}
 \end{figure}
 
-Posteriormente, se realizó la instalación del sistema operativo y la configuración de la interfaz de red, asignando la dirección \ac{IP} 172.30.30.66 al servidor. Esta dirección permite identificar el balanceador dentro de la infraestructura y establecer la comunicación con los servidores FreeIPA. La configuración realizada se presenta en la \autoref{fig:configuracion-ip-haproxy}.
+Posteriormente, se realizó la instalación del sistema operativo y la configuración de la interfaz de red, asignando la dirección \acs{IP} 172.30.30.66 al servidor. Esta dirección permite identificar el balanceador dentro de la infraestructura y establecer la comunicación con los servidores FreeIPA. La configuración realizada se presenta en la \autoref{fig:configuracion-ip-haproxy}.
 
 \begin{figure}[H]
 	\centering

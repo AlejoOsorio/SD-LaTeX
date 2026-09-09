@@ -91,7 +91,7 @@ Finalmente, para que los clientes de OpenVPN puedan proporcionar las credenciale
 
 Para realizar la integración de OpenProject con el servicio de directorio, fue necesario configurar una conexión \ac{LDAP} desde la interfaz de administración de la plataforma. Para acceder a esta configuración, se ingresó al menú Perfil → Administración → Autenticación → Conexiones \ac{LDAP}, desde donde es posible administrar las conexiones con servidores de directorio.
 
-En esta sección se creó una nueva conexión \ac{LDAP}, en cuyo formulario se definieron inicialmente los parámetros básicos de comunicación con el servicio, incluyendo el nombre asignado a la conexión, el host o dirección del servicio \ac{LDAP} y el puerto utilizado para establecer la comunicación. En este caso, la conexión se configuró utilizando la identidad del servicio definida mediante ipa.grid.uniquindio.edu.co, permitiendo que OpenProject utilice el punto de acceso proporcionado por HAProxy en lugar de establecer una conexión directa con un servidor específico de FreeIPA. Los parámetros iniciales de la conexión \ac{LDAP} configurada se presentan en la \autoref{fig:configuracion-inicial-ldap-openproject}.
+En esta sección se creó una nueva conexión \ac{LDAP}, en cuyo formulario se definieron inicialmente los parámetros básicos de comunicación con el servicio, incluyendo el nombre asignado a la conexión, el host o dirección del servicio \ac{LDAP} y el puerto utilizado para establecer la comunicación. En este caso, la conexión se configuró utilizando la identidad del servicio definida mediante \nolinkurl{ipa.grid.uniquindio.edu.co}, permitiendo que OpenProject utilice el punto de acceso proporcionado por HAProxy en lugar de establecer una conexión directa con un servidor específico de FreeIPA. Los parámetros iniciales de la conexión \ac{LDAP} configurada se presentan en la \autoref{fig:configuracion-inicial-ldap-openproject}.
 
 \begin{figure}[H]
 	\centering
@@ -199,7 +199,7 @@ Adicionalmente, se configuró el filtro de usuario, mediante el cual se establec
 
 Finalmente, se configuró el atributo que permite identificar de forma única a los usuarios de \ac{LDAP} dentro de Xen Orchestra. Para este propósito, se estableció el atributo uid, utilizado para asociar cada cuenta del directorio con su correspondiente usuario en la plataforma. Asimismo, se mantuvieron sin configurar las opciones de sincronización de grupos y dominios adicionales, debido a que la integración implementada no requiere importar los grupos de FreeIPA directamente en Xen Orchestra ni utilizar dominios \ac{LDAP} adicionales.
 
-Una vez definidos los parámetros necesarios, se procedió a guardar la configuración del complemento mediante la opción Save configuration, dejando establecida la conexión entre Xen Orchestra y el servicio de directorio FreeIPA. Los parámetros finales de la configuración del complemento \ac{LDAP} y la opción para guardar la configuración se presentan en la \autoref{fig:configuracion-final-ldap-xen-orchestra}.
+Una vez definidos los parámetros necesarios, se procedió a guardar la configuración del complemento mediante la opción \textit{Save configuration}, dejando establecida la conexión entre Xen Orchestra y el servicio de directorio FreeIPA. Los parámetros finales de la configuración del complemento \ac{LDAP} y la opción para guardar la configuración se presentan en la \autoref{fig:configuracion-final-ldap-xen-orchestra}.
 
 \begin{figure}[H]
 	\centering
@@ -208,7 +208,7 @@ Una vez definidos los parámetros necesarios, se procedió a guardar la configur
 	\label{fig:configuracion-final-ldap-xen-orchestra}
 \end{figure}
 
-Finalmente, una vez completada la configuración del complemento, se procedió a activar el plugin \ac{LDAP} para poder realizar las pruebas de autenticación. Para ello, se utilizaron los datos de prueba disponibles en la sección Test data, donde se ingresaron las credenciales de un usuario de FreeIPA y posteriormente se ejecutó la opción Test plugin. Esta prueba permite comprobar el funcionamiento del complemento una vez habilitado y verificar que podía procesar correctamente las credenciales suministradas. Como resultado, Xen Orchestra mostró el mensaje “The test appears to be working”, confirmando que la configuración realizada permitía establecer correctamente la comunicación y autenticación mediante \ac{LDAP}.
+Finalmente, una vez completada la configuración del complemento, se procedió a activar el plugin \ac{LDAP} para poder realizar las pruebas de autenticación. Para ello, se utilizaron los datos de prueba disponibles en la sección \textit{Test data}, donde se ingresaron las credenciales de un usuario de FreeIPA y posteriormente se ejecutó la opción \textit{Test plugin}. Esta prueba permite comprobar el funcionamiento del complemento una vez habilitado y verificar que podía procesar correctamente las credenciales suministradas. Como resultado, Xen Orchestra mostró el mensaje \textit{“The test appears to be working”}, confirmando que la configuración realizada permitía establecer correctamente la comunicación y autenticación mediante \ac{LDAP}.
 
 Los datos utilizados para la prueba se presentan en la \autoref{fig:datos-prueba-ldap-xen-orchestra}, mientras que el resultado satisfactorio obtenido se muestra en la \autoref{fig:resultado-prueba-ldap-xen-orchestra}.
 

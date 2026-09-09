@@ -12,6 +12,7 @@
 \label{tab:parametros-implementacion}
 \\
 \hline
+\tableheader
 \textbf{Parámetro}                  &
 \textbf{Valor definido}             &
 \textbf{Justificación}
@@ -20,6 +21,7 @@
 \endfirsthead
 
 \hline
+\tableheader
 \textbf{Parámetro}                  &
 \textbf{Valor definido}             &
 \textbf{Justificación}
@@ -42,6 +44,18 @@ Se deriva directamente del dominio \ac{DNS}, donde cada componente del nombre de
 \acs{FQDN} del servidor                   &
 ipa1.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co &
 Identifica de manera única al servidor FreeIPA dentro de la infraestructura. Este nombre es utilizado por Kerberos para generar los principales de servicio, por la autoridad certificadora para emitir los certificados digitales y por los clientes para establecer conexiones seguras con los servicios proporcionados por FreeIPA.
+\\
+\hline
+
+\acs{FQDN} de la réplica                  &
+ipa2.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co &
+Identifica a la réplica del servidor FreeIPA, la cual provee alta disponibilidad y balanceo de carga para los servicios del directorio. Permite que los clientes continúen operando de forma transparente en caso de que el servidor principal no esté disponible.
+\\
+\hline
+
+\acs{FQDN} del HAProxy              &
+ipa.\allowbreak grid.\allowbreak uniquindio.\allowbreak edu.\allowbreak co &
+Identifica al nodo encargado del balanceo de carga hacia los servidores FreeIPA. Este nombre es utilizado por los clientes como punto de entrada único para acceder a los servicios del directorio de forma distribuida.
 \\
 \hline
 \endlongtable

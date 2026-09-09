@@ -63,7 +63,7 @@ Software cuyo código fuente puede ser utilizado, estudiado, modificado y redist
 
 La metodología se desarrolló en fases sucesivas, siguiendo un enfoque sistemático:
 
-1. **Caracterización del GRID:** análisis de stakeholders, misión, líneas de trabajo y necesidades del grupo mediante una entrevista semiestructurada, consolidados en términos NPO (Necesidades, Problemas y Oportunidades).
+1. **Caracterización del GRID:** análisis de stakeholders, misión, líneas de trabajo y necesidades del grupo mediante una entrevista estructurada, consolidados en términos NPO (Necesidades, Problemas y Oportunidades).
 2. **Estudio de Mapeo Sistemático (SMS):** revisión de literatura con modelo GQM y PICOC sobre 5 bases de datos (Web of Science, IEEE Xplore, Springer, ScienceDirect, Taylor & Francis), depurada hasta un conjunto final de **22 estudios**.
 3. **Análisis DAR (Decision Analysis and Resolution):** evaluación de 5 alternativas de código abierto (OpenLDAP, 389 Directory Server, ApacheDS, OpenDJ, FreeIPA) mediante 13 criterios ponderados, resultando **FreeIPA** como la alternativa seleccionada.
 4. **Diseño de la solución:** modelado arquitectónico con **ArchiMate** y especificación de configuraciones (política de contraseñas, modelo de identidades, máquinas virtuales).

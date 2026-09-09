@@ -20,7 +20,7 @@ Como parte del diseño del servicio de directorio, es necesario definir la estru
 
 \subsubsection{Definición del nombre de dominio y del \texorpdfstring{\acs{FQDN}}{FQDN}}
 
-Aunque FreeIPA puede integrar un servicio \ac{DNS}, en la presente implementación dicho componente no será utilizado. No obstante, FreeIPA requiere la definición de un nombre de dominio y de un Nombre de Dominio Completamente Calificado (Fully Qualified Domain Name, \ac{FQDN}) para el servidor principal, ya que estos identificadores son utilizados por \ac{LDAP}, Kerberos y la infraestructura de certificados digitales para identificar de forma única al servidor y emitir los principales de servicio correspondientes. En atención a este requerimiento, para la infraestructura del grupo \ac{GRID} se definieron el dominio \ac{DNS}, el dominio \ac{LDAP} y el \ac{FQDN} del servidor, tal como se presenta en la \autoref{tab:parametros-implementacion}.
+Aunque FreeIPA puede integrar un servicio \ac{DNS}, en la presente implementación dicho componente no será utilizado. No obstante, FreeIPA requiere la definición de un nombre de dominio y de un Nombre de Dominio Completamente Calificado (\ac{FQDN}) para el servidor principal, ya que estos identificadores son utilizados por \ac{LDAP}, Kerberos y la infraestructura de certificados digitales para identificar de forma única al servidor y emitir los principales de servicio correspondientes. En atención a este requerimiento, para la infraestructura del grupo \ac{GRID} se definieron el dominio \ac{DNS}, el dominio \ac{LDAP} y el \ac{FQDN} del servidor, tal como se presenta en la \autoref{tab:parametros-implementacion}.
 
 \input{mainmatter/II-desarrollo-metodologico/disenio/tablas/parametros-dominio-freeipa.tex}
 
@@ -28,11 +28,11 @@ La selección de estos valores garantiza la coherencia entre los servicios que c
 
 \subsubsection{Definición de la estructura del directorio \texorpdfstring{\acs{LDAP}}{LDAP}}
 
-Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (Directory Information Tree, \ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}. En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts, facilitando la gestión de identidades y proporcionando una estructura consistente para las consultas realizadas por las aplicaciones integradas. La representación de esta estructura se muestra en la \autoref{fig:arbol-directorio}.
+Una vez definido el dominio de la infraestructura, es necesario establecer la organización lógica de los objetos que serán administrados por FreeIPA. Esta organización corresponde al Árbol de Información del Directorio (\ac{DIT}), el cual define la disposición jerárquica de usuarios, grupos y demás objetos almacenados dentro del servicio \ac{LDAP}. En la solución propuesta se adopta la estructura predeterminada de FreeIPA, la cual organiza los objetos administrativos bajo el contenedor cn=accounts, facilitando la gestión de identidades y proporcionando una estructura consistente para las consultas realizadas por las aplicaciones integradas. La representación de esta estructura se muestra en la \autoref{fig:arbol-directorio}.
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.9\textwidth]{mainmatter/II-desarrollo-metodologico/disenio/imagenes/arbol-directorio.png}
+	\includegraphics[width=0.6\textwidth]{mainmatter/II-desarrollo-metodologico/disenio/imagenes/arbol-directorio.png}
 	\caption{Árbol de información del directorio (\acs{DIT}) definido en FreeIPA}
 	\label{fig:arbol-directorio}
 \end{figure}
